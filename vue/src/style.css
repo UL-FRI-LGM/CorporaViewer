@@ -1,0 +1,247 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap");
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+#app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #1e1e24;
+  background-color: #708d81;
+  font-size: medium;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #708d81;
+  font-size: medium;
+  scroll-behavior: auto;
+}
+
+.app-title h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e1e24;
+}
+
+.app-title {
+  cursor: default;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 30px;
+  padding: 1rem 2rem 0.4rem 2rem;
+  background-color: #f0f7ee;
+  width: fit-content;
+  height: fit-content;
+  min-height: 4rem;
+  transition: all 0.5s ease;
+  border: #f0f7ee  4px solid;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+nav {
+  padding: 1rem 2rem;
+  background-color: #f0f7ee;
+  height: 4rem;
+  min-width: fit-content;
+  width: auto;
+  border-radius: 30px;
+  margin-top: 1rem;
+  transition: all 0.5s ease;
+  border: #f0f7ee 4px solid;
+}
+
+nav:hover{
+  border: #1e1e24 4px solid;
+}
+
+nav a, .navigation a {
+  font-weight: bold;
+  color: #1e1e24;
+}
+
+nav a.router-link-exact-active, .navigation a.router-link-exact-active {
+  color: #708d81;
+}
+
+.lang-select {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 2rem;
+  position: relative;
+  background-color: #f0f7ee;
+  width: fit-content;
+  min-height: 4rem;
+  height: fit-content;
+  border-radius: 30px;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #1e1e24;
+  border: #f0f7ee 4px solid;
+  transition: all 0.2s ease-in-out;
+}
+
+.lang-select:hover {
+  border: #1e1e24 4px solid;
+}
+
+.lang-select > select {
+  background-color: #f0f7ee;
+  border: none;
+  border-bottom: #1e1e24 1px solid;
+  font-weight: bold;
+  color: #1e1e24;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.lang-select > select:hover {
+  background-color: #f0f7ee;
+  border: none;
+  box-shadow: #708d81 0px 4px 0px 0px;
+  background-color: #708d8148;
+  font-weight: bold;
+  color: #1e1e24;
+}
+
+.light-green-container {
+  background-color: #f0f7ee;
+  border-radius: 10px;
+  padding: 20px;
+  color: #1e1e24;
+}
+
+.page-container {
+  padding: 20px;
+  background-color: #708d81;
+}
+
+.search-bar-input {
+  width: 100%;
+}
+
+.search-bar-button {
+  width: 100%;
+  background-color: #708d81 !important;
+  color: #1e1e24 !important;
+  border-radius: 100px;
+  cursor: pointer;
+}
+
+.search-bar-button > span {
+  width: 100%;
+}
+
+.input-group-btn {
+  width: 100%;
+  height: auto;
+}
+
+.line {
+  border-top: 1px solid #1e1e24;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+button {
+  text-align: center;
+}
+
+.highlight-result {
+  background-color: #ffe10050;
+  color: #1e1e24;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.input-field {
+  border: none !important;
+  border-radius: 0px !important;
+  background-color: transparent !important;
+  border-bottom: 1px solid #1e1e24 !important;
+  color: #1e1e24 !important;
+}
+
+input::placeholder {
+  color: #1e1e24 !important;
+}
+
+.input-field:hover {
+  box-shadow: #708d81 0px 4px 0px 0px !important;
+  transition: 0.3s !important;
+}
+
+.input-field:focus {
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+  background-color: #708d8148 !important;
+  box-shadow: none;
+  transition: 0.3s !important;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 4px 4px 2px 1px #708d81;
+}
+
+.checkbox {
+  background-color: #f0f7ee !important;
+  border: #708d81 0.2rem solid !important;
+  border-radius: 0.5rem !important;
+  padding: 0.7rem !important;
+  box-shadow: none !important;
+  transition: 0.3s !important;
+}
+
+.checkbox:checked {
+  background-color: #708d81 !important;
+  color: #f0f7ee !important;
+  transition: 0.3s !important;
+}
+
+.btn {
+  background-color: #708d81 !important;
+  border: none !important;
+}
+
+.btn:hover {
+  background-color: #1e1e24 !important;
+  color: #708d81 !important;
+  transition: 0.3s !important;
+}
+
+.about {
+  margin: 1rem;
+  padding: 2rem;
+  background-color: #f0f7ee;
+  border-radius: 30px;
+  color: #1e1e24;
+  text-align: left;
+}
+
+.logo {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-bottom: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  margin-right: 0.5rem !important;
+  height: 2rem;
+}
