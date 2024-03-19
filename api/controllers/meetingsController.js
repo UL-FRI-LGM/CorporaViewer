@@ -422,6 +422,11 @@ var getMeetingAsText = async (req, res) => {
     const meetingId = req.query.meetingId
     const lang = req.query.lang
 
+    if (meetingId == null || meetingId == "") {
+        res.status(400).json({ error: "Bad request, missing meetingId" });
+        return; 
+    }
+
     // TODO: getAsText verjetno ne naredi nic, lahko uporabim kar podatke iz meetinga ki jih potem prefiltriram na backendu (inner hits je prevelik size, bi moral biti najvec 100)
     // get all segments in a meeting
     const segments = await sentencesController.getAsText(meetingId, lang)
