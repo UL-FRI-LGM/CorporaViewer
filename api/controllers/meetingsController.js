@@ -1,7 +1,18 @@
 require('dotenv').config();
 const esClient = require('../../services/elasticsearch');
-const sentencesController = require('./sentencesController');
 const async = require('async');
+
+function formatDate(date, format) {
+    var dd = date.getDate();
+    var MM = date.getMonth() + 1;
+    var yyyy = date.getFullYear();
+
+    if (dd < 10) dd = '0' + dd;
+    if (MM < 10) MM = '0' + MM;
+
+    return format.replace('dd', dd).replace('MM', MM).replace('yyyy', yyyy);
+}
+
 
 function parseSort(sort) {
     switch (sort) {
@@ -22,8 +33,8 @@ function parseSort(sort) {
  */
 async function getAll(filters, page) {
     var searchFilters = []
-    searchFilters.push({ range: { "date": { gte: sentencesController.formatDate(new Date(filters.dateFrom), "dd.MM.yyyy") } } })
-    searchFilters.push({ range: { "date": { lte: sentencesController.formatDate(new Date(filters.dateTo), "dd.MM.yyyy") } } })
+    searchFilters.push({ range: { "date": { gte: formatDate(new Date(filters.dateFrom), "dd.MM.yyyy") } } })
+    searchFilters.push({ range: { "date": { lte: formatDate(new Date(filters.dateTo), "dd.MM.yyyy") } } })
     searchFilters.push({ terms: { "corpus": filters.corpuses.split(",") } })
 
     try {
@@ -429,10 +440,9 @@ var getMeetingAsText = async (req, res) => {
 
     // TODO: getAsText verjetno ne naredi nic, lahko uporabim kar podatke iz meetinga ki jih potem prefiltriram na backendu (inner hits je prevelik size, bi moral biti najvec 100)
     // get all segments in a meeting
-    const segments = await sentencesController.getAsText(meetingId, lang)
     const meeting = await esClient.search({
         index: process.env.MEETINGS_INDEX_NAME || 'meetings-index',
-        _source: ["id", "date", "titles", "agendas"],
+        _source: ["id", "date", "titles", "agendas", "sentences"],
         body: {
             query: {
                 term: {
@@ -444,53 +454,85 @@ var getMeetingAsText = async (req, res) => {
     });
 
     const searchedForMeeting = meeting.hits.hits[0]._source
+    const sentences = searchedForMeeting.sentences
+    
+    // aggregate sentences into segments
+    let segments = sentences.reduce((segments, sentence) => {
+        const segment_id = sentence.segment_id.split("seg")[1];
+        if (!segments[segment_id]) segments[segment_id] = { sentences: [], speaker: sentence.speaker };
+        segments[segment_id].sentences.push(sentence);
+        return segments;
+    }, {});
 
-    let title = "";
-    let agendas = "";
-    let content = "";
-    let text = "";
+    let title = "", agendas = "", content = "", text = "";
+    let pageLang = lang || req.query.pageLang;
+
+    title = buildHtmlElement("<h2 class='title-text'>", searchedForMeeting.titles.find(title => title.lang == pageLang)?.title, getNoTitleMessage(pageLang), "</h2>");
+    agendas = buildHtmlElement("<div class='agenda-text'>", searchedForMeeting.agendas.find(agenda => agenda.lang == pageLang)?.items.map(item => item.text).join("</div><div class='agenda-text'>"), getNoAgendaMessage(pageLang), "</div>");
+    content = Object.entries(segments).map(([segment_id, segment]) => {
+        const speaker = buildHtmlElement("<br><h5 class='speaker-text'>", segment.speaker, getNoSpeakerMessage(pageLang), "</h5>");
+        const sentences = buildHtmlElement("<div class='segment-text'>", segment.sentences.map(sentence => sentence.translations.find(translation => translation.lang == pageLang)?.text).join(""), "", "</div>");
+        return speaker + sentences;
+    })
+
+    text = title
+        + "<h3 class='agendas-title'>" + getAgendaTitle(pageLang) + "</h3><div class='agendas'>"
+        + agendas
+        + "</div>" 
+        + "<div class='segment'>" 
+        + content.join("<div class='segment'></div>") 
+        + "</div>";
+
+    res.json({
+        text: text
+    })
+
+    // let title = "";
+    // let agendas = "";
+    // let content = "";
+    // let text = "";
 
     // console.log(req.query);
 
-    if (lang === "") {
-        const pageLang = req.query.pageLang;
-        title = buildHtmlElement("<h2 class='title-text'>", searchedForMeeting.titles.find(title => title.lang == pageLang)?.title, `${pageLang === 'sl' ? "Zapisnik ne vsebuje naslova v slovenščini" : "Das Protokoll enthält keinen Titel in deutscher Sprache"}.<br><br>`, "</h2>");
-        agendas = buildHtmlElement("<div class='agenda-text'>", searchedForMeeting.agendas.find(agenda => agenda.lang == pageLang)?.items.map(item => item.text).join("</div><div class='agenda-text'>"), `${pageLang === 'sl' ? "Zapisnik ne vsebuje dnevnega reda" : "Das Protokoll enthält nicht die Tagesordnung"}.<br><br>`, "</div>");
-        content = segments.map(segment => {
-            const speaker = buildHtmlElement("<br><h5 class='speaker-text'>", segment.sentences.hits.hits[0]._source.speaker, `${pageLang === 'sl' ? "Neimenovani govorec" : "Ungenannter Sprecher"}:<br><br>`, "</h5>");
-            const sentences = buildHtmlElement("<div class='segment-text'>", segment.sentences.hits.hits.map(sentence => sentence._source.translations.find(translation => translation.original == 1)?.text).join(""), "", "</div>");
-            return speaker + sentences;
-        })
+    // if (lang === "") {
+    //     const pageLang = req.query.pageLang;
+    //     title = buildHtmlElement("<h2 class='title-text'>", searchedForMeeting.titles.find(title => title.lang == pageLang)?.title, `${pageLang === 'sl' ? "Zapisnik ne vsebuje naslova v slovenščini" : "Das Protokoll enthält keinen Titel in deutscher Sprache"}.<br><br>`, "</h2>");
+    //     agendas = buildHtmlElement("<div class='agenda-text'>", searchedForMeeting.agendas.find(agenda => agenda.lang == pageLang)?.items.map(item => item.text).join("</div><div class='agenda-text'>"), `${pageLang === 'sl' ? "Zapisnik ne vsebuje dnevnega reda" : "Das Protokoll enthält nicht die Tagesordnung"}.<br><br>`, "</div>");
+    //     content = segments.map(segment => {
+    //         const speaker = buildHtmlElement("<br><h5 class='speaker-text'>", segment.sentences.hits.hits[0]._source.speaker, `${pageLang === 'sl' ? "Neimenovani govorec" : "Ungenannter Sprecher"}:<br><br>`, "</h5>");
+    //         const sentences = buildHtmlElement("<div class='segment-text'>", segment.sentences.hits.hits.map(sentence => sentence._source.translations.find(translation => translation.original == 1)?.text).join(""), "", "</div>");
+    //         return speaker + sentences;
+    //     })
 
-        text = title
-            + "<h3 class='agendas-title'>" + getAgendaTitle(pageLang) + "</h3><div class='agendas'>"
-            + agendas
-            + "</div>" 
-            + "<div class='segment'>" 
-            + content.join("<div class='segment'></div>") 
-            + "</div>";
-    } else {
-        title = buildHtmlElement("<h2 class='title-text'>", searchedForMeeting.titles.find(title => title.lang == lang)?.title, `${lang === 'sl' ? "Zapisnik ne vsebuje naslova v slovenščini" : "Das Protokoll enthält keinen Titel in deutscher Sprache"}.<br><br>`, "</h2>");
-        agendas = buildHtmlElement("<div class='agenda-text'>", searchedForMeeting.agendas.find(agenda => agenda.lang == lang)?.items.map(item => item.text).join("</div><div class='agenda-text'>"), `${lang === 'sl' ? "Zapisnik ne vsebuje dnevnega reda" : "Das Protokoll enthält nicht die Tagesordnung"}.<br><br>`, "</div>");
-        content = segments.map(segment => {
-            const speaker = buildHtmlElement("<br><h5 class='speaker-text'>", segment.sentences.hits.hits[0]._source.speaker, `${lang === 'sl' ? "Neimenovani govorec" : "Ungenannter Sprecher"}:<br><br>`, "</h5>");
-            const sentences = buildHtmlElement("<div class='segment-text'>", segment.sentences.hits.hits.map(sentence => sentence._source.translations.find(translation => translation.lang == lang)?.text).join(""), "", "</div>");
-            return speaker + sentences;
-        })
+    //     text = title
+    //         + "<h3 class='agendas-title'>" + getAgendaTitle(pageLang) + "</h3><div class='agendas'>"
+    //         + agendas
+    //         + "</div>" 
+    //         + "<div class='segment'>" 
+    //         + content.join("<div class='segment'></div>") 
+    //         + "</div>";
+    // } else {
+    //     title = buildHtmlElement("<h2 class='title-text'>", searchedForMeeting.titles.find(title => title.lang == lang)?.title, `${lang === 'sl' ? "Zapisnik ne vsebuje naslova v slovenščini" : "Das Protokoll enthält keinen Titel in deutscher Sprache"}.<br><br>`, "</h2>");
+    //     agendas = buildHtmlElement("<div class='agenda-text'>", searchedForMeeting.agendas.find(agenda => agenda.lang == lang)?.items.map(item => item.text).join("</div><div class='agenda-text'>"), `${lang === 'sl' ? "Zapisnik ne vsebuje dnevnega reda" : "Das Protokoll enthält nicht die Tagesordnung"}.<br><br>`, "</div>");
+    //     content = segments.map(segment => {
+    //         const speaker = buildHtmlElement("<br><h5 class='speaker-text'>", segment.sentences.hits.hits[0]._source.speaker, `${lang === 'sl' ? "Neimenovani govorec" : "Ungenannter Sprecher"}:<br><br>`, "</h5>");
+    //         const sentences = buildHtmlElement("<div class='segment-text'>", segment.sentences.hits.hits.map(sentence => sentence._source.translations.find(translation => translation.lang == lang)?.text).join(""), "", "</div>");
+    //         return speaker + sentences;
+    //     })
 
-        text = title
-            + "<h3 class='agendas-title'>" + getAgendaTitle(lang) + "</h3><div class='agendas'>"
-            + agendas
-            + "</div>" 
-            + "<div class='segment'>" 
-            + content.join("<div class='segment'></div>") 
-            + "</div>";
-    }
+    //     text = title
+    //         + "<h3 class='agendas-title'>" + getAgendaTitle(lang) + "</h3><div class='agendas'>"
+    //         + agendas
+    //         + "</div>" 
+    //         + "<div class='segment'>" 
+    //         + content.join("<div class='segment'></div>") 
+    //         + "</div>";
+    // }
 
-    res.json({
-        text: text,
-        segments: segments
-    });
+    // res.json({
+    //     text: text,
+    //     segments: segments
+    // });
 } 
 
 function buildHtmlElement(start, text, alternativeText, end) {
@@ -500,14 +542,61 @@ function buildHtmlElement(start, text, alternativeText, end) {
     return htmlElement;
 }
 
+function getNoTitleMessage(lang) {
+    switch (lang) {
+        case "sl":
+            return "Zapisnik ne vsebuje naslova v slovenščini";
+        case "de":
+            return "Das Protokoll enthält keinen Titel in deutscher Sprache";
+        case "hr":
+            return "Zapisnik ne sadrži naslov na hrvatskom jeziku";
+        case "sr":
+            return "Записник не садржи наслов на српском језику";
+        default:
+            return "The minutes do not contain a title in English";
+    }
+}
+
+function getNoAgendaMessage(lang) {
+    switch (lang) {
+        case "sl":
+            return "Zapisnik ne vsebuje dnevnega reda";
+        case "de":
+            return "Das Protokoll enthält nicht die Tagesordnung";
+        case "hr":
+            return "Zapisnik ne sadrži dnevni red";
+        case "sr":
+            return "Записник не садржи дневни ред";
+        default:
+            return "The minutes do not contain an agenda";
+    }
+}
+
+function getNoSpeakerMessage(lang) {
+    switch (lang) {
+        case "sl":
+            return "Neimenovani govorec";
+        case "de":
+            return "Ungenannter Sprecher";
+        case "hr":
+            return "Nepoznati govornik";
+        case "sr":
+            return "Непознати говорник";
+        default:
+            return "Unknown speaker";
+    }
+}
+
 function getAgendaTitle(lang) {
     switch (lang) {
         case "sl":
             return "Dnevni red";
         case "de":
             return "Tagesordnung";
-        case "en":
-            return "Agenda";
+        case "hr":
+            return "Dnevni red";
+        case "sr":
+            return "Дневни ред";
         default:
             return "Agenda";
     }
