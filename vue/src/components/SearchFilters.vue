@@ -62,9 +62,9 @@
             <h4>{{ $t('corpus') }}</h4>
         </div>
         <div class="filter-content">
-            <div v-for="corp in corpuses" class="row">
+            <div v-for="corp in corpora" class="row">
                 <div class="col-2">
-                    <input class="form-check-input checkbox" :value="corp.name" type="checkbox" v-model="searchFilters.corpuses">
+                    <input class="form-check-input checkbox" :value="corp.name" type="checkbox" v-model="searchFilters.corpora">
                 </div>
                 <div class="col-10 text-left">
                     <label class="form-check-label">{{ $t(corp.name) }}</label>
@@ -133,7 +133,7 @@ label {
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import { Watch } from 'vue-property-decorator';
-import { corpusesList } from '../data/corpusesInfo';
+import { corporaList } from '../data/corporaInfo';
 import { Corpus } from '@/types/Corpus';
 import { mapGetters, mapMutations } from 'vuex';
 import { Filters } from '@/types/Filters';
@@ -143,7 +143,7 @@ import { Filters } from '@/types/Filters';
         ...mapGetters('searchFiltersModule', ['searchFiltersInstance'])
     },
     methods: {
-        ...mapMutations('searchFiltersModule', ['updateDateFrom', 'updateDateTo', 'updateLanguages', 'updateCorpuses'])
+        ...mapMutations('searchFiltersModule', ['updateDateFrom', 'updateDateTo', 'updateLanguages', 'updateCorpora'])
     }
 })
 
@@ -164,21 +164,21 @@ export default class SearchFilters extends Vue {
 
     enabledLanguages!: any;
     allLanguages: Set<string> = new Set<string>();
-    corpuses!: Corpus[];
-    previousCorpuses: string[] = [];
+    corpora!: Corpus[];
+    previousCorpora: string[] = [];
     
-    format: string = 'dd.MM.yyyy'; //TODO BENJAMIN BULLY
+    format: string = 'dd.MM.yyyy';
 
-    @Watch('searchFilters.corpuses') onCorpusesChanged() {
-        // this code prevents corpuses from loading twice when the component is created and therefore overwriting saved languages
-        if (!this.previousCorpuses.every((value, index) => value === this.searchFilters.corpuses[index]) || !this.searchFilters.corpuses.every((value, index) => value === this.previousCorpuses[index])) {
-            this.updateFiltersOnCorpusesChanged()
+    @Watch('searchFilters.corpora') onCorporaChanged() {
+        // this code prevents corpora from loading twice when the component is created and therefore overwriting saved languages
+        if (!this.previousCorpora.every((value, index) => value === this.searchFilters.corpora[index]) || !this.searchFilters.corpora.every((value, index) => value === this.previousCorpora[index])) {
+            this.updateFiltersOnCorporaChanged()
         }
-        this.previousCorpuses = Array.from(this.searchFilters.corpuses)
+        this.previousCorpora = Array.from(this.searchFilters.corpora)
     }
 
     created(): void {
-        this.initCorpusesAndFilters()
+        this.initCorporaAndFilters()
     }
 
     compareDates(date1: Date, date2: Date) {
@@ -219,15 +219,15 @@ export default class SearchFilters extends Vue {
         this.updateDateTo(this.maxDate || new Date());
     }
 
-    initCorpusesAndFilters() {
-        this.corpuses = corpusesList
+    initCorporaAndFilters() {
+        this.corpora = corporaList
 
         let minDateFrom: Date | null = null
         let maxDateTo: Date | null = null
         let languages = new Set<string>()
-        let corpuses = new Set<string>()
+        let corpora = new Set<string>()
 
-        this.corpuses.forEach(corpus => {
+        this.corpora.forEach(corpus => {
             if (minDateFrom == null || corpus.dateFrom < minDateFrom) {
                 minDateFrom = corpus.dateFrom
             }
@@ -238,7 +238,7 @@ export default class SearchFilters extends Vue {
                 languages.add(language)
                 this.allLanguages.add(language)
             })
-            corpuses.add(corpus.name)
+            corpora.add(corpus.name)
         })
         
         this.applyFilterValues(
@@ -247,17 +247,17 @@ export default class SearchFilters extends Vue {
             Array.from(languages),
             this.searchFilters.initializing 
         )
-        this.previousCorpuses = Array.from(corpuses)
-        this.updateCorpuses(Array.from(corpuses))
+        this.previousCorpora = Array.from(corpora)
+        this.updateCorpora(Array.from(corpora))
     }
 
-    updateFiltersOnCorpusesChanged() {
+    updateFiltersOnCorporaChanged() {
         let minDateFrom: Date | null = null
         let maxDateTo: Date | null = null
         let languages = new Set<string>()
 
-        this.corpuses.forEach(corpus => {
-            if (this.searchFilters.corpuses.includes(corpus.name)) {
+        this.corpora.forEach(corpus => {
+            if (this.searchFilters.corpora.includes(corpus.name)) {
                 if (minDateFrom == null || corpus.dateFrom < minDateFrom) {
                     minDateFrom = corpus.dateFrom
                 }

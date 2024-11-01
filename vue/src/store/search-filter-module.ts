@@ -20,8 +20,8 @@ const mutations: MutationTree<SearchFiltersState> = {
         console.log("updateLanguages", languages)
         state.instance.languages = languages
     },
-    updateCorpuses(state: SearchFiltersState, corpuses: string[]) {
-        state.instance.corpuses = corpuses
+    updateCorpora(state: SearchFiltersState, corpora: string[]) {
+        state.instance.corpora = corpora
     },
     updateSort(state: SearchFiltersState, sort: string) {
         state.instance.sort = sort

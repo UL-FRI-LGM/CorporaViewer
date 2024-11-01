@@ -21,16 +21,7 @@ import axios from 'axios';
 import './style.css'
 
 // multilanguage support
-import { createI18n } from 'vue-i18n'
-const i18n = createI18n({
-    locale: 'sl',
-    fallbackLocale: 'de',
-    messages: {
-        sl: require('./locales/sl.json'),
-        de: require('./locales/de.json'),
-        en: require('./locales/en.json'),
-    }
-})
+import i18n from './data/i18setup'
 
 const app = createApp(App)
 app.use(i18n)

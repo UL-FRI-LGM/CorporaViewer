@@ -91,6 +91,7 @@
 import axios from 'axios';
 import { Options, Vue } from 'vue-class-component';
 import { mapMutations, mapGetters } from 'vuex';
+import i18n from '@/data/i18setup';
 
 // components
 import SearchBar from '@/components/SearchBar.vue';
@@ -138,6 +139,8 @@ export default class SearchView extends Vue {
 
     loading: boolean = false;
 
+    currentSearchParams?: SearchParams;
+    currentSearchFilters?: Filters;
     page: number = 0;
     pageSize: number = 10;
     numOfPagesShown: number = 10;
@@ -212,7 +215,11 @@ export default class SearchView extends Vue {
         this.searchParams.searchAfterDate = undefined;
         this.searchParams.searchAfterIndex = undefined;
 
-        const queryParams = this.buildQueryParams({ ...this.searchParamsInstance, ...this.searchFiltersInstance });
+        // save current search params and filters state
+        this.currentSearchParams = { ...this.searchParamsInstance };
+        this.currentSearchFilters = { ...this.searchFiltersInstance };
+
+        const queryParams = this.buildQueryParams({ ...this.currentSearchParams, ...this.currentSearchFilters });
 
         this.loading = true;
         this.resetResults();
@@ -226,6 +233,11 @@ export default class SearchView extends Vue {
             this.searchParams.searchAfterScore = response.data.searchAfterScore;
             this.searchParams.searchAfterDate = response.data.searchAfterDate;
             this.searchParams.searchAfterIndex = response.data.searchAfterIndex;
+
+            if (this.currentSearchParams) this.currentSearchParams.pitId = response.data.pitId;
+            if (this.currentSearchParams) this.currentSearchParams.searchAfterScore = response.data.searchAfterScore;
+            if (this.currentSearchParams) this.currentSearchParams.searchAfterDate = response.data.searchAfterDate;
+            if (this.currentSearchParams) this.currentSearchParams.searchAfterIndex = response.data.searchAfterIndex;
 
             // save query results
             this.initResults({
@@ -248,6 +260,16 @@ export default class SearchView extends Vue {
         });
     }
 
+    getOtherLocales(key: "dezelniGlavar" | "porocevalec" | "predsednik") {
+        let otherLocales = "";
+        for (const [lang, value] of Object.entries(i18n.global.messages)) {
+            if (lang !== i18n.global.locale) {
+                otherLocales += `,${value[key]}`;
+            }
+        }
+        return otherLocales;
+    }
+
     /**
      * Builds query parameters for the search request.
      *
@@ -261,8 +283,18 @@ export default class SearchView extends Vue {
                 const attendee = value as Attendee | undefined;
                 if (attendee === undefined) continue;
 
+                console.log(attendee);
                 queryParams += queryParams === "" ? "?" : "&";
-                queryParams += "speaker=" + attendee.names.join(",");
+                queryParams += "speaker=" + attendee.name;
+                
+                // add special attendee names
+                if (attendee.id === "1") {
+                    queryParams += this.getOtherLocales("dezelniGlavar");
+                } else if (attendee.id === "2") {
+                    queryParams += this.getOtherLocales("porocevalec");
+                } else if (attendee.id === "3") {
+                    queryParams += this.getOtherLocales("predsednik");
+                }
             }
             else if (key === "place") {
                 const place = value as Place | undefined;
@@ -325,8 +357,8 @@ export default class SearchView extends Vue {
 
     async loadPage(page: number) {
         await axios.get(process.env.VUE_APP_API_URL + `/meetings/getPage/${page}` + this.buildQueryParams({
-            ...this.searchParamsInstance,
-            ...this.searchFiltersInstance,
+            ...this.currentSearchParams,
+            ...this.currentSearchFilters,
             pageSize: this.pageSize,
         })).then((response: any) => {
             this.setResults({
@@ -337,6 +369,11 @@ export default class SearchView extends Vue {
             this.searchParams.searchAfterScore = response.data.searchAfterScore;
             this.searchParams.searchAfterDate = response.data.searchAfterDate;
             this.searchParams.searchAfterIndex = response.data.searchAfterIndex;
+
+            if (this.currentSearchParams) this.currentSearchParams.pitId = response.data.pitId;
+            if (this.currentSearchParams) this.currentSearchParams.searchAfterScore = response.data.searchAfterScore;
+            if (this.currentSearchParams) this.currentSearchParams.searchAfterDate = response.data.searchAfterDate;
+            if (this.currentSearchParams) this.currentSearchParams.searchAfterIndex = response.data.searchAfterIndex;
 
             return response;
         }).catch((error: any) => {

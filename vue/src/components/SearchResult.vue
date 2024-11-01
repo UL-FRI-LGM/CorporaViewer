@@ -167,7 +167,7 @@ export default class SearchResult extends Vue {
         this.wasMatchAll = this.searchParamsInstance?.isMatchAll()
         this.meeting = this.resultsInstance.getMeetingOn(this.page, this.index)!
         
-        this.selectedSpeakerName = this.searchParamsInstance?.speaker?.names[0] ?? "";
+        this.selectedSpeakerName = this.searchParamsInstance?.speaker?.name ?? "";
         this.result = this.$refs.result as HTMLElement;
         this.scrollToFirstResult();
     }

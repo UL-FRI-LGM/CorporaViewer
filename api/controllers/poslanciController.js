@@ -4,7 +4,7 @@ const esClient = require('../../services/elasticsearch');
 var getAll = async (req, res) => {
     try {
         const response = await esClient.search({
-            index: process.env.ATTENDES_INDEX_NAME || 'attendees-index',
+            index: process.env.ATTENDEES_INDEX_NAME || 'attendees-index',
             body: {
                 query: {
                     match_all: {}

@@ -77,8 +77,7 @@
                     <div class="toolbar-content">
                         <select class="input-field" v-model="transcriptLanguage">
                             <option value="">{{ $t('dontTranslate') }}</option>
-                            <option value="sl">{{ $t('sl') }}</option>
-                            <option value="de">{{ $t('de') }}</option>
+                            <option v-for="lang in languageOptions" :value="lang">{{ $t(lang) }}</option>
                         </select>
                     </div>
                 </div>
@@ -478,6 +477,8 @@ import axios from 'axios';
 import { SearchParams } from '@/types/SearchParams';
 import { PdfHighlights, TranscriptHighlights } from '@/types/Highlights';
 import { Pagination } from '@/types/Pagination';
+import SearchFilters from '@/components/SearchFilters.vue';
+import { corporaList } from '@/data/corporaInfo';
 
 @Options({
     props: {
@@ -524,6 +525,7 @@ export default class PdfView extends Vue {
 
     meeting_id?: string;
     transcriptLanguage: string = '';
+    languageOptions: string[] = ['sl'];
     searchedWordsList: string[] = [];
     firstLoad: boolean = false;
 
@@ -562,6 +564,18 @@ export default class PdfView extends Vue {
                 }
             }
         });
+
+        // not the best way, but works
+        switch(this.meeting_id?.split('_')[0]) {
+            case "DZK":
+                this.languageOptions = corporaList[0].languages;
+                break;
+            case "yu1Parl":
+                this.languageOptions = corporaList[1].languages;
+                break;
+            default:
+                this.languageOptions = ['sl'];
+        }
 
         window.addEventListener('scroll', () => {
             this.scrollHeight = window.scrollY;
@@ -756,9 +770,7 @@ export default class PdfView extends Vue {
             }
         }
         if (this.searchParams.speaker) {
-            this.searchParams.speaker.names.forEach((name: string) => {
-                this.searchedWordsList.push(name);
-            });
+            this.searchedWordsList.push(this.searchParams.speaker.name);
         }
     }
 
@@ -767,7 +779,7 @@ export default class PdfView extends Vue {
 
         let firstQuery = this.searchParams.words ?? "";
         firstQuery += this.searchParams.place?.names ? " " + Object.values(this.searchParams.place?.names).filter(name => name !== 'zzzzz').join(" ") : "";
-        firstQuery += this.searchParams.speaker ? " " + this.searchParams.speaker?.names.join(" ") : "";
+        firstQuery += this.searchParams.speaker ? " " + this.searchParams.speaker?.name : "";
 
         this.wordsToHighlight = firstQuery.trim();
     }

@@ -5,7 +5,7 @@ export interface FiltersInterface {
     dateFrom: Date;
     dateTo: Date;
     languages: string[];
-    corpuses: string[];
+    corpora: string[];
     sort: string;
 }
 
@@ -14,7 +14,7 @@ export class Filters implements FiltersInterface {
     dateFrom: Date = new Date();
     dateTo: Date = new Date();
     languages: string[] = [];
-    corpuses: string[] = [];
+    corpora: string[] = [];
     sort: string = "relevance";
     
     static create(): Filters {

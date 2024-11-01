@@ -33,7 +33,7 @@ function reformatId(id) {
 var getById = async (req, res) => {
     const filename = reformatId(req.params.id);
 
-    const path = (process.env.PATH_TO_DATA || '/home/martin/Data/CorporaViewer') + `/DZK/Kranjska-pdf/${filename}.pdf`
+    const path = (process.env.PATH_TO_DATA || '/home/martin/Data/CorporaViewer/prod') + `/pdfs/${filename}.pdf`
 
     var file = fs.createReadStream(path);
     var stat = fs.statSync(path);
@@ -47,7 +47,7 @@ var getById = async (req, res) => {
 var getThumbnailById = async (req, res) => {
     const filename = reformatId(req.params.id);
 
-    const path = (process.env.PATH_TO_DATA || '/home/martin/Data/CorporaViewer') + `/DZK/thumbnails/${filename}.png`
+    const path = (process.env.PATH_TO_DATA || '/home/martin/Data/CorporaViewer/prod') + `/thumbnails/${filename}.png`
 
     if (!fs.existsSync(path)) {
         return res.status(404).json({ error: "Thumbnail not found" });
