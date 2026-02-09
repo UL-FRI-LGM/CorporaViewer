@@ -1,0 +1,56 @@
+version: "2.2"
+
+services:
+  es01:
+    image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION}
+    restart: always
+    # Intalling required plugins (analysis-icu), don't forget to restart to activate plugins
+    command: /bin/sh -c "bin/elasticsearch-plugin install analysis-icu; /usr/local/bin/docker-entrypoint.sh"
+    volumes:
+      - esdata01:/usr/share/elasticsearch/data
+    ports:
+      - ${ES_PORT}:9200
+    environment:
+      - node.name=es01
+      - cluster.name=${CLUSTER_NAME}
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - bootstrap.memory_lock=true
+      - ES_JAVA_OPTS=-Xms2g -Xmx2g
+    mem_limit: ${MEM_LIMIT}
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          "curl -s http://localhost:9200 | grep -q 'You Know, for Search'",
+        ]
+      interval: 10s
+      timeout: 10s
+      retries: 120
+
+  api:
+    depends_on:
+      es01:
+        condition: service_healthy
+    image: 260620021/parlavis-api:latest
+    restart: always
+    ports:
+      - ${API_PORT}:3000
+    environment:
+      - IP_ADDRESS=0.0.0.0
+      - ELASTICSEARCH_HOSTS=http://es01:9200
+      - MEETINGS_INDEX_NAME=${MEETINGS_INDEX_NAME}
+      - WORDS_INDEX_NAME=${WORDS_INDEX_NAME}
+      - SENTENCES_INDEX_NAME=${SENTENCES_INDEX_NAME}
+      - PATH_TO_DATA=/app/data
+    volumes:
+      - ${PATH_TO_DATA}:/app/data
+    mem_limit: ${MEM_LIMIT}
+
+volumes:
+  esdata01:
+    driver: local
