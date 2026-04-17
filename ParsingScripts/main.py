@@ -1,12 +1,5 @@
 import argparse
 
-import optimizer
-#import parser_dzk
-#import parser_yuparl
-import renamer
-import thumbnailer
-import uploader
-
 
 def main():
     parser = argparse.ArgumentParser(
@@ -186,10 +179,13 @@ def main():
 
     # Execute the appropriate function based on the subcommand
     if args.command == 'rename':
+        import renamer
         renamer.rename_files(args.source, args.destination, args.corpus)
     elif args.command == 'thumbnail':
+        import thumbnailer
         thumbnailer.create_thumbnails(args.source, args.destination, force_create=args.force_create)
     elif args.command == 'optimize':
+        import optimizer
         optimizer.optimize_pdfs(
             args.source,
             args.destination,
@@ -200,14 +196,16 @@ def main():
         )
     elif args.command == 'parse':
         if args.corpus == 'dzk':
-            ...
-            # parser_dzk.parse(args.source, args.destination, args.from_index, args.to_index)
+            import parser_dzk
+            parser_dzk.parse(args.source, args.destination, args.from_index, args.to_index)
         elif args.corpus == 'yuparl':
             ...
+            # import parser_yuparl
             # parser_yuparl.parse(args.source, args.destination, args.from_index, args.to_index)
         else:
             raise NotImplementedError(f"Parsing for corpus '{args.corpus}' is not implemented.")
     elif args.command == 'upload':
+        import uploader
         uploader.upload(
             args.source,
             args.elasticsearch_host,

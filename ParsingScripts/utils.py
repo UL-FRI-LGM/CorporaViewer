@@ -1,4 +1,5 @@
 import json
+from constants import *
 
 
 def save_to_jsonl(elements, file_path):
@@ -95,28 +96,34 @@ def transform_sentences_fast(meeting, coords_index=None):
     time_start = time.time()
 
     transformed_sentences = []
-    for sentence in meeting.get("sentences", []):
+    for sentence in meeting.get(SENTENCES, []):
         coords = []
 
         # prefer the original translation (original == 1)
-        orig = next((t for t in sentence.get("translations", []) if t.get("original") == 1), None)
+        orig = next((t for t in sentence.get(TRANSLATIONS, []) if t.get("original") == 1), None)
         if orig:
             for w in orig.get("words", []):
-                wid = w.get("id")
+                wid = w.get(ID)
                 if not wid:
                     continue
                 if wid in coords_index:
                     coords.extend(coords_index[wid])
 
         transformed_sentences.append({
-            "meeting_id": meeting.get("id"),
-            "sentence_id": sentence.get("id"),
-            "segment_id": sentence.get("segment_id"),
-            "speaker": sentence.get("speaker"),
-            "coordinates": coords,
-            "translations": [
-                {"text": t.get("text"), "lang": t.get("lang"), "original": t.get("original")}
-                for t in sentence.get("translations", [])
+            MEETING_ID: meeting.get(ID),
+            SENTENCE_ID: sentence.get(ID),
+            SEGMENT_ID: sentence.get(SEGMENT_ID),
+            SPEAKER: sentence.get(SPEAKER),
+            PERSON_ENTITIES: sentence.get(PERSON_ENTITIES),
+            LOCATION_ENTITIES: sentence.get(LOCATION_ENTITIES),
+            COORDINATES: coords,
+            TRANSLATIONS: [
+                {
+                    "text": t.get("text"),
+                    "lang": t.get("lang"),
+                    "original": t.get("original"),
+                }
+                for t in sentence.get(TRANSLATIONS, [])
             ],
         })
 
@@ -135,8 +142,8 @@ def transform_words_fast(meeting, coords_index=None):
 
     transformed_words = []
 
-    for sentence in meeting.get("sentences", []):
-        for translation in sentence.get("translations", []):
+    for sentence in meeting.get(SENTENCES, []):
+        for translation in sentence.get(TRANSLATIONS, []):
 
             word_index = 0
             for i, word in enumerate(translation.get("words", [])):
@@ -145,22 +152,22 @@ def transform_words_fast(meeting, coords_index=None):
                 prev_join = translation["words"][i - 1].get("join") if i > 0 else None
                 word_index = word_index + 1 if i > 0 and prev_join != "right" else word_index
 
-                wid = word.get("id")
+                wid = word.get(ID)
                 coordinates = coords_index.get(wid, []) if (translation.get("original") == 1 and wid) else []
 
                 transformed_words.append({
-                    "meeting_id": meeting.get("id"),
-                    "sentence_id": sentence.get("id"),
-                    "segment_id": sentence.get("segment_id"),
+                    MEETING_ID: meeting.get(ID),
+                    SENTENCE_ID: sentence.get(ID),
+                    SEGMENT_ID: sentence.get(SEGMENT_ID),
                     "word_id": wid,
                     "type": word.get("type"),
                     "join": word.get("join"),
                     "text": word.get("text"),
                     "lemma": word.get("lemma"),
-                    "speaker": sentence.get("speaker"),
+                    SPEAKER: sentence.get(SPEAKER),
                     "pos": i,
                     "wpos": word_index,
-                    "coordinates": coordinates,
+                    COORDINATES: coordinates,
                     "lang": translation.get("lang"),
                     "original": translation.get("original"),
                     "propn": word.get("propn", 0)

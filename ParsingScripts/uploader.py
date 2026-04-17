@@ -6,12 +6,14 @@ from elasticsearch import Elasticsearch, helpers
 
 STATE_FILE = "uploader_state.json"
 
-
 MEETINGS_INDEX_NAME = "meetings-index"
 SENTENCES_INDEX_NAME = "sentences-index"
 WORDS_INDEX_NAME = "words-index"
 PLACES_INDEX_NAME = "places-index"
 ATTENDEES_INDEX_NAME = "attendees-index"
+PERSON_ENTITIES_INDEX_NAME = "person-entities-index"
+LOCATION_ENTITIES_INDEX_NAME = "location-entities-index"
+CAP_TOPICS_INDEX_NAME = "cap-topics-index"
 
 # Settings for the Elasticsearch indices (mappings, analyzers, etc.)
 MEETINGS_INDEX_SETTINGS = {
@@ -48,6 +50,9 @@ MEETINGS_INDEX_MAPPING = {
             }
         },
         "corpus": {
+            "type": "keyword"
+        },
+        "cap_topics_aggregated": {
             "type": "keyword"
         },
         "date": {
@@ -90,6 +95,7 @@ MEETINGS_INDEX_MAPPING = {
             }
         },
         "sentences": {
+            "type": "nested",
             "properties": {
                 "id": {
                     "type": "keyword",
@@ -111,6 +117,12 @@ MEETINGS_INDEX_MAPPING = {
                             "ignore_above": 256
                         }
                     }
+                },
+                "person_entities": {
+                    "type": "keyword"
+                },
+                "location_entities": {
+                    "type": "keyword"
                 },
                 "translations": {
                     "type": "nested",
@@ -135,6 +147,12 @@ MEETINGS_INDEX_MAPPING = {
                                     "ignore_above": 256
                                 }
                             }
+                        },
+                        "person_entities": {
+                            "type": "keyword"
+                        },
+                        "location_entities": {
+                            "type": "keyword"
                         },
                         "text": {
                             "type": "text",
@@ -287,6 +305,12 @@ SENTENCES_INDEX_MAPPING = {
             "type": "text",
             "analyzer": "custom_text_analyzer"
         },
+        "person_entities": {
+            "type": "keyword"
+        },
+        "location_entities": {
+            "type": "keyword"
+        },
         "translations": {
             "type": "nested",
             "properties": {
@@ -295,6 +319,12 @@ SENTENCES_INDEX_MAPPING = {
                 },
                 "original": {
                     "type": "long"
+                },
+                "person_entities": {
+                    "type": "keyword"
+                },
+                "location_entities": {
+                    "type": "keyword"
                 },
                 "text": {
                     "type": "text",
@@ -435,6 +465,21 @@ ATTENDEES_INDEX_SETTINGS = {
     "index.refresh_interval": "-1",
 }
 
+PERSON_ENTITIES_INDEX_SETTINGS = {
+    "index.number_of_replicas": 0,
+    "index.refresh_interval": "-1",
+}
+
+LOCATION_ENTITIES_INDEX_SETTINGS = {
+    "index.number_of_replicas": 0,
+    "index.refresh_interval": "-1",
+}
+
+CAP_TOPICS_INDEX_SETTINGS = {
+    "index.number_of_replicas": 0,
+    "index.refresh_interval": "-1",
+}
+
 
 def load_progress():
     if os.path.exists(STATE_FILE):
@@ -523,6 +568,9 @@ def upload(source_dir, elasticsearch_host, elasticsearch_port, delete_index_if_e
     create_index(es, WORDS_INDEX_NAME, WORDS_INDEX_SETTINGS, WORDS_INDEX_MAPPING, delete_index_if_exists)
     create_index(es, PLACES_INDEX_NAME, PLACES_INDEX_SETTINGS, {}, delete_index_if_exists)
     create_index(es, ATTENDEES_INDEX_NAME, ATTENDEES_INDEX_SETTINGS, {}, delete_index_if_exists)
+    create_index(es, PERSON_ENTITIES_INDEX_NAME, PERSON_ENTITIES_INDEX_SETTINGS, {}, delete_index_if_exists)
+    create_index(es, LOCATION_ENTITIES_INDEX_NAME, LOCATION_ENTITIES_INDEX_SETTINGS, {}, delete_index_if_exists)
+    create_index(es, CAP_TOPICS_INDEX_NAME, CAP_TOPICS_INDEX_SETTINGS, {}, delete_index_if_exists)
 
     state = load_progress()
 
@@ -562,12 +610,24 @@ def upload(source_dir, elasticsearch_host, elasticsearch_port, delete_index_if_e
             with open(file_path, "r", encoding="utf-8") as file:
                 poslanci = file.readlines()
                 state[jsonl_file]["isDone"] = upload_to_elasticsearch(es, poslanci, ATTENDEES_INDEX_NAME)
+        elif jsonl_file == "top20_person_entities.jsonl":
+            with open(file_path, "r", encoding="utf-8") as file:
+                person_entities = file.readlines()
+                state[jsonl_file]["isDone"] = upload_to_elasticsearch(es, person_entities, PERSON_ENTITIES_INDEX_NAME)
+        elif jsonl_file == "top20_location_entities.jsonl":
+            with open(file_path, "r", encoding="utf-8") as file:
+                location_entities = file.readlines()
+                state[jsonl_file]["isDone"] = upload_to_elasticsearch(es, location_entities, LOCATION_ENTITIES_INDEX_NAME)
+        elif jsonl_file == "all_cap_topics.jsonl":
+            with open(file_path, "r", encoding="utf-8") as file:
+                cap_topics = file.readlines()
+                state[jsonl_file]["isDone"] = upload_to_elasticsearch(es, cap_topics, CAP_TOPICS_INDEX_NAME)
         else:
             print("unknown file: " + jsonl_file + " skipping upload")
             continue
 
         print("uploaded: " + jsonl_file)
-        print(f"progress: {i}/{len(jsonl_files)}\n")
+        print(f"progress: {i+1}/{len(jsonl_files)}\n")
 
         save_progress(state)
 
@@ -576,6 +636,8 @@ def upload(source_dir, elasticsearch_host, elasticsearch_port, delete_index_if_e
     set_refresh_interval(es, WORDS_INDEX_NAME)
     set_refresh_interval(es, PLACES_INDEX_NAME)
     set_refresh_interval(es, ATTENDEES_INDEX_NAME)
+    set_refresh_interval(es, PERSON_ENTITIES_INDEX_NAME)
+    set_refresh_interval(es, LOCATION_ENTITIES_INDEX_NAME)
+    set_refresh_interval(es, CAP_TOPICS_INDEX_NAME)
 
     print("Uploaded meetings, sentences and words to Elasticsearch")
-

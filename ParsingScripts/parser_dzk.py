@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 
 import spacy
 from utils import *
+from constants import *
 
 from alive_progress import alive_bar
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
@@ -168,18 +169,19 @@ def parse_sentence(sentence_root, segment_page, segment_id, speaker):
     global prop_nouns
     sentence_attribs = parse_attribs(sentence_root)
     sentence = {}
-    sentence["id"] = sentence_attribs["id"]
-    sentence["translations"] = []
+    sentence[ID] = sentence_attribs[ID]
+    sentence[TRANSLATIONS] = []
     sentence["segment_page"] = segment_page
-    sentence["segment_id"] = segment_id
-    sentence["speaker"] = speaker
+    sentence[SEGMENT_ID] = segment_id
+    sentence[SPEAKER] = speaker
 
     translation = {}
     translation["lang"] = sentence_attribs["lang"]
-    translation["speaker"] = sentence["speaker"]
+    translation[SPEAKER] = sentence[SPEAKER]
     translation["original"] = 1
     translation["text"] = ""
     translation["words"] = []
+    # Note: person_entities and location_entities are added later in parse_jsonl()
 
     # parse original language
     for i, word_root in enumerate(sentence_root):
@@ -188,7 +190,7 @@ def parse_sentence(sentence_root, segment_page, segment_id, speaker):
         if word_tag == "w" or word_tag == "pc":
             word = {}
             word_attribs = parse_attribs(word_root)
-            word["id"] = word_attribs["id"]
+            word[ID] = word_attribs[ID]
             word["type"] = word_tag
             word["lemma"] = word_attribs["lemma"]
             word["text"] = word_root.text
@@ -212,7 +214,11 @@ def parse_sentence(sentence_root, segment_page, segment_id, speaker):
             print("parse_sentence(): expected child tag 'w' or 'pc', got tag '" + word_tag + "'")
             return False
 
-    sentence["translations"].append(translation)
+    # če imamo mogoče xml brez word tagov
+    if translation["text"] == "" and sentence_root.text:
+        translation["text"] = sentence_root.text
+
+    sentence[TRANSLATIONS].append(translation)
     sentence["original_language"] = translation["lang"]
 
     return sentence
@@ -224,8 +230,8 @@ def parse_note(note_root, segment_page, segment_id, speaker):
     note["type"] = "comment"
     note["text"] = note_root.text
     note["page"] = segment_page
-    note["segment_id"] = segment_id
-    note["speaker"] = speaker
+    note[SEGMENT_ID] = segment_id
+    note[SPEAKER] = speaker
 
     return note
 
@@ -236,7 +242,7 @@ def parse_segment(segment_root, speaker):
     attribs = parse_attribs(segment_root)
 
     segment_page = attribs["n"] if attribs.get("n") else -1
-    segment_id = attribs["id"]
+    segment_id = attribs[ID]
 
     for child in segment_root:
         child_tag = parse_tag(child)
@@ -308,23 +314,23 @@ def translate_sentences(sentences, source_lang, target_lang, chunk_size=10, num_
                 end = start + chunk_size
                 chunk = sentences[start:end]
 
-                encoded = tokenizer(chunk, return_tensors="pt", padding=True, truncation=True, max_length=512).to(device)
-                generated_tokens = model.generate(
-                    **encoded,
-                    forced_bos_token_id=get_lang_id(tokenizer, target_lang),
-                    num_beams=num_beams,
-                    early_stopping=False,
-                    length_penalty=1.3,
-                    max_new_tokens=512,
-                )
+            encoded = tokenizer(chunk, return_tensors="pt", padding=True, truncation=True, max_length=512).to(device)
+            generated_tokens = model.generate(
+                **encoded,
+                forced_bos_token_id=get_lang_id(tokenizer, target_lang),
+                num_beams=num_beams,
+                early_stopping=False,
+                length_penalty=1.3,
+                max_new_tokens=512,
+            )
 
-                decoded = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
-                translations.extend(decoded)
+            decoded = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
+            translations.extend(decoded)
 
-                # free intermediate tensors and clear cached GPU memory
-                if device == "cuda":
-                    del encoded, generated_tokens
-                    torch.cuda.empty_cache()
+            # free intermediate tensors and clear cached GPU memory
+            if device == "cuda":
+                del encoded, generated_tokens
+                torch.cuda.empty_cache()
 
                 bar(len(chunk))
 
@@ -342,13 +348,13 @@ def translate_meeting(meeting):
     sl_translations_list = []
 
     # get all sentences in the meeting and put them in lists according to their language, also get their ids
-    for sentence in meeting["sentences"]:
-        if sentence["translations"][0]["lang"] == "de":
-            de_sentence_ids.append(sentence["id"])
-            de_translations_list.append(sentence["translations"][0]["text"])
-        elif sentence["translations"][0]["lang"] == "sl":
-            sl_sentence_ids.append(sentence["id"])
-            sl_translations_list.append(sentence["translations"][0]["text"])
+    for sentence in meeting[SENTENCES]:
+        if sentence[TRANSLATIONS][0]["lang"] == "de":
+            de_sentence_ids.append(sentence[ID])
+            de_translations_list.append(sentence[TRANSLATIONS][0]["text"])
+        elif sentence[TRANSLATIONS][0]["lang"] == "sl":
+            sl_sentence_ids.append(sentence[ID])
+            sl_translations_list.append(sentence[TRANSLATIONS][0]["text"])
 
     # translate german to slovene
     translations_sl = translate_sentences(de_translations_list, 'deu_Latn', 'slv_Latn')
@@ -363,19 +369,21 @@ def translate_meeting(meeting):
 
     for i, (translated_text, lemmatization) in enumerate(zip(translations_sl, lemmatizations_sl)):
         sentence_id = de_sentence_ids[i]
-        sentence_index = next((idx for (idx, d) in enumerate(meeting["sentences"]) if d["id"] == sentence_id), None)
+        sentence_index = next((idx for (idx, d) in enumerate(meeting[SENTENCES]) if d[ID] == sentence_id), None)
         if sentence_index is None:
             continue
 
         translation_entry = {
             "lang": "sl",
             "original": 0,
-            "speaker": meeting["sentences"][sentence_index]["speaker"],
+            SPEAKER: meeting[SENTENCES][sentence_index][SPEAKER],
+            PERSON_ENTITIES: meeting[SENTENCES][sentence_index].get(PERSON_ENTITIES, []),
+            LOCATION_ENTITIES: meeting[SENTENCES][sentence_index].get(LOCATION_ENTITIES, []),
             "text": translated_text,
             "words": lemmatization
         }
 
-        meeting["sentences"][sentence_index]["translations"].append(translation_entry)
+        meeting[SENTENCES][sentence_index][TRANSLATIONS].append(translation_entry)
 
     # translate slovene to german
     translations_de = translate_sentences(sl_translations_list,'slv_Latn', 'deu_Latn')
@@ -389,19 +397,21 @@ def translate_meeting(meeting):
 
     for i, (translated_text, lemmatization) in enumerate(zip(translations_de, lemmatizations_de)):
         sentence_id = sl_sentence_ids[i]
-        sentence_index = next((idx for (idx, d) in enumerate(meeting["sentences"]) if d["id"] == sentence_id), None)
+        sentence_index = next((idx for (idx, d) in enumerate(meeting[SENTENCES]) if d[ID] == sentence_id), None)
         if sentence_index is None:
             continue
 
         translation_entry = {
             "lang": "de",
             "original": 0,
-            "speaker": meeting["sentences"][sentence_index]["speaker"],
+            SPEAKER: meeting[SENTENCES][sentence_index][SPEAKER],
+            PERSON_ENTITIES: meeting[SENTENCES][sentence_index].get(PERSON_ENTITIES, []),
+            LOCATION_ENTITIES: meeting[SENTENCES][sentence_index].get(LOCATION_ENTITIES, []),
             "text": translated_text,
             "words": lemmatization
         }
 
-        meeting["sentences"][sentence_index]["translations"].append(translation_entry)
+        meeting[SENTENCES][sentence_index][TRANSLATIONS].append(translation_entry)
 
 
     end_time = time.time()
@@ -412,25 +422,86 @@ def translate_meeting(meeting):
     return
 
 
-def parse_zapisnik(xml_root):
+def parse_jsonl(jsonl_path, meeting):
+    if not os.path.exists(jsonl_path):
+        print(f"WARNING: JSONL file not found: {jsonl_path}")
+        # Add empty to all
+        for sentence in meeting[SENTENCES]:
+            sentence[PERSON_ENTITIES] = []
+            sentence[LOCATION_ENTITIES] = []
+            sentence[CAP_TOPICS] = []
+        meeting[CAP_TOPICS_AGGREGATED] = []
+        return
+
+    sentence_entities_map = {}  # sentence_id -> person_entities, location_entities
+    sentence_topics_map = {}    # sentence_id -> cap_topics
+    all_topics = set()
+
+    with open(jsonl_path, 'r', encoding='utf-8') as f:
+        for line in f:
+            data = json.loads(line)
+            record_id = data[ID]
+
+            if 'from' in data and 'to' in data:
+                # Segment record — map topics to each sentence in range
+                topics = data.get(CAP_TOPICS, [])
+                from_num = int(data['from'].replace('s', ''))
+                to_num = int(data['to'].replace('s', ''))
+                all_topics.update(topics)
+                for i in range(from_num, to_num + 1):
+                    sentence_full_id = f"{record_id}.s{i}"
+                    if sentence_full_id not in sentence_topics_map:
+                        sentence_topics_map[sentence_full_id] = []
+                    sentence_topics_map[sentence_full_id].extend(topics)
+            else:
+                # Sentence record — store person/location entities
+                sentence_entities_map[record_id] = {
+                    PERSON_ENTITIES: data.get(PERSON_ENTITIES, []),
+                    LOCATION_ENTITIES: data.get(LOCATION_ENTITIES, [])
+                }
+
+    # Aggregate all unique topics for the meeting document
+    meeting[CAP_TOPICS_AGGREGATED] = sorted(list(all_topics))
+
+    # Write to meeting sentences
+    for sentence in meeting[SENTENCES]:
+        sentence_id = sentence[ID]
+        if sentence_id in sentence_entities_map:
+            sentence[PERSON_ENTITIES] = sentence_entities_map[sentence_id][PERSON_ENTITIES]
+            sentence[LOCATION_ENTITIES] = sentence_entities_map[sentence_id][LOCATION_ENTITIES]
+        else:
+            sentence[PERSON_ENTITIES] = []
+            sentence[LOCATION_ENTITIES] = []
+
+        sentence[CAP_TOPICS] = sentence_topics_map.get(sentence_id, [])
+
+        # Duplicate into all translation objects
+        for translation in sentence.get(TRANSLATIONS, []):
+            translation[PERSON_ENTITIES] = sentence[PERSON_ENTITIES]
+            translation[LOCATION_ENTITIES] = sentence[LOCATION_ENTITIES]
+
+def parse_zapisnik(xml_root, jsonl_path):
     meeting_parse_start_time = time.time()
 
     meeting = {}
 
     # get the meeting id
-    meeting["id"] = xml_root.attrib["{http://www.w3.org/XML/1998/namespace}id"]
+    meeting[ID] = xml_root.attrib["{http://www.w3.org/XML/1998/namespace}id"]
 
     # get the meeting date
-    meeting["date"] = parse_date_from_id(meeting["id"])
+    meeting["date"] = parse_date_from_id(meeting[ID])
 
     # get the meeting title
     meeting["titles"] = parse_titles(xml_root, NAMESPACE_MAPPINGS)
 
     # get agendas
-    meeting["agendas"] = parse_agendas(xml_root, meeting["id"])
+    meeting["agendas"] = parse_agendas(xml_root, meeting[ID])
 
     # get speeches
-    meeting["sentences"], meeting["notes"] = parse_speeches(xml_root)
+    meeting[SENTENCES], meeting["notes"] = parse_speeches(xml_root)
+
+    # add data from source jsonl files.
+    parse_jsonl(jsonl_path, meeting)
 
     # translate meeting
     translate_meeting(meeting)
@@ -469,17 +540,19 @@ def parse(source, destination, from_idx=0, to_idx=-1):
 
         print("parse(): processing file " + file)
 
+        jsonl_path = path.replace(".xml", ".jsonl")
+
         # initialize parser
-        zapisnik, povedi, besede = parse_zapisnik(xml_root)
+        zapisnik, povedi, besede = parse_zapisnik(xml_root, jsonl_path)
 
         # save data to jsonl files
-        file_path = os.path.join(destination, zapisnik["id"] + "_meeting.jsonl")
+        file_path = os.path.join(destination, zapisnik[ID] + "_meeting.jsonl")
         save_to_jsonl([zapisnik], file_path)
 
-        file_path = os.path.join(destination, zapisnik["id"] + "_sentences.jsonl")
+        file_path = os.path.join(destination, zapisnik[ID] + "_sentences.jsonl")
         save_to_jsonl(povedi, file_path)
 
-        file_path = os.path.join(destination, zapisnik["id"] + "_words.jsonl")
+        file_path = os.path.join(destination, zapisnik[ID] + "_words.jsonl")
         save_to_jsonl(besede, file_path)
 
         print(f"parse(): {i+1}/{len(files)} files processed\n")
