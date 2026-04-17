@@ -31,13 +31,13 @@ const getAllMeetings = async (filters: CorpusSearchFilters, page: number) => {
 
     const meetingsIndexSearchResponse: SearchResponse<MeetingsIndexDocument> = await esClient.search({
         index: process.env.MEETINGS_INDEX_NAME || 'meetings-index',
-        body: {
-            _source: ["id", "date", "titles", "agendas", "corpus"],
-            query: allMeetingsQuery,
-            size: 10,
-            from: (page - 1) * 10,
-            sort: utils.parseSort(filters.sort!)
-        }
+
+        _source: ["id", "date", "titles", "agendas", "corpus"],
+        query: allMeetingsQuery,
+        size: 10,
+        from: (page - 1) * 10,
+        sort: utils.parseSort(filters.sort!)
+
     });
 
     const relevantMeetingData: MeetingData[] = [];
@@ -68,15 +68,15 @@ const getPage = async (queryParams: GetPageQueryParams) => {
 
     // close ES point in time if page is 1 and point in time is provided
     if (queryParams.page === 1 && queryParams.pitId) {
-        await esClient.closePointInTime({body: {id: queryParams.pitId}});
+        await esClient.closePointInTime({id: queryParams.pitId});
     }
 
 
     const esSearchRequestBody: any = {
         _source: ["id", "date", "titles", "agendas", "corpus"],
-        body: {
-            query: meetingsIndexQueryBuildersUtils.buildMeetingsPageQuery(queryParams),
-        },
+
+        query: meetingsIndexQueryBuildersUtils.buildMeetingsPageQuery(queryParams),
+
         size: 10,
         sort: utils.parseSort(queryParams.filters!.sort!),
     }
@@ -95,7 +95,7 @@ const getPage = async (queryParams: GetPageQueryParams) => {
 
     if (queryParams.page > 1 && queryParams.searchAfterScore && queryParams.searchAfterDate) {
         // Add search after params if provided
-        esSearchRequestBody.body.search_after = utils.parseSearchAfterParams(
+        esSearchRequestBody.search_after = utils.parseSearchAfterParams(
             queryParams.filters!.sort!,
             queryParams.searchAfterScore!,
             queryParams.searchAfterDate,
@@ -108,7 +108,7 @@ const getPage = async (queryParams: GetPageQueryParams) => {
 
     const relevantMeetingData: MeetingData[] = [];
     for (const meeting of meetingsIndexSearchResponse.hits.hits) {
-        if (!meeting._source || !meeting.inner_hits) {
+        if (!meeting._source) {
             continue;
         }
 
@@ -118,7 +118,7 @@ const getPage = async (queryParams: GetPageQueryParams) => {
                 titles: meeting._source.titles,
                 agendas: meeting._source.agendas,
                 corpus: meeting._source.corpus,
-                sentences: meeting.inner_hits!["sentences.translations"].hits.hits.map(sentence => {
+                sentences: meeting.inner_hits?.["sentences.translations"].hits.hits.map(sentence => {
                     return {
                         lang: sentence._source.lang,
                         original: sentence._source.original,
@@ -127,8 +127,9 @@ const getPage = async (queryParams: GetPageQueryParams) => {
                         words: sentence._source.words,
                         highlights: sentence.highlight
                     } as SentenceData
-                }),
-                totalSentences: (meeting.inner_hits!["sentences.translations"].hits.total as SearchTotalHits).value,
+                }) ?? [],
+                totalSentences: meeting.inner_hits?.["sentences.translations"]?.hits?.total ?
+                    (meeting.inner_hits["sentences.translations"].hits.total as SearchTotalHits).value : 0,
             } as MeetingData
         );
     }
@@ -150,14 +151,14 @@ const getMeetingAsText = async (meetingId: string, pageLang: string, translation
     const meetingsIndexSearchResponse: SearchResponse<MeetingsIndexDocument> = await esClient.search({
         index: process.env.MEETINGS_INDEX_NAME || 'meetings-index',
         _source: ["id", "date", "titles", "agendas", "sentences"],
-        body: {
-            query: {
-                term: {
-                    "id": meetingId
-                }
-            },
-            size: 1
-        }
+
+        query: {
+            term: {
+                "id": meetingId
+            }
+        },
+        size: 1
+
     });
 
     const searchedMeeting = meetingsIndexSearchResponse.hits.hits[0]._source!;
@@ -204,7 +205,7 @@ const getMeetingAsText = async (meetingId: string, pageLang: string, translation
 
             if (currSentence.speaker === null) {
                 let placeholderLang = translationLang || currSentence.original_language;
-                switch (placeholderLang){
+                switch (placeholderLang) {
                     case 'sl':
                         groupedSentences[segmentId].speaker = "Zapisnik navaja";
                         break;
@@ -275,28 +276,28 @@ const getSpeakers = async (meetingId: string,) => {
 
     const meetingsIndexSearchResponse: SearchResponse<MeetingsIndexDocument> = await esClient.search({
         index: process.env.MEETINGS_INDEX_NAME || 'meetings-index',
-        body: {
-            query: {
-                bool: {
-                    filter: [
-                        {
-                            term: {
-                                id: meetingId
-                            }
+
+        query: {
+            bool: {
+                filter: [
+                    {
+                        term: {
+                            id: meetingId
                         }
-                    ]
-                }
-            },
-            aggs: {
-                unique_speakers: {
-                    terms: {
-                        field: "sentences.speaker.keyword",
-                        size: 10000
                     }
+                ]
+            }
+        },
+        aggs: {
+            unique_speakers: {
+                terms: {
+                    field: "sentences.speaker.keyword",
+                    size: 10000
                 }
-            },
-            _source: false
-        }
+            }
+        },
+        _source: false
+
     });
 
     const uniqueSpeakersAggregation = meetingsIndexSearchResponse.aggregations as {
@@ -456,10 +457,10 @@ async function* getHighlights(meetingId: string, query: string, speaker: string 
         const closeOpenPointInTimePromises: Promise<ClosePointInTimeResponse>[] = [];
 
         if (sentencesIndexPointInTime) {
-            closeOpenPointInTimePromises.push(esClient.closePointInTime({body: sentencesIndexPointInTime}));
+            closeOpenPointInTimePromises.push(esClient.closePointInTime(sentencesIndexPointInTime));
         }
         if (wordsIndexPointInTime) {
-            closeOpenPointInTimePromises.push(esClient.closePointInTime({body: wordsIndexPointInTime}));
+            closeOpenPointInTimePromises.push(esClient.closePointInTime(wordsIndexPointInTime));
         }
 
         await Promise.all(closeOpenPointInTimePromises);

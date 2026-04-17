@@ -17,6 +17,8 @@ export interface SentencesIndexDocument {
     sentence_id: string;
     segment_id: string;
     speaker: string;
+    person_entities: string[];
+    location_entities: string[];
     coordinates: Coordinate[];
     translations: Translation[];
 }

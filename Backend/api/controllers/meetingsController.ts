@@ -59,7 +59,7 @@ const getPage = async (req: Request<GetPageRequestParams, {}, {}, GetPageRequest
     }
 
 
-    const noSearchParamsProvided: boolean = Boolean(!words && speaker.length === 0 && placeNames.length === 0);
+    const noSearchParamsProvided: boolean = Boolean(!words && speaker.length === 0 && placeNames.length === 0 && !queryParams.personEntities && !queryParams.locationEntities && !queryParams.capTopics);
     if (noSearchParamsProvided) {
         try {
             const allMeetingsData = await meetingsRepository.getAllMeetings(filters, page);

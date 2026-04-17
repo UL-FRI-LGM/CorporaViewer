@@ -174,6 +174,9 @@ const parseMeetingsRequestQuery = (req: Request<GetPageRequestParams, {}, {}, Ge
     const words: string = req.query.words || "";
     const speaker: string[] = parseSpeaker(req.query.speaker);
     const placeNames: PlaceName[] = parsePlace(req.query.place);
+    const personEntities: string = req.query.personEntities || "";
+    const locationEntities: string = req.query.locationEntities || "";
+    const capTopics: string = req.query.capTopics || "";
     const filters: CorpusSearchFilters = {
         dateFrom: req.query.dateFrom,
         dateTo: req.query.dateTo,
@@ -191,6 +194,9 @@ const parseMeetingsRequestQuery = (req: Request<GetPageRequestParams, {}, {}, Ge
         words,
         speaker,
         placeNames,
+        personEntities,
+        locationEntities,
+        capTopics,
         filters,
         page,
         pitId,

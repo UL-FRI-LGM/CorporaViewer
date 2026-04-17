@@ -2,6 +2,9 @@ export interface GetPageRequestQuery {
     words?: string;
     speaker?: string;
     place?: string;
+    personEntities?: string;
+    locationEntities?: string;
+    capTopics?: string;
     dateFrom?: string;
     dateTo?: string;
     languages?: string;

@@ -58,7 +58,9 @@ const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
     let innerQuery: any;
 
     /* IF THERE IS ONLY SPEAKER PROVIDED, IT'S A SPECIAL CASE */
-    const isOnlySpeakerProvided: boolean = queryParams.speaker && queryParams.words.length === 0 && queryParams.placeNames.length === 0;
+    const isOnlySpeakerProvided: boolean = queryParams.speaker && queryParams.speaker.length > 0 && queryParams.words.length === 0 && queryParams.placeNames.length === 0 && queryParams.personEntities.length === 0 && queryParams.locationEntities.length === 0;
+    let areContentQueriesPresent;
+    let arePlacesQueriesPresent;
     if (isOnlySpeakerProvided) {
         /* BUILD INNER QUERY THAT GETS MEETINGS THAT CONTAIN UTTERANCE OF SELECTED SPEAKER */
 
@@ -109,7 +111,7 @@ const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
         // Add language filters
         contentsQueryFilters.push({terms: {"sentences.translations.lang.keyword": queryParams.filters!.languages!.split(",")}});
         // Add speaker filters
-        if (queryParams.speaker) {
+        if (queryParams.speaker && queryParams.speaker.length > 0) {
             contentsQueryFilters.push({
                 bool: {
                     should: queryParams.speaker.map(speaker => {
@@ -197,7 +199,7 @@ const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
             }
         }
 
-        const areContentQueriesPresent: boolean = contentsQueries.length > 0;
+        areContentQueriesPresent = contentsQueries.length > 0;
         if (areContentQueriesPresent) {
             innerQuery.nested.query.bool.must.push({
                 bool: {
@@ -207,13 +209,37 @@ const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
             });
         }
 
-        const arePlacesQueriesPresent: boolean = placesQueries.length > 0;
+        arePlacesQueriesPresent = placesQueries.length > 0;
         if (arePlacesQueriesPresent) {
             innerQuery.nested.query.bool.must.push({
                 bool: {
                     should: placesQueries,
                     minimum_should_match: 1
                 }
+            });
+        }
+
+        // Add person entity filters (directly to nested query, same level as lang/speaker)
+        if (queryParams.personEntities) {
+            const entitiesArray = queryParams.personEntities
+                .split(',')
+                .map(e => e.trim())
+                .filter(e => e.length > 0);
+
+            innerQuery.nested.query.bool.must.push({
+                terms: {"sentences.translations.person_entities": entitiesArray}
+            });
+        }
+
+        // Add location entity filters
+        if (queryParams.locationEntities) {
+            const entitiesArray = queryParams.locationEntities
+                .split(',')
+                .map(e => e.trim())
+                .filter(e => e.length > 0);
+
+            innerQuery.nested.query.bool.must.push({
+                terms: {"sentences.translations.location_entities": entitiesArray}
             });
         }
     }
@@ -223,14 +249,7 @@ const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
         bool:
             {
                 filter: [],
-                must: [
-                    {
-                        function_score: {
-                            query: {},
-                            score_mode: "sum",
-                        }
-                    }
-                ]
+                must: []
             }
     };
 
@@ -252,8 +271,28 @@ const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
         outerQuery.bool.filter.push(rangeFilter);
     }
 
+    if (queryParams.capTopics && queryParams.capTopics.length > 0) {
+        outerQuery.bool.filter.push({
+            terms: {
+                "cap_topics_aggregated": queryParams.capTopics
+                    .split(",")
+                    .map(t => decodeURIComponent(t.trim()))
+            }
+        })
+    }
+
     // 2. Add inner query to outer query
-    outerQuery.bool.must[0].function_score.query = innerQuery;
+    const arePersonEntitiesPresent = !!queryParams.personEntities && queryParams.personEntities.length > 0;
+    const areLocationEntitiesPresent = !!queryParams.locationEntities && queryParams.locationEntities.length > 0;
+    const isInnerQueryNeeded = isOnlySpeakerProvided || areContentQueriesPresent || arePlacesQueriesPresent || arePersonEntitiesPresent || areLocationEntitiesPresent;
+    if (isInnerQueryNeeded) {
+        outerQuery.bool.must.push({
+            function_score: {
+                query: innerQuery,
+                score_mode: "sum",
+            }
+        });
+    }
 
     return outerQuery;
 }
