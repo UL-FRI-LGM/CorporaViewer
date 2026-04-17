@@ -11,6 +11,7 @@
             @keyup.enter="search"
         />
       </div>
+      <!--   Speaker   -->
       <div class="col-md-6">
         <div class="input-group search-bar-input">
           <Typeahead
@@ -23,6 +24,7 @@
           />
         </div>
       </div>
+      <!--   Place old   -->
       <div class="col-md-6">
         <div class="input-group search-bar-input">
           <Typeahead
@@ -35,6 +37,46 @@
           />
         </div>
       </div>
+      <!--   Person entities   -->
+      <div class="col-md-6">
+        <div class="input-group search-bar-input">
+          <Typeahead
+              :placeholder="$t('selectPersonEntityPlaceholder')"
+              :list="personEntitiesList"
+              :displayFn="personEntityDisplayFn"
+              :emptyItem="undefined"
+              :getter="personEntityGetter"
+              @selectedChange="setNewSelectedPersonEntity"
+          />
+        </div>
+      </div>
+      <!--   Location entities   -->
+      <div class="col-md-6">
+        <div class="input-group search-bar-input">
+          <Typeahead
+              :placeholder="$t('selectLocationEntityPlaceholder')"
+              :list="locationEntitiesList"
+              :displayFn="locationEntityDisplayFn"
+              :emptyItem="undefined"
+              :getter="locationEntityGetter"
+              @selectedChange="setNewSelectedLocationEntity"
+          />
+        </div>
+      </div>
+      <!--   CAP Topics   -->
+      <div class="col-md-6">
+        <div class="input-group search-bar-input">
+          <Typeahead
+              :placeholder="$t('selectCapTopicPlaceholder')"
+              :list="capTopicsList"
+              :displayFn="capTopicDisplayFn"
+              :emptyItem="undefined"
+              :getter="capTopicGetter"
+              @selectedChange="setNewSelectedCapTopic"
+          />
+        </div>
+      </div>
+
     </div>
     <div class="col-md-1 search-bar-button-container row">
       <button class="col-md-5 btn btn-default" type="button" @click="search">
@@ -107,6 +149,9 @@ import {Options, Vue} from 'vue-class-component';
 import Typeahead from '@components/Typeahead.vue';
 import {Attendee} from '@/types/Attendee';
 import {Place} from '@/types/Place';
+import {PersonEntity} from '@/types/PersonEntity';
+import {LocationEntity} from '@/types/LocationEntity';
+import {CapTopic} from '@/types/CapTopic';
 import {Watch} from 'vue-property-decorator';
 import {mapGetters, mapMutations} from 'vuex';
 import i18n from '@/data/i18setup';
@@ -121,7 +166,7 @@ import {Filters} from '@/types/Filters';
     ...mapGetters('searchFiltersModule', ['searchFiltersInstance'])
   },
   methods: {
-    ...mapMutations('searchParamsModule', ['updateSearchWords', 'updateSearchSpeaker', 'updateSearchPlace', 'resetSearchParams']),
+    ...mapMutations('searchParamsModule', ['updateSearchWords', 'updateSearchSpeaker', 'updateSearchPlace', 'updatePersonEntity', 'updateLocationEntity', 'updateCapTopic', 'resetSearchParams']),
     ...mapMutations('resultsModule', ['resetResults'])
   }
 })
@@ -132,6 +177,9 @@ export default class SearchBar extends Vue {
   wordSearchQuery: string = ''
   speakersList: Attendee[] = []
   placeNamesList: Place[] = []
+  personEntitiesList: PersonEntity[] = []
+  locationEntitiesList: LocationEntity[] = []
+  capTopicsList: CapTopic[] = []
 
   get searchFilters(): Filters {
     return this.searchFiltersInstance
@@ -150,6 +198,9 @@ export default class SearchBar extends Vue {
   created(): void {
     this.getSpeakersList();
     this.getplaceNamesList();
+    this.getPersonEntitiesList();
+    this.getLocationEntitiesList();
+    this.getCapTopicsList();
   }
 
   mounted(): void {
@@ -167,6 +218,18 @@ export default class SearchBar extends Vue {
 
   setNewSelectedPlace(place: Place) {
     this.updateSearchPlace(place);
+  }
+
+  setNewSelectedPersonEntity(entity: PersonEntity) {
+    this.updatePersonEntity(entity);
+  }
+
+  setNewSelectedLocationEntity(entity: LocationEntity) {
+    this.updateLocationEntity(entity);
+  }
+
+  setNewSelectedCapTopic(entity: CapTopic) {
+    this.updateCapTopic(entity);
   }
 
   krajDisplayFn(kraj: Place): string {
@@ -187,6 +250,22 @@ export default class SearchBar extends Vue {
     return speaker.names.join(' / ');
   }
 
+  personEntityDisplayFn(entity: PersonEntity): string {
+    const locale = this.$i18n.locale;
+    if (locale === 'sl' && entity.names.sl) {
+      return entity.names.sl + (entity.names.de && entity.names.de !== entity.names.sl ? ' / ' + entity.names.de : '');
+    }
+    return entity.names.de + (entity.names.sl && entity.names.sl !== entity.names.de ? ' / ' + entity.names.sl : '');
+  }
+
+  locationEntityDisplayFn(entity: LocationEntity): string {
+    return entity.names.de;
+  }
+
+  capTopicDisplayFn(entity: CapTopic): string {
+    return entity.id + " - " + entity.name;
+  }
+
   getSpeakersList() {
     const corpora = this.searchFilters.corpora;
     axios.get(process.env.VUE_APP_API_URL + '/poslanci/getAll')
@@ -204,9 +283,10 @@ export default class SearchBar extends Vue {
               names: [i18n.global.t('predsednik')]
             },
             ...response.data.map((speaker: any) => {
+              const names = speaker._source.names;
               return {
                 id: speaker._source.id,
-                names: speaker._source.names
+                names: Array.isArray(names) ? names : Object.values(names)
               }
             }).sort((a: Attendee, b: Attendee) => {
               return this.compareSpeakers(a, b);
@@ -223,10 +303,16 @@ export default class SearchBar extends Vue {
         .then(response => {
           this.placeNamesList = response.data
               .filter((place: any) => {
-                const placeCorpora = new Set(place._source.corpus.map((corpus: string) => corpus.toLowerCase()));
+                const corpusRaw = place._source.corpus;
+                const corpusArray: string[] = Array.isArray(corpusRaw) ? corpusRaw : [corpusRaw];
+                const placeCorpora = new Set(corpusArray.map((corpus: string) => corpus.toLowerCase()));
                 return corpora.length == 0 || corpora.some(corpora => placeCorpora.has(corpora.toLowerCase()));
               }).map((place: any) => {
-                return place._source as Place;
+                const corpusRaw = place._source.corpus;
+                return {
+                  ...place._source,
+                  corpus: Array.isArray(corpusRaw) ? corpusRaw : [corpusRaw]
+                } as Place;
               }).sort((a: Place, b: Place) => {
                 return this.comparePlaceNames(a, b);
               })
@@ -275,6 +361,48 @@ export default class SearchBar extends Vue {
     })
   }
 
+  getPersonEntitiesList() {
+    axios.get(process.env.VUE_APP_API_URL + '/personEntities/getAll')
+        .then(response => {
+          this.personEntitiesList = response.data.map((entity: any) => {
+            return entity._source as PersonEntity;
+          }).sort((a: PersonEntity, b: PersonEntity) => {
+            return a.names.de.localeCompare(b.names.de);
+          })
+        })
+        .catch(error => {
+          console.log(error);
+        });
+  }
+
+  getLocationEntitiesList() {
+    axios.get(process.env.VUE_APP_API_URL + '/locationEntities/getAll')
+        .then(response => {
+          this.locationEntitiesList = response.data.map((entity: any) => {
+            return entity._source as LocationEntity;
+          }).sort((a: LocationEntity, b: LocationEntity) => {
+            return a.names.de.localeCompare(b.names.de);
+          })
+        })
+        .catch(error => {
+          console.log(error);
+        });
+  }
+
+  getCapTopicsList() {
+    axios.get(process.env.VUE_APP_API_URL + '/capTopics/getAll')
+        .then(response => {
+          this.capTopicsList = response.data.map((entity: any) => {
+            return entity._source as CapTopic;
+          }).sort((a: CapTopic, b: CapTopic) => {
+            return a.name.localeCompare(b.name);
+          })
+        })
+        .catch(error => {
+          console.log(error);
+        });
+  }
+
   clear() {
     this.wordSearchQuery = '';
 
@@ -288,6 +416,18 @@ export default class SearchBar extends Vue {
 
   placeGetter(): Place {
     return this.searchParamsInstance.place;
+  }
+
+  personEntityGetter(): PersonEntity {
+    return this.searchParamsInstance.personEntity;
+  }
+
+  locationEntityGetter(): LocationEntity {
+    return this.searchParamsInstance.locationEntity;
+  }
+
+  capTopicGetter(): CapTopic {
+    return this.searchParamsInstance.capTopic;
   }
 }
 </script>

@@ -89,8 +89,8 @@
 <script lang="ts">
 
 import axios from 'axios';
-import { Options, Vue } from 'vue-class-component';
-import { mapMutations, mapGetters } from 'vuex';
+import {Options, Vue} from 'vue-class-component';
+import {mapMutations, mapGetters} from 'vuex';
 import i18n from '@/data/i18setup';
 
 // components
@@ -100,11 +100,14 @@ import SearchFilters from '@components/SearchFilters.vue';
 import Paging from '@components/Paging.vue';
 
 // types
-import { Attendee } from '@/types/Attendee';
-import { Place } from '@/types/Place';
-import { SearchParams } from '@/types/SearchParams';
-import { Filters } from '@/types/Filters';
-import { Results } from '@/types/Results';
+import {Attendee} from '@/types/Attendee';
+import {Place} from '@/types/Place';
+import {PersonEntity} from '@/types/PersonEntity';
+import {LocationEntity} from '@/types/LocationEntity';
+import {SearchParams} from '@/types/SearchParams';
+import {Filters} from '@/types/Filters';
+import {Results} from '@/types/Results';
+import {CapTopic} from "@/types/CapTopic";
 
 @Options({
   components: {
@@ -128,9 +131,11 @@ export default class SearchView extends Vue {
   get searchParams(): SearchParams {
     return this.searchParamsInstance;
   }
+
   get searchFilters(): Filters {
     return this.searchFiltersInstance;
   }
+
   get results(): Results {
     return this.resultsInstance;
   }
@@ -148,8 +153,11 @@ export default class SearchView extends Vue {
 
   isPreloadingPages: boolean = false;
   stopPreloading: boolean = false;
-  resolvePreload: (value?: unknown) => void = () => { };
-  rejectPreload: (reason?: any) => void = (reason?) => { console.error(reason) };
+  resolvePreload: (value?: unknown) => void = () => {
+  };
+  rejectPreload: (reason?: any) => void = (reason?) => {
+    console.error(reason)
+  };
 
 
   mounted(): void {
@@ -190,6 +198,7 @@ export default class SearchView extends Vue {
     }
     return list;
   }
+
   /**
    * Executes a search with the stored parameters.
    */
@@ -216,10 +225,10 @@ export default class SearchView extends Vue {
     this.searchParams.searchAfterIndex = undefined;
 
     // save current search params and filters state
-    this.currentSearchParams = { ...this.searchParamsInstance };
-    this.currentSearchFilters = { ...this.searchFiltersInstance };
+    this.currentSearchParams = {...this.searchParamsInstance};
+    this.currentSearchFilters = {...this.searchFiltersInstance};
 
-    const queryParams = this.buildQueryParams({ ...this.currentSearchParams, ...this.currentSearchFilters });
+    const queryParams = this.buildQueryParams({...this.currentSearchParams, ...this.currentSearchFilters});
 
     this.loading = true;
     this.resetResults();
@@ -279,36 +288,80 @@ export default class SearchView extends Vue {
   buildQueryParams(params: any): string {
     let queryParams = "";
     for (const [key, value] of Object.entries(params)) {
-      if (key === "speaker") {
-        const attendee = value as Attendee | undefined;
-        if (attendee === undefined) continue;
+      switch (key) {
+        case "speaker": {
 
-        console.log(attendee);
-        queryParams += queryParams === "" ? "?" : "&";
-        queryParams += "speaker=" + attendee.names.join(",");
+          const attendee = value as Attendee | undefined;
+          if (attendee === undefined) continue;
 
-        // add special attendee names
-        if (attendee.id === "1") {
-          queryParams += this.getOtherLocales("dezelniGlavar");
-        } else if (attendee.id === "2") {
-          queryParams += this.getOtherLocales("porocevalec");
-        } else if (attendee.id === "3") {
-          queryParams += this.getOtherLocales("predsednik");
+          console.log(attendee);
+          queryParams += queryParams === "" ? "?" : "&";
+          queryParams += "speaker=" + attendee.names.join(",");
+
+          // add special attendee names
+          if (attendee.id === "1") {
+            queryParams += this.getOtherLocales("dezelniGlavar");
+          } else if (attendee.id === "2") {
+            queryParams += this.getOtherLocales("porocevalec");
+          } else if (attendee.id === "3") {
+            queryParams += this.getOtherLocales("predsednik");
+          }
+          break;
         }
-      }
-      else if (key === "place") {
-        const place = value as Place | undefined;
-        if (place === undefined) continue;
+        case "place": {
+          const place = value as Place | undefined;
+          if (place === undefined) continue;
 
-        queryParams += queryParams === "" ? "?" : "&";
-        queryParams += "place="
-        for (const [lang, name] of Object.entries(place.names)) {
-          queryParams += `{${lang}:${name}}`
+          queryParams += queryParams === "" ? "?" : "&";
+          queryParams += "place="
+          for (const [lang, name] of Object.entries(place.names)) {
+            queryParams += `{${lang}:${name}}`
+          }
+          break;
         }
-      }
-      else if (value !== "" && value !== undefined) {
-        queryParams += queryParams === "" ? "?" : "&";
-        queryParams += key + "=" + value;
+        case "personEntity": {
+          const personEntity = value as PersonEntity | undefined;
+          if (personEntity) {
+            const names = Object.values(personEntity.names)
+              .filter((n): n is string => !!n)
+              .map(n => encodeURIComponent(n))
+              .join(",");
+            if (names) {
+              queryParams += queryParams === "" ? "?" : "&";
+              queryParams += `personEntities=${names}`;
+            }
+          }
+          break;
+        }
+        case "locationEntity": {
+          const locationEntity = value as LocationEntity | undefined;
+          if (locationEntity) {
+            const names = Object.values(locationEntity.names)
+              .filter((n): n is string => !!n)
+              .map(n => encodeURIComponent(n))
+              .join(",");
+            if (names) {
+              queryParams += queryParams === "" ? "?" : "&";
+              queryParams += `locationEntities=${names}`;
+            }
+          }
+          break;
+        }
+        case "capTopic": {
+          const capTopic = value as CapTopic | undefined;
+          if (capTopic) {
+            queryParams += queryParams === "" ? "?" : "&";
+            queryParams += `capTopics=${encodeURIComponent(capTopic.name)}`;
+          }
+          break;
+        }
+        default: {
+          if (value !== "" && value !== undefined) {
+            queryParams += queryParams === "" ? "?" : "&";
+            queryParams += key + "=" + value;
+          }
+          break;
+        }
       }
     }
     return queryParams;
@@ -335,8 +388,7 @@ export default class SearchView extends Vue {
     for (const [index, page] of this.results.results.entries()) {
       if (this.stopPreloading) {
         break;
-      }
-      else if (page === undefined) {
+      } else if (page === undefined) {
         let preloadError = false;
         await this.loadPage(index + 1).catch((error: any) => {
           console.error(error);
@@ -382,7 +434,7 @@ export default class SearchView extends Vue {
   }
 
   openPdf(meeting_id: string) {
-    this.$router.push({ name: 'view-pdf', params: { meeting_id: meeting_id } })
+    this.$router.push({name: 'view-pdf', params: {meeting_id: meeting_id}})
   }
 
   getShowingResultsText() {

@@ -10,6 +10,7 @@ module.exports = defineConfig({
         config.resolve.alias.set('bootstrap-vue$', 'bootstrap-vue/src/index.js')
     },
     configureWebpack: {
+        devtool: 'source-map',
         resolve: {
             fallback: {
                 "fs": false

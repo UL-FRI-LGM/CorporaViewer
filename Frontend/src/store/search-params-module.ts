@@ -1,8 +1,11 @@
-import { Module, MutationTree } from "vuex";
-import { RootState } from "@/store/index";
-import { SearchParams } from "@/types/SearchParams";
-import { Attendee } from "@/types/Attendee";
-import { Place } from "@/types/Place";
+import {Module, MutationTree} from "vuex";
+import {RootState} from "@/store/index";
+import {SearchParams} from "@/types/SearchParams";
+import {Attendee} from "@/types/Attendee";
+import {Place} from "@/types/Place";
+import {PersonEntity} from "@/types/PersonEntity";
+import {LocationEntity} from "@/types/LocationEntity";
+import {CapTopic} from "@/types/CapTopic";
 
 interface SearchParamsState {
     instance: SearchParams;
@@ -21,6 +24,15 @@ const mutations: MutationTree<SearchParamsState> = {
     },
     updateSearchPlace(state: SearchParamsState, place: Place | undefined) {
         state.instance.place = place
+    },
+    updatePersonEntity(state: SearchParamsState, entity: PersonEntity | undefined) {
+        state.instance.personEntity = entity
+    },
+    updateLocationEntity(state: SearchParamsState, entity: LocationEntity | undefined) {
+        state.instance.locationEntity = entity
+    },
+    updateCapTopic(state: SearchParamsState, entity: CapTopic | undefined) {
+        state.instance.capTopic = entity
     },
 }
 

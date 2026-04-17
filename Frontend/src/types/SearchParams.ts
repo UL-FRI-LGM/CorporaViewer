@@ -1,12 +1,19 @@
-import { reactive } from "vue";
-import { Place } from "./Place";
-import { Attendee } from "./Attendee";
+import {reactive} from "vue";
+import {Place} from "./Place";
+import {Attendee} from "./Attendee";
+import {PersonEntity} from "./PersonEntity";
+import {LocationEntity} from "./LocationEntity";
+import {CapTopic} from "@/types/CapTopic";
 
 export interface SearchParamsInterface {
     searchOccurred: boolean;
     words: string;
     speaker?: Attendee;
     place?: Place;
+
+    personEntity?: PersonEntity;
+    locationEntity?: LocationEntity;
+    capTopic?: CapTopic;
 
     pitId?: string;
     searchAfterScore?: number;
@@ -25,13 +32,22 @@ export class SearchParams implements SearchParamsInterface {
     speaker?: Attendee;
     place?: Place;
 
+    personEntity?: PersonEntity;
+    locationEntity?: LocationEntity;
+    capTopic?: CapTopic;
+
     pitId?: string;
     searchAfterScore?: number;
     searchAfterDate?: Date;
     searchAfterIndex?: number;
 
     isMatchAll(): boolean {
-        return this.words.length == 0 && !this.speaker && !this.place;
+        return this.words.length == 0
+            && !this.speaker
+            && !this.place
+            && !this.personEntity
+            && !this.locationEntity
+            && !this.capTopic;
     }
 
     reset(): void {
@@ -39,6 +55,10 @@ export class SearchParams implements SearchParamsInterface {
         this.words = "";
         this.speaker = undefined;
         this.place = undefined;
+
+        this.personEntity = undefined;
+        this.locationEntity = undefined;
+        this.capTopic = undefined;
 
         this.pitId = undefined;
         this.searchAfterScore = undefined;
