@@ -4,7 +4,7 @@ export interface GetPageRequestQuery {
     place?: string;
     personEntities?: string;
     locationEntities?: string;
-    capTopics?: string;
+    capTopics?: string | string[];
     dateFrom?: string;
     dateTo?: string;
     languages?: string;

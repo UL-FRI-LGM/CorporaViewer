@@ -31,8 +31,15 @@ const mutations: MutationTree<SearchParamsState> = {
     updateLocationEntity(state: SearchParamsState, entity: LocationEntity | undefined) {
         state.instance.locationEntity = entity
     },
-    updateCapTopic(state: SearchParamsState, entity: CapTopic | undefined) {
-        state.instance.capTopic = entity
+    addCapTopic(state: SearchParamsState, topic: CapTopic) {
+        if (!state.instance.capTopics.find(t => t.id === topic.id))
+            state.instance.capTopics.push(topic)
+    },
+    removeCapTopic(state: SearchParamsState, topic: CapTopic) {
+        state.instance.capTopics = state.instance.capTopics.filter(t => t.id !== topic.id)
+    },
+    resetCapTopics(state: SearchParamsState) {
+        state.instance.capTopics = []
     },
 }
 

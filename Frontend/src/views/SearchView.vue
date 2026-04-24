@@ -51,7 +51,7 @@
 }
 
 .search-results:last-child {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .search-filters {
@@ -347,12 +347,12 @@ export default class SearchView extends Vue {
           }
           break;
         }
-        case "capTopic": {
-          const capTopic = value as CapTopic | undefined;
-          if (capTopic) {
+        case "capTopics": {
+          const topics = value as CapTopic[];
+          topics.forEach(t => {
             queryParams += queryParams === "" ? "?" : "&";
-            queryParams += `capTopics=${encodeURIComponent(capTopic.name)}`;
-          }
+            queryParams += `capTopics=${encodeURIComponent(t.name)}`;
+          });
           break;
         }
         default: {

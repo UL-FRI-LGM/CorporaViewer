@@ -66,13 +66,9 @@
       <!--   CAP Topics   -->
       <div class="col-md-6">
         <div class="input-group search-bar-input">
-          <Typeahead
+          <CapTopicMultiselect
+              :allTopics="capTopicsList"
               :placeholder="$t('selectCapTopicPlaceholder')"
-              :list="capTopicsList"
-              :displayFn="capTopicDisplayFn"
-              :emptyItem="undefined"
-              :getter="capTopicGetter"
-              @selectedChange="setNewSelectedCapTopic"
           />
         </div>
       </div>
@@ -105,7 +101,7 @@
 .row {
   display: flex !important;
   flex-direction: row;
-  margin: 0px;
+  margin: 0;
 }
 
 .row > * {
@@ -131,7 +127,7 @@
 }
 
 .btn-default :disabled {
-  margin: 0px;
+  margin: 0;
   background-color: #f7f6ee;
   border-color: #f0f7ee;
   color: #1e1e24;
@@ -147,6 +143,7 @@
 import axios from 'axios';
 import {Options, Vue} from 'vue-class-component';
 import Typeahead from '@components/Typeahead.vue';
+import CapTopicMultiselect from '@components/CapTopicMultiselect.vue';
 import {Attendee} from '@/types/Attendee';
 import {Place} from '@/types/Place';
 import {PersonEntity} from '@/types/PersonEntity';
@@ -159,14 +156,15 @@ import {Filters} from '@/types/Filters';
 
 @Options({
   components: {
-    Typeahead
+    Typeahead,
+    CapTopicMultiselect
   },
   computed: {
     ...mapGetters('searchParamsModule', ['searchParamsInstance']),
     ...mapGetters('searchFiltersModule', ['searchFiltersInstance'])
   },
   methods: {
-    ...mapMutations('searchParamsModule', ['updateSearchWords', 'updateSearchSpeaker', 'updateSearchPlace', 'updatePersonEntity', 'updateLocationEntity', 'updateCapTopic', 'resetSearchParams']),
+    ...mapMutations('searchParamsModule', ['updateSearchWords', 'updateSearchSpeaker', 'updateSearchPlace', 'updatePersonEntity', 'updateLocationEntity', 'resetCapTopics', 'resetSearchParams']),
     ...mapMutations('resultsModule', ['resetResults'])
   }
 })
@@ -228,10 +226,6 @@ export default class SearchBar extends Vue {
     this.updateLocationEntity(entity);
   }
 
-  setNewSelectedCapTopic(entity: CapTopic) {
-    this.updateCapTopic(entity);
-  }
-
   krajDisplayFn(kraj: Place): string {
     const locale = this.$i18n.locale;
     let placeString = (kraj.names[locale] === "zzzzz" ? "" : kraj.names[locale]) ?? "";
@@ -262,12 +256,7 @@ export default class SearchBar extends Vue {
     return entity.names.de;
   }
 
-  capTopicDisplayFn(entity: CapTopic): string {
-    return entity.id + " - " + entity.name;
-  }
-
   getSpeakersList() {
-    const corpora = this.searchFilters.corpora;
     axios.get(process.env.VUE_APP_API_URL + '/poslanci/getAll')
         .then(response => {
           this.speakersList = [{
@@ -392,9 +381,11 @@ export default class SearchBar extends Vue {
   getCapTopicsList() {
     axios.get(process.env.VUE_APP_API_URL + '/capTopics/getAll')
         .then(response => {
-          this.capTopicsList = response.data.map((entity: any) => {
-            return entity._source as CapTopic;
-          }).sort((a: CapTopic, b: CapTopic) => {
+          this.capTopicsList = response.data.map((entity: any) => ({
+            ...entity._source,
+            mainTopic: entity._source.name.split(':')[0].trim(),
+            isMainOnly: false
+          })).sort((a: CapTopic, b: CapTopic) => {
             return a.name.localeCompare(b.name);
           })
         })
@@ -426,8 +417,5 @@ export default class SearchBar extends Vue {
     return this.searchParamsInstance.locationEntity;
   }
 
-  capTopicGetter(): CapTopic {
-    return this.searchParamsInstance.capTopic;
-  }
 }
 </script>

@@ -176,7 +176,10 @@ const parseMeetingsRequestQuery = (req: Request<GetPageRequestParams, {}, {}, Ge
     const placeNames: PlaceName[] = parsePlace(req.query.place);
     const personEntities: string = req.query.personEntities || "";
     const locationEntities: string = req.query.locationEntities || "";
-    const capTopics: string = req.query.capTopics || "";
+    const capTopicsRaw = req.query.capTopics;
+    const capTopics: string[] = !capTopicsRaw ? [] :
+        Array.isArray(capTopicsRaw) ? capTopicsRaw.map(t => decodeURIComponent(t)) :
+            [decodeURIComponent(capTopicsRaw)];
     const filters: CorpusSearchFilters = {
         dateFrom: req.query.dateFrom,
         dateTo: req.query.dateTo,
@@ -330,7 +333,7 @@ const filterHighlights = (highlights: Highlight[]): Highlight[] => {
         .flatMap((highlight: Highlight): string[] => highlight.ids)
     );
 
-    const filteredHighlights: Highlight[] = highlights.filter((highlight: Highlight): boolean => {
+    return highlights.filter((highlight: Highlight): boolean => {
         // Just a safety check
         if (highlight.ids.length === 0)
             return false;
@@ -348,11 +351,7 @@ const filterHighlights = (highlights: Highlight[]): Highlight[] => {
         return !highlight.ids.some((id: string): boolean => sentencesIds.has(id.split(".").slice(0, 2).join("."))) &&
             !highlight.ids.some((id: string): boolean => phrasesIds.has(id));
     });
-
-    return filteredHighlights;
 }
-
-
 
 
 export default {

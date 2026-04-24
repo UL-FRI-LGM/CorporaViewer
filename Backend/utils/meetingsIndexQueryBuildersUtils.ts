@@ -249,7 +249,8 @@ const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
         bool:
             {
                 filter: [],
-                must: []
+                must: [],
+                should: []
             }
     };
 
@@ -272,13 +273,20 @@ const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
     }
 
     if (queryParams.capTopics && queryParams.capTopics.length > 0) {
-        outerQuery.bool.filter.push({
-            terms: {
-                "cap_topics_aggregated": queryParams.capTopics
-                    .split(",")
-                    .map(t => decodeURIComponent(t.trim()))
-            }
-        })
+        const mainTopics = queryParams.capTopics.filter((t: string | string[]) => !t.includes(':'));
+        const subtopics = queryParams.capTopics.filter((t: string | string[]) => t.includes(':'));
+
+        // Use should on outer query so each matching topic boosts the score (OR + ranking)
+        // Main topics: prefix match (e.g. "Defence" matches "Defence: Military", "Defence: Arms Control", ...)
+        mainTopics.forEach(main => {
+            outerQuery.bool.should.push({ prefix: { "cap_topics_aggregated": main + ":" } });
+        });
+        // Subtopics: each as a separate term clause so each match adds to score
+        subtopics.forEach(sub => {
+            outerQuery.bool.should.push({ term: { "cap_topics_aggregated": sub } });
+        });
+
+        outerQuery.bool.minimum_should_match = 1;
     }
 
     // 2. Add inner query to outer query

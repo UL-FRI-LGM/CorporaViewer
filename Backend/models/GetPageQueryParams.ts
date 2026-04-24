@@ -7,7 +7,7 @@ export interface GetPageQueryParams {
     placeNames: PlaceName[];
     personEntities: string;
     locationEntities: string;
-    capTopics: string;
+    capTopics: string[];
     filters: CorpusSearchFilters;
     page: number;
     pitId?: string;

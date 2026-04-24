@@ -13,7 +13,7 @@ export interface SearchParamsInterface {
 
     personEntity?: PersonEntity;
     locationEntity?: LocationEntity;
-    capTopic?: CapTopic;
+    capTopics: CapTopic[];
 
     pitId?: string;
     searchAfterScore?: number;
@@ -34,7 +34,7 @@ export class SearchParams implements SearchParamsInterface {
 
     personEntity?: PersonEntity;
     locationEntity?: LocationEntity;
-    capTopic?: CapTopic;
+    capTopics: CapTopic[] = [];
 
     pitId?: string;
     searchAfterScore?: number;
@@ -47,7 +47,7 @@ export class SearchParams implements SearchParamsInterface {
             && !this.place
             && !this.personEntity
             && !this.locationEntity
-            && !this.capTopic;
+            && this.capTopics.length === 0;
     }
 
     reset(): void {
@@ -58,7 +58,7 @@ export class SearchParams implements SearchParamsInterface {
 
         this.personEntity = undefined;
         this.locationEntity = undefined;
-        this.capTopic = undefined;
+        this.capTopics = [];
 
         this.pitId = undefined;
         this.searchAfterScore = undefined;
