@@ -24,19 +24,6 @@
           />
         </div>
       </div>
-      <!--   Place old   -->
-      <div class="col-md-6">
-        <div class="input-group search-bar-input">
-          <Typeahead
-              :placeholder="$t('selectPlacePlaceholder')"
-              :list="placeNamesList"
-              :displayFn="krajDisplayFn"
-              :emptyItem="undefined"
-              :getter="placeGetter"
-              @selectedChange="setNewSelectedPlace"
-          />
-        </div>
-      </div>
       <!--   Person entities   -->
       <div class="col-md-6">
         <div class="input-group search-bar-input">
@@ -147,7 +134,6 @@ import CapTopicMultiselect from '@components/CapTopicMultiselect.vue';
 import {Attendee} from '@/types/Attendee';
 import {Place} from '@/types/Place';
 import {PersonEntity} from '@/types/PersonEntity';
-import {LocationEntity} from '@/types/LocationEntity';
 import {CapTopic} from '@/types/CapTopic';
 import {Watch} from 'vue-property-decorator';
 import {mapGetters, mapMutations} from 'vuex';
@@ -164,7 +150,7 @@ import {Filters} from '@/types/Filters';
     ...mapGetters('searchFiltersModule', ['searchFiltersInstance'])
   },
   methods: {
-    ...mapMutations('searchParamsModule', ['updateSearchWords', 'updateSearchSpeaker', 'updateSearchPlace', 'updatePersonEntity', 'updateLocationEntity', 'resetCapTopics', 'resetSearchParams']),
+    ...mapMutations('searchParamsModule', ['updateSearchWords', 'updateSearchSpeaker', 'updatePersonEntity', 'updateLocationEntity', 'resetCapTopics', 'resetSearchParams']),
     ...mapMutations('resultsModule', ['resetResults'])
   }
 })
@@ -174,9 +160,8 @@ export default class SearchBar extends Vue {
 
   wordSearchQuery: string = ''
   speakersList: Attendee[] = []
-  placeNamesList: Place[] = []
   personEntitiesList: PersonEntity[] = []
-  locationEntitiesList: LocationEntity[] = []
+  locationEntitiesList: Place[] = []
   capTopicsList: CapTopic[] = []
 
   get searchFilters(): Filters {
@@ -184,18 +169,15 @@ export default class SearchBar extends Vue {
   }
 
   @Watch('$i18n.locale') onLocaleChanged() {
-    this.sortPlaceNamesList();
     this.sortSpeakersList();
   }
 
   @Watch('searchFilters.corpora') onCorporaChanged() {
     this.getSpeakersList();
-    this.getplaceNamesList();
   }
 
   created(): void {
     this.getSpeakersList();
-    this.getplaceNamesList();
     this.getPersonEntitiesList();
     this.getLocationEntitiesList();
     this.getCapTopicsList();
@@ -214,30 +196,12 @@ export default class SearchBar extends Vue {
     this.updateSearchSpeaker(speaker);
   }
 
-  setNewSelectedPlace(place: Place) {
-    this.updateSearchPlace(place);
-  }
-
   setNewSelectedPersonEntity(entity: PersonEntity) {
     this.updatePersonEntity(entity);
   }
 
-  setNewSelectedLocationEntity(entity: LocationEntity) {
+  setNewSelectedLocationEntity(entity: Place) {
     this.updateLocationEntity(entity);
-  }
-
-  krajDisplayFn(kraj: Place): string {
-    const locale = this.$i18n.locale;
-    let placeString = (kraj.names[locale] === "zzzzz" ? "" : kraj.names[locale]) ?? "";
-
-    //append each key-value pair to the string
-    for (const [key, value] of Object.entries(kraj.names)) {
-      if (key != locale && value != "zzzzz") {
-        placeString += (placeString === "" ? "" : " / ") + value;
-      }
-    }
-
-    return placeString
   }
 
   speakerDisplayFn(speaker: Attendee): string {
@@ -252,8 +216,14 @@ export default class SearchBar extends Vue {
     return entity.names.de + (entity.names.sl && entity.names.sl !== entity.names.de ? ' / ' + entity.names.sl : '');
   }
 
-  locationEntityDisplayFn(entity: LocationEntity): string {
-    return entity.names.de;
+  locationEntityDisplayFn(entity: Place): string {
+    const locale = this.$i18n.locale;
+    const sl = entity.names.sl || '';
+    const de = entity.names.de || '';
+    if (locale === 'sl' && sl) {
+      return sl + (de && de !== sl ? ' / ' + de : '');
+    }
+    return (de || sl) + (de && sl && sl !== de ? ' / ' + sl : '');
   }
 
   getSpeakersList() {
@@ -286,62 +256,10 @@ export default class SearchBar extends Vue {
         });
   }
 
-  getplaceNamesList() {
-    const corpora = this.searchFilters.corpora;
-    axios.get(process.env.VUE_APP_API_URL + '/krajevnaImena/getAll')
-        .then(response => {
-          this.placeNamesList = response.data
-              .filter((place: any) => {
-                const corpusRaw = place._source.corpus;
-                const corpusArray: string[] = Array.isArray(corpusRaw) ? corpusRaw : [corpusRaw];
-                const placeCorpora = new Set(corpusArray.map((corpus: string) => corpus.toLowerCase()));
-                return corpora.length == 0 || corpora.some(corpora => placeCorpora.has(corpora.toLowerCase()));
-              }).map((place: any) => {
-                const corpusRaw = place._source.corpus;
-                return {
-                  ...place._source,
-                  corpus: Array.isArray(corpusRaw) ? corpusRaw : [corpusRaw]
-                } as Place;
-              }).sort((a: Place, b: Place) => {
-                return this.comparePlaceNames(a, b);
-              })
-        })
-        .catch(error => {
-          console.log(error);
-        });
-  }
-
-  comparePlaceNames(a: Place, b: Place): number {
-    // first compare the locale, then compare the other locales if the first one is the same
-    const locale = this.$i18n.locale;
-    const placeNameA = this.getFirstValidPlaceName(a, locale);
-    const placeNameB = this.getFirstValidPlaceName(b, locale);
-    return placeNameA.localeCompare(placeNameB);
-  }
-
-  getFirstValidPlaceName(place: Place, preferedLocale: string): string {
-    if (Object.keys(place.names).includes(preferedLocale) && place.names[preferedLocale] !== "zzzzz") {
-      return place.names[preferedLocale];
-    } else {
-      for (const [key, value] of Object.entries(place.names)) {
-        if (value != "zzzzz") {
-          return value;
-        }
-      }
-      return "zzzzz";
-    }
-  }
-
   compareSpeakers(a: Attendee, b: Attendee): number {
     const lastNameA = a.names[0].split(' ').pop() ?? "";
     const lastNameB = b.names[0].split(' ').pop() ?? "";
     return lastNameA.localeCompare(lastNameB);
-  }
-
-  sortPlaceNamesList() {
-    this.placeNamesList.sort((a: Place, b: Place) => {
-      return this.comparePlaceNames(a, b);
-    })
   }
 
   sortSpeakersList() {
@@ -365,13 +283,17 @@ export default class SearchBar extends Vue {
   }
 
   getLocationEntitiesList() {
-    axios.get(process.env.VUE_APP_API_URL + '/locationEntities/getAll')
+    axios.get(process.env.VUE_APP_API_URL + '/krajevnaImena/getAll')
         .then(response => {
           this.locationEntitiesList = response.data.map((entity: any) => {
-            return entity._source as LocationEntity;
-          }).sort((a: LocationEntity, b: LocationEntity) => {
-            return a.names.de.localeCompare(b.names.de);
-          })
+            const corpusRaw = entity._source.corpus;
+            return {
+              ...entity._source,
+              corpus: Array.isArray(corpusRaw) ? corpusRaw : [corpusRaw]
+            } as Place;
+          }).sort((a: Place, b: Place) => {
+            return this.locationEntityDisplayFn(a).localeCompare(this.locationEntityDisplayFn(b));
+          });
         })
         .catch(error => {
           console.log(error);
@@ -405,15 +327,11 @@ export default class SearchBar extends Vue {
     return this.searchParamsInstance.speaker;
   }
 
-  placeGetter(): Place {
-    return this.searchParamsInstance.place;
-  }
-
   personEntityGetter(): PersonEntity {
     return this.searchParamsInstance.personEntity;
   }
 
-  locationEntityGetter(): LocationEntity {
+  locationEntityGetter(): Place {
     return this.searchParamsInstance.locationEntity;
   }
 

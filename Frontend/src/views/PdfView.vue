@@ -910,9 +910,9 @@ export default class PdfView extends Vue {
 
     // Compose the query from the parameters used to retrieve relevant documents
     let initialQuery = this.searchParams.words.replaceAll(/\s+OR\s+/g, " ") ?? "";
-    if (this.searchParams.place?.names) {
+    if (this.searchParams.locationEntity?.names) {
       // Get all valid place names
-      let validPlaces = Object.values(this.searchParams.place?.names).filter(name => name !== 'zzzzz');
+      let validPlaces = Object.values(this.searchParams.locationEntity.names).filter((name): name is string => !!name && name !== 'zzzzz');
       // If the place name is composed of multiple words, wrap it in quotes
       let placesQuery = validPlaces.map(place => {
         if (place.includes(" ")) {

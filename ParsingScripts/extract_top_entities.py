@@ -57,22 +57,6 @@ def write_persons_jsonl(person_counter, output_file, top_n=20):
     print(f"  Wrote {top_n} persons")
 
 
-def write_locations_jsonl(location_counter, output_file, top_n=20):
-    """Write top N locations to JSONL file."""
-    print(f"\nWriting top {top_n} locations to {output_file.name}")
-
-    with open(output_file, 'w', encoding='utf-8') as f:
-        for idx, (location, count) in enumerate(location_counter.most_common(top_n), 1):
-            entry = {
-                "id": f"DezelniZborKranjski_place_{idx}",
-                "names": {
-                    "de": location
-                },
-                "corpus": "DezelniZborKranjski"
-            }
-            f.write(json.dumps(entry, ensure_ascii=False) + '\n')
-    print(f"  Wrote {top_n} locations")
-
 
 def main():
     # Find all JSONL files
@@ -106,16 +90,8 @@ def main():
     )
 
     print("\n" + "="*60)
-    write_locations_jsonl(
-        location_counter,
-        OUTPUT_DIR / "top20_location_entities.jsonl",
-        top_n=20
-    )
-
-    print("\n" + "="*60)
     print("Done! Output files:")
     print(f"  - {OUTPUT_DIR / 'top20_person_entities.jsonl'}")
-    print(f"  - {OUTPUT_DIR / 'top20_location_entities.jsonl'}")
     print("="*60)
 
 

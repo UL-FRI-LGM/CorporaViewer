@@ -12,7 +12,6 @@ WORDS_INDEX_NAME = "words-index"
 PLACES_INDEX_NAME = "places-index"
 ATTENDEES_INDEX_NAME = "attendees-index"
 PERSON_ENTITIES_INDEX_NAME = "person-entities-index"
-LOCATION_ENTITIES_INDEX_NAME = "location-entities-index"
 CAP_TOPICS_INDEX_NAME = "cap-topics-index"
 
 # Settings for the Elasticsearch indices (mappings, analyzers, etc.)
@@ -470,11 +469,6 @@ PERSON_ENTITIES_INDEX_SETTINGS = {
     "index.refresh_interval": "-1",
 }
 
-LOCATION_ENTITIES_INDEX_SETTINGS = {
-    "index.number_of_replicas": 0,
-    "index.refresh_interval": "-1",
-}
-
 CAP_TOPICS_INDEX_SETTINGS = {
     "index.number_of_replicas": 0,
     "index.refresh_interval": "-1",
@@ -569,7 +563,6 @@ def upload(source_dir, elasticsearch_host, elasticsearch_port, delete_index_if_e
     create_index(es, PLACES_INDEX_NAME, PLACES_INDEX_SETTINGS, {}, delete_index_if_exists)
     create_index(es, ATTENDEES_INDEX_NAME, ATTENDEES_INDEX_SETTINGS, {}, delete_index_if_exists)
     create_index(es, PERSON_ENTITIES_INDEX_NAME, PERSON_ENTITIES_INDEX_SETTINGS, {}, delete_index_if_exists)
-    create_index(es, LOCATION_ENTITIES_INDEX_NAME, LOCATION_ENTITIES_INDEX_SETTINGS, {}, delete_index_if_exists)
     create_index(es, CAP_TOPICS_INDEX_NAME, CAP_TOPICS_INDEX_SETTINGS, {}, delete_index_if_exists)
 
     state = load_progress()
@@ -602,7 +595,7 @@ def upload(source_dir, elasticsearch_host, elasticsearch_port, delete_index_if_e
             with open(file_path, "r", encoding="utf-8") as file:
                 words = file.readlines()
                 state[jsonl_file]["isDone"] = upload_to_elasticsearch(es, words, WORDS_INDEX_NAME)
-        elif jsonl_file == "krajevna_imena.jsonl":
+        elif jsonl_file == "krajevna_imena_z_koordinatami.jsonl":
             with open(file_path, "r", encoding="utf-8") as file:
                 krajevna_imena = file.readlines()
                 state[jsonl_file]["isDone"] = upload_to_elasticsearch(es, krajevna_imena, PLACES_INDEX_NAME)
@@ -614,10 +607,6 @@ def upload(source_dir, elasticsearch_host, elasticsearch_port, delete_index_if_e
             with open(file_path, "r", encoding="utf-8") as file:
                 person_entities = file.readlines()
                 state[jsonl_file]["isDone"] = upload_to_elasticsearch(es, person_entities, PERSON_ENTITIES_INDEX_NAME)
-        elif jsonl_file == "top20_location_entities.jsonl":
-            with open(file_path, "r", encoding="utf-8") as file:
-                location_entities = file.readlines()
-                state[jsonl_file]["isDone"] = upload_to_elasticsearch(es, location_entities, LOCATION_ENTITIES_INDEX_NAME)
         elif jsonl_file == "all_cap_topics.jsonl":
             with open(file_path, "r", encoding="utf-8") as file:
                 cap_topics = file.readlines()
@@ -637,7 +626,6 @@ def upload(source_dir, elasticsearch_host, elasticsearch_port, delete_index_if_e
     set_refresh_interval(es, PLACES_INDEX_NAME)
     set_refresh_interval(es, ATTENDEES_INDEX_NAME)
     set_refresh_interval(es, PERSON_ENTITIES_INDEX_NAME)
-    set_refresh_interval(es, LOCATION_ENTITIES_INDEX_NAME)
     set_refresh_interval(es, CAP_TOPICS_INDEX_NAME)
 
     print("Uploaded meetings, sentences and words to Elasticsearch")

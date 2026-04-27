@@ -2,17 +2,15 @@ import {reactive} from "vue";
 import {Place} from "./Place";
 import {Attendee} from "./Attendee";
 import {PersonEntity} from "./PersonEntity";
-import {LocationEntity} from "./LocationEntity";
 import {CapTopic} from "@/types/CapTopic";
 
 export interface SearchParamsInterface {
     searchOccurred: boolean;
     words: string;
     speaker?: Attendee;
-    place?: Place;
 
     personEntity?: PersonEntity;
-    locationEntity?: LocationEntity;
+    locationEntity?: Place;
     capTopics: CapTopic[];
 
     pitId?: string;
@@ -30,10 +28,9 @@ export class SearchParams implements SearchParamsInterface {
     searchOccurred: boolean = false;
     words: string = "";
     speaker?: Attendee;
-    place?: Place;
 
     personEntity?: PersonEntity;
-    locationEntity?: LocationEntity;
+    locationEntity?: Place;
     capTopics: CapTopic[] = [];
 
     pitId?: string;
@@ -44,7 +41,6 @@ export class SearchParams implements SearchParamsInterface {
     isMatchAll(): boolean {
         return this.words.length == 0
             && !this.speaker
-            && !this.place
             && !this.personEntity
             && !this.locationEntity
             && this.capTopics.length === 0;
@@ -54,7 +50,6 @@ export class SearchParams implements SearchParamsInterface {
         this.searchOccurred = false;
         this.words = "";
         this.speaker = undefined;
-        this.place = undefined;
 
         this.personEntity = undefined;
         this.locationEntity = undefined;

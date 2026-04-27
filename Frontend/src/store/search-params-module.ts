@@ -4,7 +4,6 @@ import {SearchParams} from "@/types/SearchParams";
 import {Attendee} from "@/types/Attendee";
 import {Place} from "@/types/Place";
 import {PersonEntity} from "@/types/PersonEntity";
-import {LocationEntity} from "@/types/LocationEntity";
 import {CapTopic} from "@/types/CapTopic";
 
 interface SearchParamsState {
@@ -22,13 +21,10 @@ const mutations: MutationTree<SearchParamsState> = {
     updateSearchSpeaker(state: SearchParamsState, speaker: Attendee | undefined) {
         state.instance.speaker = speaker
     },
-    updateSearchPlace(state: SearchParamsState, place: Place | undefined) {
-        state.instance.place = place
-    },
     updatePersonEntity(state: SearchParamsState, entity: PersonEntity | undefined) {
         state.instance.personEntity = entity
     },
-    updateLocationEntity(state: SearchParamsState, entity: LocationEntity | undefined) {
+    updateLocationEntity(state: SearchParamsState, entity: Place | undefined) {
         state.instance.locationEntity = entity
     },
     addCapTopic(state: SearchParamsState, topic: CapTopic) {

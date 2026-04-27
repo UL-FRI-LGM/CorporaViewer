@@ -2,7 +2,6 @@ import {Router} from 'express';
 import poslanciController from "../controllers/poslanciController";
 import krajevnaImenaController from "../controllers/krajevnaImenaController";
 import personEntitiesController from "../controllers/personEntitiesController";
-import locationEntitiesController from "../controllers/locationEntitiesController";
 import pdfController from "../controllers/pdfController";
 import meetingsController from "../controllers/meetingsController";
 import headers from "../middleware/headers"
@@ -15,8 +14,6 @@ router.get("/poslanci/getAll", poslanciController.getAll);
 router.get("/krajevnaImena/getAll", krajevnaImenaController.getAll);
 
 router.get("/personEntities/getAll", personEntitiesController.getAll);
-
-router.get("/locationEntities/getAll", locationEntitiesController.getAll);
 
 router.get("/capTopics/getAll", capTopicsController.getAll);
 

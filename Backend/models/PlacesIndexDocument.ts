@@ -4,4 +4,8 @@ export interface PlacesIndexDocument {
         sl: string;
         de: string;
     };
+    coordinates?: {
+        lat: string;
+        lon: string;
+    };
 }

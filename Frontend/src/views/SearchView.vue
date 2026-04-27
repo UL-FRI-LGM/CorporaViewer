@@ -103,7 +103,6 @@ import Paging from '@components/Paging.vue';
 import {Attendee} from '@/types/Attendee';
 import {Place} from '@/types/Place';
 import {PersonEntity} from '@/types/PersonEntity';
-import {LocationEntity} from '@/types/LocationEntity';
 import {SearchParams} from '@/types/SearchParams';
 import {Filters} from '@/types/Filters';
 import {Results} from '@/types/Results';
@@ -308,17 +307,6 @@ export default class SearchView extends Vue {
           }
           break;
         }
-        case "place": {
-          const place = value as Place | undefined;
-          if (place === undefined) continue;
-
-          queryParams += queryParams === "" ? "?" : "&";
-          queryParams += "place="
-          for (const [lang, name] of Object.entries(place.names)) {
-            queryParams += `{${lang}:${name}}`
-          }
-          break;
-        }
         case "personEntity": {
           const personEntity = value as PersonEntity | undefined;
           if (personEntity) {
@@ -334,7 +322,7 @@ export default class SearchView extends Vue {
           break;
         }
         case "locationEntity": {
-          const locationEntity = value as LocationEntity | undefined;
+          const locationEntity = value as Place | undefined;
           if (locationEntity) {
             const names = Object.values(locationEntity.names)
               .filter((n): n is string => !!n)
