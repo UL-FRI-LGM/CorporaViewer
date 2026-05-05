@@ -11,6 +11,7 @@
       </div>
 
       <div class="col-md-9">
+        <MapView :locations="mapLocations"></MapView>
         <div class="light-green-container">
           <div v-if="!searchParamsInstance.searchOccurred && !loading">
             <h5>{{ $t('resultsWillBeDisplayedHere') }}</h5>
@@ -98,6 +99,7 @@ import SearchBar from '@components/SearchBar.vue';
 import SearchResult from '@components/SearchResult.vue';
 import SearchFilters from '@components/SearchFilters.vue';
 import Paging from '@components/Paging.vue';
+import MapView, { MapLocation } from '@components/MapView.vue';
 
 // types
 import {Attendee} from '@/types/Attendee';
@@ -113,7 +115,8 @@ import {CapTopic} from "@/types/CapTopic";
     SearchBar,
     SearchResult,
     SearchFilters,
-    Paging
+    Paging,
+    MapView
   },
   computed: {
     ...mapGetters('searchParamsModule', ['searchParamsInstance']),
@@ -142,6 +145,7 @@ export default class SearchView extends Vue {
   [x: string]: any;
 
   loading: boolean = false;
+  mapLocations: MapLocation[] = [];
 
   currentSearchParams?: SearchParams;
   currentSearchFilters?: Filters;
@@ -230,6 +234,7 @@ export default class SearchView extends Vue {
     const queryParams = this.buildQueryParams({...this.currentSearchParams, ...this.currentSearchFilters});
 
     this.loading = true;
+    this.mapLocations = [];
     this.resetResults();
 
     // execute search
@@ -259,6 +264,9 @@ export default class SearchView extends Vue {
       this.loading = false;
       this.searchParamsInstance.searchOccurred = true;
 
+      // update map with locations from results
+      this.fetchMapLocations(response.data.meetings.map((m: any) => m.id));
+
       // preload pages
       this.changePageTo(0);
     }).catch((error: any) => {
@@ -266,6 +274,20 @@ export default class SearchView extends Vue {
       this.searchParamsInstance.searchOccurred = true;
       console.error(error);
     });
+  }
+
+  fetchMapLocations(meetingIds: string[]) {
+    if (!meetingIds.length) {
+      this.mapLocations = [];
+      return;
+    }
+    axios.get(process.env.VUE_APP_API_URL + '/krajevnaImena/getMapLocations?meetingIds[]=' + meetingIds.join(','))
+        .then((response: any) => {
+          this.mapLocations = response.data;
+        })
+        .catch((error: any) => {
+          console.error(error);
+        });
   }
 
   getOtherLocales(key: "dezelniGlavar" | "porocevalec" | "predsednik") {

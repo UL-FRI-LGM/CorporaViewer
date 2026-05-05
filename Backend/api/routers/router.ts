@@ -12,6 +12,8 @@ const router: Router = Router();
 router.get("/poslanci/getAll", poslanciController.getAll);
 
 router.get("/krajevnaImena/getAll", krajevnaImenaController.getAll);
+router.get("/krajevnaImena/getCoords", krajevnaImenaController.getCoords);
+router.get("/krajevnaImena/getMapLocations", krajevnaImenaController.getMapLocations);
 
 router.get("/personEntities/getAll", personEntitiesController.getAll);
 

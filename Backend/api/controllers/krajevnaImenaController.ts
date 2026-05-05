@@ -17,6 +17,44 @@ const getAll = async (req: Request<{}, {}, {}, KrajevnaImenaRequestQuery>, res: 
 }
 
 
+const getCoords = async (req: Request, res: Response) => {
+    try {
+        const raw = req.query.names;
+        const namesParam = Array.isArray(raw) ? (raw[0] as string) : (raw as string | undefined);
+        if (!namesParam) {
+            res.status(400).json({error: "Missing names[] parameter"});
+            return;
+        }
+        const names = namesParam.split(',').map(n => n.trim()).filter(Boolean);
+        const coords = await krajevnaImenaRepository.getCoords(names);
+        res.json(coords);
+    } catch (error: any) {
+        console.error(error);
+        res.status(500).json({error: "Internal server error"});
+    }
+}
+
+
+const getMapLocations = async (req: Request, res: Response) => {
+    try {
+        const raw = req.query.meetingIds;
+        const idsParam = Array.isArray(raw) ? (raw[0] as string) : (raw as string | undefined);
+        if (!idsParam) {
+            res.status(400).json({error: "Missing meetingIds[] parameter"});
+            return;
+        }
+        const meetingIds = idsParam.split(',').map(id => id.trim()).filter(Boolean);
+        const locations = await krajevnaImenaRepository.getMapLocations(meetingIds);
+        res.json(locations);
+    } catch (error: any) {
+        console.error(error);
+        res.status(500).json({error: "Internal server error"});
+    }
+}
+
+
 export default {
-    getAll
+    getAll,
+    getCoords,
+    getMapLocations
 }

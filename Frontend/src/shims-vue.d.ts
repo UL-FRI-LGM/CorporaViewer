@@ -7,6 +7,7 @@ declare module '*.vue' {
 
 declare module '@vuepic/vue-datepicker'
 
+
 declare module 'vue/types/vue' {
   interface Vue {
     $axios: any

@@ -1,0 +1,1055 @@
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kolenča Vas", "de": "Kolenzdorf"}, "coordinates": {"lat": "45.7864604", "lon": "14.764782"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Poljane", "de": "Pölland"}, "coordinates": {"lat": "46.3096677", "lon": "14.2318972"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kropa", "de": "Kropp"}, "coordinates": {"lat": "46.2910887", "lon": "14.2047026"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stanišče", "de": "Stanische"}, "coordinates": {"lat": "46.120334", "lon": "14.2235599"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rakek", "de": ""}, "coordinates": {"lat": "45.8130947", "lon": "14.3192052"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prilesje", "de": ""}, "coordinates": {"lat": "45.813686", "lon": "14.6433685"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bukova Gora Srednja", "de": "Mitterbuchberg"}, "coordinates": {"lat": "45.5733651", "lon": "15.0635008"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Krka", "de": "Gurkdorf"}, "coordinates": {"lat": "45.8750613", "lon": "14.736907"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Spodnji Log", "de": "Unterlag"}, "coordinates": {"lat": "46.0841468", "lon": "14.8918128"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Otavec", "de": "Otawitz"}, "coordinates": {"lat": "45.5930291", "lon": "15.166783"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lipovec", "de": "Lipowitz"}, "coordinates": {"lat": "45.7149911", "lon": "14.7669734"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lipljene Male", "de": "Kleinliplein"}, "coordinates": {"lat": "45.8898142", "lon": "14.6362521"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podpeč", "de": ""}, "coordinates": {"lat": "45.9677101", "lon": "14.3378077"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rovišče", "de": "Rowische"}, "coordinates": {"lat": "46.1200874", "lon": "14.9018904"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrbovo", "de": "Werbowo"}, "coordinates": {"lat": "45.5596869", "lon": "14.2534091"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Korita", "de": ""}, "coordinates": {"lat": "45.8634709", "lon": "14.9857937"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hinje", "de": "Hinnach"}, "coordinates": {"lat": "46.007425", "lon": "15.1601887"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Tlake", "de": ""}, "coordinates": {"lat": "45.98061", "lon": "14.582174"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sebenje", "de": ""}, "coordinates": {"lat": "46.3310497", "lon": "14.299977"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Knežak", "de": "Grafenbrunn"}, "coordinates": {"lat": "45.6247372", "lon": "14.2448666"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trboje", "de": "Terboje"}, "coordinates": {"lat": "46.1967285", "lon": "14.4114033"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bukovica", "de": "Bukowitz"}, "coordinates": {"lat": "45.9787381", "lon": "14.8566422"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Janče", "de": "Jantschberg"}, "coordinates": {"lat": "46.0524302", "lon": "14.7113583"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grmada", "de": ""}, "coordinates": {"lat": "45.8976352", "lon": "14.9831214"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lahovo", "de": ""}, "coordinates": {"lat": "45.7994785", "lon": "14.5173332"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Goričica", "de": "Goritschitza"}, "coordinates": {"lat": "45.9485029", "lon": "14.3676045"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Luža", "de": "Lacken"}, "coordinates": {"lat": "45.8994387", "lon": "14.2756237"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dobravica", "de": ""}, "coordinates": {"lat": "46.2905043", "lon": "14.2403804"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Posavec", "de": "Posautz"}, "coordinates": {"lat": "46.3106141", "lon": "14.2397424"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Primskovo", "de": "Primskau"}, "coordinates": {"lat": "45.9722137", "lon": "14.9112349"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Povodje", "de": "Poudie"}, "coordinates": {"lat": "46.1415871", "lon": "14.4778092"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Borovec", "de": "Morobitz"}, "coordinates": {"lat": "46.1729776", "lon": "15.2608528"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podgrad", "de": ""}, "coordinates": {"lat": "45.7352064", "lon": "15.2009199"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Opale", "de": ""}, "coordinates": {"lat": "46.0209807", "lon": "14.1428688"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stražišče", "de": "Straschische"}, "coordinates": {"lat": "45.8424846", "lon": "14.3997983"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zabava", "de": "Sabawa"}, "coordinates": {"lat": "46.1425087", "lon": "14.8521586"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lazi Dolenji", "de": "Niedergereuth"}, "coordinates": {"lat": "45.7591979", "lon": "14.7159341"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kramplje", "de": ""}, "coordinates": {"lat": "45.7935358", "lon": "14.5234593"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kuželj", "de": "Kuschel"}, "coordinates": {"lat": "45.4747317", "lon": "14.8064868"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dobrova", "de": "Dobrawa"}, "coordinates": {"lat": "46.0545038", "lon": "14.4156797"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Livold", "de": "Lienfeld"}, "coordinates": {"lat": "45.6134867", "lon": "14.8583769"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Breg", "de": "Ranndorf"}, "coordinates": {"lat": "46.0472426", "lon": "15.2314319"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Breznica", "de": "Bresnitz"}, "coordinates": {"lat": "46.3937643", "lon": "14.13489"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Konca", "de": "Ort"}, "coordinates": {"lat": "45.6731642", "lon": "14.8419221"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sodevec", "de": "Schöpfenlag"}, "coordinates": {"lat": "45.4852687", "lon": "15.0827223"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Studenec", "de": "Bründl"}, "coordinates": {"lat": "45.7648369", "lon": "14.1352608"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Razdrto", "de": "Präwald"}, "coordinates": {"lat": "45.7539757", "lon": "14.0473869"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bistričica", "de": "Wisterschitz"}, "coordinates": {"lat": "46.2673959", "lon": "14.586208"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Goričane", "de": "Görtschach"}, "coordinates": {"lat": "46.1417364", "lon": "14.3961682"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Leskovec", "de": "Haselbach"}, "coordinates": {"lat": "45.9370916", "lon": "15.4478036"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mihovo", "de": ""}, "coordinates": {"lat": "45.8044936", "lon": "15.328103"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kozjek", "de": ""}, "coordinates": {"lat": "45.8933116", "lon": "14.9274468"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vipava", "de": "Wippach"}, "coordinates": {"lat": "45.8466286", "lon": "13.961222"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Radovlje", "de": ""}, "coordinates": {"lat": "46.0813661", "lon": "13.9652609"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pušeča Vas", "de": "Puschendorf"}, "coordinates": {"lat": "45.8662684", "lon": "15.4608324"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gabrije", "de": "Gaberje"}, "coordinates": {"lat": "45.5764742", "lon": "14.2418794"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dole", "de": "Mariathal"}, "coordinates": {"lat": "46.02688", "lon": "14.9819029"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jelovec", "de": "Jelowitz"}, "coordinates": {"lat": "45.9919975", "lon": "15.241878"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žabja Vas", "de": "Froschdorf"}, "coordinates": {"lat": "46.1054161", "lon": "14.6712551"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Plešivica", "de": "Pleschiwitz"}, "coordinates": {"lat": "45.8268294", "lon": "14.8765844"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Drtija", "de": "Drittai"}, "coordinates": {"lat": "46.129095", "lon": "14.7585595"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trnje", "de": "Dorn"}, "coordinates": {"lat": "45.711123", "lon": "14.2314899"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Cerknica", "de": "Zirknitz"}, "coordinates": {"lat": "45.7936578", "lon": "14.361883"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Unec", "de": "Maunitz"}, "coordinates": {"lat": "45.5751536", "lon": "13.8476847"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Babina Gora", "de": "Babnagora"}, "coordinates": {"lat": "45.673392", "lon": "15.3214364"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrhpolje", "de": "Oberfeld"}, "coordinates": {"lat": "46.1249494", "lon": "14.7090496"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lipljene Velike", "de": "Großliplein"}, "coordinates": {"lat": "45.9050754", "lon": "14.6244279"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Družinska Vas", "de": "Gesindeldorf"}, "coordinates": {"lat": "45.8683253", "lon": "15.2586579"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bistra", "de": "Freudenthal"}, "coordinates": {"lat": "45.9753243", "lon": "14.2923973"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rajhenav", "de": "Reichenau"}, "coordinates": {"lat": "45.6401713", "lon": "14.9456176"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sora", "de": "Zaier"}, "coordinates": {"lat": "46.1408109", "lon": "14.3232718"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Skaručna", "de": "Skarutschna"}, "coordinates": {"lat": "46.1506004", "lon": "14.4818911"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gradež", "de": ""}, "coordinates": {"lat": "45.8801498", "lon": "14.6209848"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Retje", "de": ""}, "coordinates": {"lat": "45.7095536", "lon": "14.581796"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Matoz", "de": ""}, "coordinates": {"lat": "45.5154066", "lon": "14.8905118"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jesenice", "de": "Jessenitz"}, "coordinates": {"lat": "46.4323726", "lon": "14.062333"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Herinja Vas", "de": "Hereindorf"}, "coordinates": {"lat": "45.8502062", "lon": "15.2119875"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ihan", "de": "Jauchen"}, "coordinates": {"lat": "46.1223924", "lon": "14.614836"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Paka", "de": "Paka"}, "coordinates": {"lat": "45.7800211", "lon": "14.7615758"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podolnica", "de": ""}, "coordinates": {"lat": "46.0269603", "lon": "14.327608"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podmolnik", "de": ""}, "coordinates": {"lat": "46.0200593", "lon": "14.5966056"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lipe", "de": ""}, "coordinates": {"lat": "45.9858893", "lon": "14.4331235"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gaber Veliki", "de": "Großgaber"}, "coordinates": {"lat": "45.7236921", "lon": "14.6609731"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lukovek", "de": "Lukouk"}, "coordinates": {"lat": "45.90275", "lon": "15.0694302"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Krško", "de": "Gurkfeld"}, "coordinates": {"lat": "45.9576446", "lon": "15.4946767"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jasen", "de": ""}, "coordinates": {"lat": "45.558289", "lon": "14.2615209"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Suha", "de": "Zauchen"}, "coordinates": {"lat": "46.2313753", "lon": "14.0042206"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Preddvor", "de": "Höflein"}, "coordinates": {"lat": "46.3021436", "lon": "14.4216606"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Idrija", "de": "Idria"}, "coordinates": {"lat": "46.0023983", "lon": "14.0273014"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Briga", "de": "Brieg"}, "coordinates": {"lat": "45.5194774", "lon": "14.8561475"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Novi Lazi", "de": "Hinterberg"}, "coordinates": {"lat": "45.4440578", "lon": "14.9669113"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kožljek", "de": "Koschlek"}, "coordinates": {"lat": "45.842798", "lon": "14.378243"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žukovo", "de": ""}, "coordinates": {"lat": "45.8080365", "lon": "14.6964877"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rovte", "de": "Gereuth"}, "coordinates": {"lat": "46.2785497", "lon": "14.2360767"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žirovnica", "de": "Scheraunitz"}, "coordinates": {"lat": "46.4046083", "lon": "14.1353229"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zalog", "de": "Salog"}, "coordinates": {"lat": "46.064197", "lon": "14.6135837"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stehanja Vas", "de": "Stockendorf"}, "coordinates": {"lat": "45.9155286", "lon": "14.9223486"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kot", "de": ""}, "coordinates": {"lat": "45.976464", "lon": "14.3931302"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Šalka Vas", "de": "Schalkendorf"}, "coordinates": {"lat": "45.6463505", "lon": "14.880673"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Parje", "de": ""}, "coordinates": {"lat": "45.6626875", "lon": "14.2173571"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Motnik", "de": "Möttnig"}, "coordinates": {"lat": "46.2155584", "lon": "14.88587"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vič", "de": "Waitsch"}, "coordinates": {"lat": "46.0441356", "lon": "14.4881134"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podkoren", "de": "Wurzen"}, "coordinates": {"lat": "46.4937616", "lon": "13.756686"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lukovica", "de": "Lukowitz"}, "coordinates": {"lat": "46.1697683", "lon": "14.6913078"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Drnovo", "de": "Dernowo"}, "coordinates": {"lat": "45.9168477", "lon": "15.4865859"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zadlog", "de": "Sadlog"}, "coordinates": {"lat": "45.9411986", "lon": "14.0047561"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dobe", "de": ""}, "coordinates": {"lat": "45.8498914", "lon": "15.4025786"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Srnjak", "de": ""}, "coordinates": {"lat": "45.8637355", "lon": "14.5896223"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Klanec", "de": "Klanz"}, "coordinates": {"lat": "46.2177905", "lon": "14.5108303"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Buje", "de": ""}, "coordinates": {"lat": "45.6569793", "lon": "14.0173311"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Seničica", "de": ""}, "coordinates": {"lat": "46.123744", "lon": "14.4227773"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Slamnik", "de": ""}, "coordinates": {"lat": "46.3345443", "lon": "13.8675634"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kamnji Potok", "de": "Steinbach"}, "coordinates": {"lat": "45.6935639", "lon": "14.7992485"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Logatec Dolenji", "de": "Unterloitsch"}, "coordinates": {"lat": "45.9186868", "lon": "14.227594518810335"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Iška", "de": "Eisdorf"}, "coordinates": {"lat": "45.8964032", "lon": "14.4939581"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Velika Ravan", "de": "Welkaraun"}, "coordinates": {"lat": "46.3118374", "lon": "14.366855"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Juršiče", "de": "Jurschitz"}, "coordinates": {"lat": "45.6717042", "lon": "14.2619201"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Predoslje", "de": "Predassel"}, "coordinates": {"lat": "46.2655928", "lon": "14.3855234"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bogu", "de": ""}, "coordinates": {"lat": "45.786227", "lon": "13.8787246"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Skopice", "de": ""}, "coordinates": {"lat": "45.9030733", "lon": "15.5537097"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Preloge", "de": "Preloge"}, "coordinates": {"lat": "45.6638101", "lon": "15.1518872"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podbukovje", "de": "Podbukuje"}, "coordinates": {"lat": "45.8756838", "lon": "14.7815286"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Krnica", "de": ""}, "coordinates": {"lat": "46.3868442", "lon": "13.8719242"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Col", "de": "Zoll"}, "coordinates": {"lat": "45.8815361", "lon": "13.9144224"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zasip", "de": "Asp"}, "coordinates": {"lat": "46.3893064", "lon": "14.1075595"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Radovljica", "de": "Radmannsdorf"}, "coordinates": {"lat": "46.343509", "lon": "14.1720227"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stara Cerkev", "de": "Mitterdorf"}, "coordinates": {"lat": "45.6704768", "lon": "14.8400897"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grabče", "de": ""}, "coordinates": {"lat": "46.3804964", "lon": "14.0618958"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Koritnica", "de": ""}, "coordinates": {"lat": "45.945539", "lon": "15.3611124"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Studeno", "de": "Kaltenfeld"}, "coordinates": {"lat": "45.8245275", "lon": "14.1764718"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bodešice", "de": "Wodeschitz"}, "coordinates": {"lat": "46.3474033", "lon": "14.1324895"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Seč", "de": "Setsch"}, "coordinates": {"lat": "45.7538469", "lon": "14.8292748"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trebeljevo", "de": "Trebeleu"}, "coordinates": {"lat": "46.0135453", "lon": "14.7385006"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mošnja", "de": ""}, "coordinates": {"lat": "46.1484858", "lon": "13.8709815"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sela", "de": "Seele"}, "coordinates": {"lat": "45.5322574", "lon": "14.671727"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Klopce", "de": ""}, "coordinates": {"lat": "46.10719", "lon": "14.6931433"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Petrova Vas", "de": "Petersdorf"}, "coordinates": {"lat": "45.612102", "lon": "15.1613732"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Muljava", "de": "Mulau"}, "coordinates": {"lat": "45.9033185", "lon": "14.7998631"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Volavlje", "de": "Wolaule"}, "coordinates": {"lat": "46.0326553", "lon": "14.7164304"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Planina", "de": "Alpen"}, "coordinates": {"lat": "45.8569188", "lon": "13.9090414"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Tomačevo", "de": ""}, "coordinates": {"lat": "46.0834571", "lon": "14.5351791"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trava", "de": "Obergraß"}, "coordinates": {"lat": "45.6032481", "lon": "14.67211"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mlino", "de": "Seebach"}, "coordinates": {"lat": "46.3577798", "lon": "14.0993695"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prežganje", "de": ""}, "coordinates": {"lat": "46.0231063", "lon": "14.7246147"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Skril", "de": "Skrill"}, "coordinates": {"lat": "45.6776728", "lon": "14.7638092"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Koseze", "de": "Kosese"}, "coordinates": {"lat": "45.5532964", "lon": "14.2404834"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jablana", "de": ""}, "coordinates": {"lat": "46.1213862", "lon": "14.9506753"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dečina", "de": ""}, "coordinates": {"lat": "45.4773845", "lon": "15.0882832"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stara Lipa", "de": "Altlinden"}, "coordinates": {"lat": "45.4793564", "lon": "15.1147936"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrbica", "de": ""}, "coordinates": {"lat": "45.5538405", "lon": "14.1309175  "}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kilovče", "de": "Killenberg"}, "coordinates": {"lat": "45.6195302", "lon": "14.1868803"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grahovo", "de": "Grachowo"}, "coordinates": {"lat": "45.7706733", "lon": "14.4251088"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Suhadole", "de": "Suchadole"}, "coordinates": {"lat": "46.0255863", "lon": "15.0367321"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Roje", "de": ""}, "coordinates": {"lat": "45.8622583", "lon": "15.3368016"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Straža", "de": "Strascha"}, "coordinates": {"lat": "45.7836855", "lon": "15.0730399"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zagorica", "de": "Auritz"}, "coordinates": {"lat": "46.0594439", "lon": "14.8497978"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Blagovica", "de": "Glogowitz"}, "coordinates": {"lat": "46.176147", "lon": "14.8023577"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bločice", "de": "Obloschitz"}, "coordinates": {"lat": "45.7419869", "lon": "14.0988489"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Druljevek", "de": "Drulouk"}, "coordinates": {"lat": null, "lon": null}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Loka Velika", "de": "Großlack"}, "coordinates": {"lat": "45.9306924", "lon": "14.9661329"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lože", "de": "Losche"}, "coordinates": {"lat": "45.8279029", "lon": "13.9378266"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bukovje", "de": "Bukuje"}, "coordinates": {"lat": "45.830551", "lon": "14.0982493"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kaplja Vas", "de": "Kaplawas"}, "coordinates": {"lat": "45.9617051", "lon": "15.1812062"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Tribuče", "de": "Tributsche"}, "coordinates": {"lat": "45.5442162", "lon": "15.2482619"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Adergas", "de": "Adergaß"}, "coordinates": {"lat": "46.2859256", "lon": "14.1518681"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hrastje", "de": "Hrastie"}, "coordinates": {"lat": "46.2593049", "lon": "14.0567976"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prapretno", "de": ""}, "coordinates": {"lat": "46.0845959", "lon": "15.3779556"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Polom", "de": "Ebenthal"}, "coordinates": {"lat": "45.7262192", "lon": "14.8123668"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dobrnič", "de": "Döbernik"}, "coordinates": {"lat": "45.8920554", "lon": "14.6196173"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vadiče", "de": ""}, "coordinates": {"lat": "46.3494649", "lon": "14.2607691"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rakitnik", "de": ""}, "coordinates": {"lat": "45.7043885", "lon": "14.0251539"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Suhor", "de": "Suchor"}, "coordinates": {"lat": "45.4830148", "lon": "14.7927915"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žabnica", "de": "Safnitz"}, "coordinates": {"lat": "46.2161266", "lon": "14.1898857"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dvorska Vas", "de": "Höflern"}, "coordinates": {"lat": "45.8103391", "lon": "14.6395495"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Boden", "de": "Boden"}, "coordinates": {"lat": "45.4966135", "lon": "14.9004283"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Konec", "de": ""}, "coordinates": {"lat": "45.7333493", "lon": "15.207443"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podljuben Veliki", "de": "Großpodluben"}, "coordinates": {"lat": "45.749426", "lon": "15.1010154"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Popovo", "de": ""}, "coordinates": {"lat": "46.3604864", "lon": "14.136885"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Znojile", "de": ""}, "coordinates": {"lat": "46.2372131", "lon": "14.6910051"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bela Peč", "de": "Weißenfels"}, "coordinates": {"lat": "46.2446218", "lon": "14.6976292"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kompolje", "de": "Kompole"}, "coordinates": {"lat": "46.0401976", "lon": "15.265776"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lesno Brdo", "de": "Hölzenegg"}, "coordinates": {"lat": "46.0043154", "lon": "14.3339158"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Slatnik", "de": "Slatenegg"}, "coordinates": {"lat": "45.898647", "lon": "14.1136482"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrabče", "de": ""}, "coordinates": {"lat": "45.7740386", "lon": "13.9613763"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podlož", "de": "Podlaas"}, "coordinates": {"lat": "45.7350188", "lon": "14.460582"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Črnuče", "de": "Tschernutsch"}, "coordinates": {"lat": "46.1050061", "lon": "14.5328616"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Strelac", "de": "Schützendorf"}, "coordinates": {"lat": "45.8243538", "lon": "15.0389354"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Damelj", "de": "Damel"}, "coordinates": {"lat": "45.4336882", "lon": "15.1862222"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Strmica", "de": "Stermza"}, "coordinates": {"lat": "46.2295619", "lon": "14.270938"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sap", "de": ""}, "coordinates": {"lat": null, "lon": null}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dolje", "de": ""}, "coordinates": {"lat": "46.1953988", "lon": "13.7123238"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rašica", "de": "Uranschitz"}, "coordinates": {"lat": "45.8520922", "lon": "14.6229461"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bitnje", "de": "Wittnach"}, "coordinates": {"lat": "46.2838358", "lon": "13.95929"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Reteče", "de": "Retetsche"}, "coordinates": {"lat": "46.1584009", "lon": "14.3689787"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zagradec", "de": "Sagratz"}, "coordinates": {"lat": "45.8596002", "lon": "14.8344631"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Draga", "de": "Suchen"}, "coordinates": {"lat": "46.1476552", "lon": "14.312879"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lašče", "de": ""}, "coordinates": {"lat": "45.7922008", "lon": "14.9473963"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Metulje", "de": ""}, "coordinates": {"lat": "45.7417831", "lon": "14.4967566"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vojsko", "de": "Woiska"}, "coordinates": {"lat": "46.0247615", "lon": "13.9026232"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Radohova Vas", "de": "Rodockendorf"}, "coordinates": {"lat": "45.9408413", "lon": "14.7866999"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vimol", "de": ""}, "coordinates": {"lat": "45.660319", "lon": "15.136277"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Horjul", "de": ""}, "coordinates": {"lat": "46.0223241", "lon": "14.2988997"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podgorje", "de": "Podgier"}, "coordinates": {"lat": "46.2126479", "lon": "14.561932"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prelesje", "de": "Gerdenschlag"}, "coordinates": {"lat": "45.4902385", "lon": "15.0625113"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Selce", "de": "Selze"}, "coordinates": {"lat": "46.108673", "lon": "14.90828"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Tanča Gora", "de": "Tanzberg"}, "coordinates": {"lat": "45.534207", "lon": "15.1546044"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mokrice", "de": "Mokritz"}, "coordinates": {"lat": "45.8937403", "lon": "15.5367025"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrh", "de": "Schweinberg"}, "coordinates": {"lat": "45.9861685", "lon": "13.8904232"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Medvedjek", "de": "Bärenheim"}, "coordinates": {"lat": "45.9319202", "lon": "14.9144702"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Feld", "de": "Feld"}, "coordinates": {"lat": "46.2539726", "lon": "13.8625302"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bakovnik", "de": ""}, "coordinates": {"lat": "46.2082435", "lon": "14.6019164"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prečna", "de": "Pretschna"}, "coordinates": {"lat": "45.8124417", "lon": "15.122856"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Topolec", "de": "Topoltz"}, "coordinates": {"lat": "45.5846578", "lon": "14.2010761"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zemon Gorenji", "de": "Obersemon"}, "coordinates": {"lat": "45.5296712", "lon": "14.2653186"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Slatina", "de": "Slatina"}, "coordinates": {"lat": "46.3674717", "lon": "14.2040564"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Suhorje", "de": ""}, "coordinates": {"lat": "45.6384143", "lon": "14.1047606"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rodine", "de": "Rodein"}, "coordinates": {"lat": "45.5987152", "lon": "15.1444375"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Osilnica", "de": "Ossiunitz"}, "coordinates": {"lat": "45.5292418", "lon": "14.6988672"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Topla Reber Gorenja", "de": "Oberwarmberg"}, "coordinates": {"lat": "45.7585826", "lon": "14.9230564"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Binkelj", "de": "Winkel"}, "coordinates": {"lat": "46.1750357", "lon": "14.2865732"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Savica", "de": "Sawitz"}, "coordinates": {"lat": "46.2837267", "lon": "13.842399"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lipa", "de": ""}, "coordinates": {"lat": "46.1920942", "lon": "14.7474263"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podstenje", "de": ""}, "coordinates": {"lat": "45.5986746", "lon": "14.2208481"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lisec", "de": "Lisitzberg"}, "coordinates": {"lat": "45.8612352", "lon": "14.9503112"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prelog", "de": ""}, "coordinates": {"lat": "46.1293116", "lon": "14.6105102"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stranje", "de": "Straindorf"}, "coordinates": {"lat": "46.0452174", "lon": "15.4153133"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dobovec", "de": "Dobouz"}, "coordinates": {"lat": "46.108455", "lon": "15.0399681"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dobliče", "de": "Döblitsch"}, "coordinates": {"lat": "45.5586842", "lon": "15.144002"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rupa", "de": ""}, "coordinates": {"lat": "45.4657776", "lon": "14.2623194"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pance", "de": ""}, "coordinates": {"lat": "45.9930235", "lon": "14.6661002"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ljubno", "de": "Laufen"}, "coordinates": {"lat": "46.3101495", "lon": "14.2408148"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sava", "de": "Saue"}, "coordinates": {"lat": "46.0901071", "lon": "14.8537205"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lučna", "de": "Lutschna"}, "coordinates": {"lat": "46.0621547", "lon": "14.1858989"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kaplanovo", "de": "Kaplanau"}, "coordinates": {"lat": "45.8213262", "lon": "14.5822004"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bistrica", "de": "Feistritz"}, "coordinates": {"lat": "46.264342", "lon": "14.2427213"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Močvirje", "de": "Motschviria"}, "coordinates": {"lat": "45.9463834", "lon": "15.3122017"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Koče", "de": "Kotschen"}, "coordinates": {"lat": "45.5976239", "lon": "14.801878"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zažar", "de": "Schaschar"}, "coordinates": {"lat": "45.998475", "lon": "14.2762421"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Padež", "de": "Padesch"}, "coordinates": {"lat": "46.0623915", "lon": "14.9736618"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Korenitka", "de": ""}, "coordinates": {"lat": "45.9175272", "lon": "14.9471458"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Okrog", "de": "Ukrog"}, "coordinates": {"lat": "45.9759317", "lon": "14.9798441"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Poljane Velike", "de": "Großpölland"}, "coordinates": {"lat": "45.7977492", "lon": "14.6863987"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mozelj", "de": "Obermösel"}, "coordinates": {"lat": "45.5861612", "lon": "14.9318373"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pirašica", "de": "Piraschitz"}, "coordinates": {"lat": "46.2798027", "lon": "13.9646084"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Topli Vrh", "de": "Warmberg"}, "coordinates": {"lat": "45.6195899", "lon": "15.148857"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rudnik", "de": "Rudnig"}, "coordinates": {"lat": "46.0279462", "lon": "14.5300442"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Polhovica", "de": "Pohouza"}, "coordinates": {"lat": "45.8417538", "lon": "15.2786417"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mirna Peč", "de": "Hönigstein"}, "coordinates": {"lat": "45.8602716", "lon": "15.0818996"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrd", "de": "Werd"}, "coordinates": {"lat": "45.9500938", "lon": "14.2786602"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lese Velike", "de": "Großlesse"}, "coordinates": {"lat": "45.8752594", "lon": "14.8005521"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podnart", "de": ""}, "coordinates": {"lat": "46.2970954", "lon": "14.2545243"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Potoki", "de": "Bach"}, "coordinates": {"lat": "46.4113122", "lon": "13.9647894"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žalina", "de": "Schalna"}, "coordinates": {"lat": "45.9372996", "lon": "14.6842547"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Strahomer", "de": ""}, "coordinates": {"lat": "45.9435032", "lon": "14.4892446"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Paloviče", "de": "Palowitsch"}, "coordinates": {"lat": "46.3565328", "lon": "14.2481184"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ladja", "de": ""}, "coordinates": {"lat": "46.397626", "lon": "13.8750578"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Predjama", "de": "Luegg"}, "coordinates": {"lat": "45.8141793", "lon": "14.129137"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Breže", "de": "Friesach"}, "coordinates": {"lat": "45.7614494", "lon": "14.662907"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vovče", "de": "Woutsche"}, "coordinates": {"lat": "46.1866379", "lon": "13.6526368"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kostanjevica", "de": "Landstraß"}, "coordinates": {"lat": "46.0159195", "lon": "15.0913524"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žalje", "de": "Sallenberg"}, "coordinates": {"lat": "46.2290339", "lon": "14.5987873"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Predgrad", "de": "Vornschloß"}, "coordinates": {"lat": "45.5051229", "lon": "15.0556773"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Križ", "de": "Kreuzdorf"}, "coordinates": {"lat": "46.1555084", "lon": "14.4736444"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podturen", "de": ""}, "coordinates": {"lat": "45.741672", "lon": "15.0308083"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lancovo", "de": "Lanzowo"}, "coordinates": {"lat": "46.339461", "lon": "14.163404"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jakovica", "de": "Jakobowitz"}, "coordinates": {"lat": "45.8625451", "lon": "14.2503907"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ogulin", "de": ""}, "coordinates": {"lat": "45.4650958", "lon": "15.2446364"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Semič", "de": "Semitsch"}, "coordinates": {"lat": "45.6517513", "lon": "15.1835241"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ostrog", "de": ""}, "coordinates": {"lat": "45.8563252", "lon": "15.3770022"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ambrus", "de": ""}, "coordinates": {"lat": "45.7906297", "lon": "14.5222564"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Topla Reber", "de": "Unterwarmberg"}, "coordinates": {"lat": "45.7585826", "lon": "14.9230564"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žaga Stara", "de": "Altsag"}, "coordinates": {"lat": "45.7005901", "lon": "15.0593893"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mokronog Gorenji", "de": "Obernassenfuß"}, "coordinates": {"lat": "45.9246931", "lon": "15.1478606"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grintovec", "de": "Grintowitz"}, "coordinates": {"lat": "45.6852636", "lon": "14.8801044"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Besnica Spodnja", "de": "Unterweßnitz"}, "coordinates": {"lat": "46.2572163", "lon": "14.2997463"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Orehek", "de": "Nußdorf"}, "coordinates": {"lat": "45.7493041", "lon": "14.1534482"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prem", "de": ""}, "coordinates": {"lat": "45.6048384", "lon": "14.1548006"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Peščenik", "de": "Sandberg"}, "coordinates": {"lat": "45.9234676", "lon": "15.3009309"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stranska Vas", "de": "Seitendorf"}, "coordinates": {"lat": "46.0607955", "lon": "14.4229594"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrba", "de": "Felbern"}, "coordinates": {"lat": "46.382365", "lon": "14.1202523"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Orlaka", "de": "Harlacken"}, "coordinates": {"lat": "45.879911", "lon": "14.8893793"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brezje", "de": "Bresie"}, "coordinates": {"lat": "46.3251189", "lon": "14.2123655"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrzdenec", "de": "Schönbrunn"}, "coordinates": {"lat": "46.0196209", "lon": "14.2700887"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trnovica", "de": ""}, "coordinates": {"lat": "45.9037181", "lon": "14.8688001"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hrastnik", "de": "Hrastnigg"}, "coordinates": {"lat": "46.1456196", "lon": "15.0817358"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Erzelj", "de": "Ersel"}, "coordinates": {"lat": "45.8324567", "lon": "13.9075083"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rudolfovo", "de": "Rudolfsberg"}, "coordinates": {"lat": "45.8498075", "lon": "14.4667476"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kralje", "de": "Wertatsch"}, "coordinates": {"lat": "45.5322335", "lon": "14.9922905"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podjele", "de": ""}, "coordinates": {"lat": "46.3126356", "lon": "13.9307754"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kremenca", "de": "Kremenza"}, "coordinates": {"lat": "45.8262724", "lon": "14.453213"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Srakovlje", "de": ""}, "coordinates": {"lat": "46.2810205", "lon": "14.3619281"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Šiška Spodnja", "de": "Unterschischka"}, "coordinates": {"lat": "46.0701345", "lon": "14.4020485"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Visoko", "de": "Wisoko"}, "coordinates": {"lat": "46.2681033", "lon": "14.395626"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Homec", "de": "Homez"}, "coordinates": {"lat": "46.1798676", "lon": "14.5881168"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Maverl", "de": "Maierle"}, "coordinates": {"lat": "45.5708181", "lon": "15.1325597"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Opčina", "de": ""}, "coordinates": {"lat": "45.8473372", "lon": "14.4624401"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bezuljak", "de": "Wesulak"}, "coordinates": {"lat": "45.8334927", "lon": "14.3701645"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vernek", "de": ""}, "coordinates": {"lat": "46.1055148", "lon": "14.7923903"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jablanica", "de": "Jablanitz"}, "coordinates": {"lat": "45.5460702", "lon": "14.230921"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Globočica", "de": "Globoschitz"}, "coordinates": {"lat": "45.8736573", "lon": "15.5657074"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Smednik", "de": ""}, "coordinates": {"lat": "45.9096493", "lon": "15.3761213"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Radovica", "de": "Radowitza"}, "coordinates": {"lat": "45.6890191", "lon": "15.3503166"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jelše", "de": ""}, "coordinates": {"lat": "45.8997113", "lon": "15.4690647"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Godič", "de": "Goditsch"}, "coordinates": {"lat": "46.2525738", "lon": "14.6125596"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gradišče", "de": ""}, "coordinates": {"lat": "46.0536231", "lon": "15.5542456"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Doline", "de": ""}, "coordinates": {"lat": "46.1588524", "lon": "14.6581726"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Čemšenik", "de": "Scherenbüchel"}, "coordinates": {"lat": "46.1795697", "lon": "14.94375"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žlebe", "de": "Schlebe"}, "coordinates": {"lat": "46.1227756", "lon": "14.399439"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Obrh", "de": "Oberch"}, "coordinates": {"lat": "45.750621", "lon": "15.0348222"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Studor", "de": "Studorf"}, "coordinates": {"lat": "46.1365155", "lon": "14.0926702"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Glince", "de": "Gleinitz"}, "coordinates": {"lat": "46.0840005", "lon": "14.4415309"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bevke", "de": ""}, "coordinates": {"lat": "45.9832887", "lon": "14.355155"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ježica", "de": "Jeschza"}, "coordinates": {"lat": "46.0935183", "lon": "14.5167597"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vodice", "de": "Wodize"}, "coordinates": {"lat": "45.8792611", "lon": "14.0599553"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Črna", "de": "Tscherna"}, "coordinates": {"lat": "45.9908268", "lon": "14.1130202"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lašiče", "de": "Laschitz"}, "coordinates": {"lat": "45.7960421", "lon": "14.9515118"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jelša", "de": ""}, "coordinates": {"lat": "46.1875613", "lon": "14.802857"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lašče Velike", "de": "Großlaschitz"}, "coordinates": {"lat": "45.8324687", "lon": "14.6383103"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mahniče", "de": ""}, "coordinates": {"lat": "45.7784236", "lon": "13.8933116"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dobeno", "de": ""}, "coordinates": {"lat": "45.8691533", "lon": "15.6043095"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sinadole", "de": ""}, "coordinates": {"lat": "45.7205332", "lon": "13.9862695"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zali Log", "de": "Salilog"}, "coordinates": {"lat": "46.2068705", "lon": "14.1006963"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Telčji Vrh", "de": "Kälbersberg"}, "coordinates": {"lat": "45.584021", "lon": "15.1622937"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trpčane", "de": "Terptschane"}, "coordinates": {"lat": "45.5271926", "lon": "14.3173784"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Železniki", "de": "Eisnern"}, "coordinates": {"lat": "46.2257913", "lon": "14.1693085"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kozaršče", "de": "Kosarsche"}, "coordinates": {"lat": "46.1616712", "lon": "13.7225273"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Krašnja", "de": "Kraxen"}, "coordinates": {"lat": "46.1669606", "lon": "14.7456955"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trstenik", "de": ""}, "coordinates": {"lat": "46.316152", "lon": "14.3578555"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrtača", "de": ""}, "coordinates": {"lat": "45.8235809", "lon": "15.4690735"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Reva", "de": ""}, "coordinates": {"lat": "45.8691185", "lon": "14.9822545"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mali Log", "de": "Kleinlack"}, "coordinates": {"lat": "45.7275609", "lon": "14.5555604"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prestranek", "de": "Pröstranegg"}, "coordinates": {"lat": "45.7297918", "lon": "14.1849842"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Krašnji Vrh", "de": "Kraschenberg"}, "coordinates": {"lat": "45.7057046", "lon": "15.3365534"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Praše", "de": "Prasche"}, "coordinates": {"lat": "46.1950829", "lon": "14.4007824"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Štrukljeva Vas", "de": "Strukeldorf"}, "coordinates": {"lat": "45.8284114", "lon": "14.4547066"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Goveji Dol", "de": "Gowidul"}, "coordinates": {"lat": "45.9829477", "lon": "15.1996278"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zabreznica", "de": "Sabresnitz"}, "coordinates": {"lat": "46.3975648", "lon": "14.147897"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Puc", "de": ""}, "coordinates": {"lat": "45.5218642", "lon": "14.8297728"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Loke", "de": "Lokach"}, "coordinates": {"lat": "45.9556103", "lon": "15.4608321"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ovčjak", "de": "Schäflein"}, "coordinates": {"lat": "45.5767099", "lon": "15.1275053"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podutik", "de": ""}, "coordinates": {"lat": "46.0730431", "lon": "14.451123"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Papeži", "de": "Papesch"}, "coordinates": {"lat": "45.5671289", "lon": "14.7006974"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ravnik", "de": "Raunik"}, "coordinates": {"lat": "45.8061691", "lon": "14.5113569"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Otoče", "de": ""}, "coordinates": {"lat": "46.3109614", "lon": "14.23141"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rožnik", "de": "Rosenbach"}, "coordinates": {"lat": "45.8993127", "lon": "14.64475"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mirna", "de": "Neudegg"}, "coordinates": {"lat": "45.9670742", "lon": "15.1717066"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ortnek", "de": "Ortenegg"}, "coordinates": {"lat": "45.791266", "lon": "14.6786879"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Apnenik", "de": "Kalchberg"}, "coordinates": {"lat": "45.815659", "lon": "15.3504406"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podcerkev", "de": "Podzirku"}, "coordinates": {"lat": "45.7119131", "lon": "14.4578783"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dvorje", "de": ""}, "coordinates": {"lat": "46.1360368", "lon": "14.7044453"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zvirče", "de": "Swirtschach"}, "coordinates": {"lat": "46.3325303", "lon": "14.2801951"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sv. Duh", "de": "Heiligengeist"}, "coordinates": {"lat": "46.1882844", "lon": "14.3196683"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Selšček", "de": "Seuschtschek"}, "coordinates": {"lat": "45.8200706", "lon": "14.3962096"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Godešiče", "de": "Godeschitz"}, "coordinates": {"lat": "46.1713957", "lon": "14.3435118"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mavčiče", "de": "Mautschitsch"}, "coordinates": {"lat": "46.1862291", "lon": "14.4049564"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ravne", "de": "Eben"}, "coordinates": {"lat": "46.0886569", "lon": "14.9655269"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mokronog", "de": "Nassenfuß"}, "coordinates": {"lat": "45.9426493", "lon": "15.1446786"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Otok", "de": ""}, "coordinates": {"lat": "45.7504477", "lon": "14.2169633"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Omota", "de": ""}, "coordinates": {"lat": "45.6611402", "lon": "15.222233"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bobovek", "de": ""}, "coordinates": {"lat": "46.2752216", "lon": "14.364417"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gozd", "de": "Wald"}, "coordinates": {"lat": "46.4665483", "lon": "13.8371443"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Borje", "de": ""}, "coordinates": {"lat": "46.1244052", "lon": "14.9120146"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hraše", "de": "Hrasche"}, "coordinates": {"lat": "46.1785862", "lon": "14.4271797"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rakovec", "de": ""}, "coordinates": {"lat": "45.6482049", "lon": "15.3846681"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pijava Gorica", "de": "Piautzbüchel"}, "coordinates": {"lat": "45.9522388", "lon": "14.5729129"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Migovska Gora", "de": "Migouzberg"}, "coordinates": {"lat": "45.9629009", "lon": "15.0229278"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podlipoglav", "de": ""}, "coordinates": {"lat": "46.0174498", "lon": "14.6230819"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Beričevo", "de": "Förtschach"}, "coordinates": {"lat": "46.0882874", "lon": "14.620545"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brglez", "de": ""}, "coordinates": {"lat": "45.9792554", "lon": "15.018678"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zameško", "de": ""}, "coordinates": {"lat": "45.88083", "lon": "15.3712895"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Radovina", "de": "Rothwein"}, "coordinates": {"lat": "46.3895696", "lon": "13.9637577"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jelševec", "de": ""}, "coordinates": {"lat": "45.8999617", "lon": "15.1881158"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kokrica", "de": "Kokritz"}, "coordinates": {"lat": "46.2642628", "lon": "14.3572574"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Na Pogledu", "de": "Hohenberg"}, "coordinates": {"lat": "45.7270326", "lon": "14.9064547"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stara Loka", "de": "Altlack"}, "coordinates": {"lat": "46.1728318", "lon": "14.2988857"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Padova", "de": "Padua"}, "coordinates": {"lat": "45.4835878", "lon": "14.8807087"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Morava", "de": "Mrauen"}, "coordinates": {"lat": "45.5468138", "lon": "14.8369865"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dobravice", "de": "Dobrawitz"}, "coordinates": {"lat": "45.6322788", "lon": "15.2698105"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Cerkvišče", "de": ""}, "coordinates": {"lat": "45.5761992", "lon": "15.2649498"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Matenja Vas", "de": "Mautersdorf"}, "coordinates": {"lat": "45.7397967", "lon": "14.176737"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rog", "de": "Hornwald"}, "coordinates": {"lat": "45.8500722", "lon": "14.4672318"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zbure", "de": "Swur"}, "coordinates": {"lat": "45.9094124", "lon": "15.2473467"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Karlovica", "de": "Karlowitz"}, "coordinates": {"lat": "45.8072043", "lon": "14.604238"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Oslica", "de": "Osselze"}, "coordinates": {"lat": "45.9093691", "lon": "14.7895771"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Raka", "de": "Arch"}, "coordinates": {"lat": "45.9306432", "lon": "15.3418911"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vreme Gorenje", "de": "Oberurem"}, "coordinates": {"lat": "45.6603412", "lon": "14.0159065"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rečica", "de": "Retschitz"}, "coordinates": {"lat": "46.3718472", "lon": "14.0959391"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zaklanec", "de": "Saklanz"}, "coordinates": {"lat": "46.0242459", "lon": "14.3148742"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dol", "de": "Thal"}, "coordinates": {"lat": "45.8519556", "lon": "15.4663073"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Turjak", "de": "Auersperg"}, "coordinates": {"lat": "45.8819973", "lon": "14.5871655"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mlaka", "de": "Moos"}, "coordinates": {"lat": "46.2197047", "lon": "14.5146644"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Črni Potok", "de": "Schwarzenbach"}, "coordinates": {"lat": "45.5836896", "lon": "14.8754506"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrhovo", "de": "Werchou"}, "coordinates": {"lat": "46.0401282", "lon": "15.2182676"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Senožet", "de": ""}, "coordinates": {"lat": "46.23001", "lon": "14.26404"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Radeče", "de": "Ratschach"}, "coordinates": {"lat": "46.0661317", "lon": "15.1818757"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zemona", "de": ""}, "coordinates": {"lat": "45.8550821", "lon": "13.9523301"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jeršiče", "de": "Jerschitz"}, "coordinates": {"lat": "45.8430446", "lon": "14.4711502"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Laze", "de": "Lase"}, "coordinates": {"lat": "45.8500655", "lon": "15.6332286"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hrušica", "de": "Birnbaum"}, "coordinates": {"lat": "45.7846686", "lon": "15.2457038"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zapotok", "de": "Sapotok"}, "coordinates": {"lat": "46.0796077", "lon": "13.5686343"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Temenica", "de": "Themenitz"}, "coordinates": {"lat": "45.9667397", "lon": "14.8904108"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Irča Vas", "de": "Irtschdorf"}, "coordinates": {"lat": "45.8045809", "lon": "15.1478318"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mače", "de": "Katzendorf"}, "coordinates": {"lat": "46.2488852", "lon": "14.2434606"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dragomelj", "de": "Dragomel"}, "coordinates": {"lat": "46.1081224", "lon": "14.5942288"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Duplje", "de": ""}, "coordinates": {"lat": "45.8624984", "lon": "13.9473857"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gorjuše", "de": "Goriusch"}, "coordinates": {"lat": "46.3138028", "lon": "14.012317"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dol, auch Vrhpolje", "de": "Lustthal"}, "coordinates": {"lat": "46.2307878", "lon": "14.6269169"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zaboršt", "de": ""}, "coordinates": {"lat": "45.9233936", "lon": "15.325756"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Nadgorica", "de": "Nadgoritz"}, "coordinates": {"lat": "46.0994487", "lon": "14.5577266"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Godovič", "de": "Godowitsch"}, "coordinates": {"lat": "45.956899", "lon": "14.0928113"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vinice", "de": "Weinitz"}, "coordinates": {"lat": "45.7553117", "lon": "14.6700036"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grčarice", "de": "Masern"}, "coordinates": {"lat": "45.6488849", "lon": "14.7550521"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mihovec", "de": ""}, "coordinates": {"lat": "45.7312306", "lon": "15.1718041"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dob", "de": "Aich"}, "coordinates": {"lat": "46.1510617", "lon": "14.6259829"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Forme", "de": "Formach"}, "coordinates": {"lat": "46.1914399", "lon": "14.3114721"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Razbore", "de": "Reswure"}, "coordinates": {"lat": "45.9673194", "lon": "14.9502253"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Martinjak", "de": "Martinsbach"}, "coordinates": {"lat": "45.7773796", "lon": "14.4012086"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prevale", "de": ""}, "coordinates": {"lat": "46.0219409", "lon": "15.007787"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Idrija Spodnja", "de": "Unteridria"}, "coordinates": {"lat": "46.0429628", "lon": "13.986271"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gabrovščica", "de": "Gabrowschitz"}, "coordinates": {"lat": "45.8801478", "lon": "14.7659236"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bukovšica", "de": "Clementis, Sct."}, "coordinates": {"lat": "46.2240726", "lon": "14.2522279"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Peven", "de": "Pewen"}, "coordinates": {"lat": "46.1972995", "lon": "14.2740541"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jarček", "de": "Jartschek"}, "coordinates": {"lat": "45.9317206", "lon": "15.3216466"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rakitnica", "de": "Rakitnitz"}, "coordinates": {"lat": "45.6922635", "lon": "14.7583648"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dane", "de": "Danne"}, "coordinates": {"lat": "45.6944246", "lon": "14.3744335"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mladica", "de": "Mladitz"}, "coordinates": {"lat": "45.6466166", "lon": "15.1874419"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lavrovec", "de": "Lauersberg"}, "coordinates": {"lat": "46.0244886", "lon": "14.1891136"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ribno", "de": "Reifen"}, "coordinates": {"lat": "46.3498386", "lon": "14.1228634"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Orlje", "de": "Orle"}, "coordinates": {"lat": "46.1437584", "lon": "14.6711355"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lipsenj", "de": "Lipsein"}, "coordinates": {"lat": "45.7500322", "lon": "14.4248627"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kremenica", "de": ""}, "coordinates": {"lat": "45.9556066", "lon": "14.5318749"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rajndol", "de": "Reinthal"}, "coordinates": {"lat": "45.5651846", "lon": "14.934822"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kanji Dol", "de": "Kanidol"}, "coordinates": {"lat": "45.8936239", "lon": "14.0557511"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bitinje", "de": ""}, "coordinates": {"lat": "45.6055896", "lon": "14.1759179"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Glogovica", "de": "Glogouze"}, "coordinates": {"lat": "45.9419478", "lon": "14.8262028"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brdo Malo", "de": "Kleinberdo"}, "coordinates": {"lat": "45.7675414", "lon": "14.0587168"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hotavlje", "de": "Hotaule"}, "coordinates": {"lat": "46.1120116", "lon": "14.115187"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mavče", "de": "Mautschitsch"}, "coordinates": {"lat": "46.1813383", "lon": "14.3738613"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrbičje", "de": "Werbitsche"}, "coordinates": {"lat": "45.9197607", "lon": "14.611357"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Klenik", "de": "Klenigg"}, "coordinates": {"lat": "46.1209809", "lon": "14.8472618"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grabrovec", "de": "Grabrouz"}, "coordinates": {"lat": "45.6744036", "lon": "15.2854376"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brlog", "de": ""}, "coordinates": {"lat": "45.8463736", "lon": "15.4877582"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prigorica", "de": "Büchelsdorf"}, "coordinates": {"lat": "45.7132694", "lon": "14.7495234"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podzemelj", "de": "Podsemel"}, "coordinates": {"lat": "45.6084679", "lon": "15.275392"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vinji Vrh", "de": "Weinberg"}, "coordinates": {"lat": "45.8790927", "lon": "15.2599204"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Strmec", "de": "Stermetz"}, "coordinates": {"lat": "45.8210037", "lon": "14.6382673"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Šenčur", "de": "Georgen, Sct."}, "coordinates": {"lat": "46.2431499", "lon": "14.4191043"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stari Trg", "de": "Altenmarkt"}, "coordinates": {"lat": "45.957749", "lon": "14.7564169"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Voklo", "de": "Hülben"}, "coordinates": {"lat": "46.2153386", "lon": "14.4215686"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Videm", "de": "Widem"}, "coordinates": {"lat": "45.8484576", "lon": "14.6661309"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brezovica", "de": "Bresowitz"}, "coordinates": {"lat": "45.9481267", "lon": "14.2623955"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Narin", "de": "Narein"}, "coordinates": {"lat": "45.6365446", "lon": "14.1746043"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Koprivnik", "de": "Nesselthal"}, "coordinates": {"lat": "45.6031182", "lon": "15.0300961"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mošnje", "de": "Möschnach"}, "coordinates": {"lat": "46.335489", "lon": "14.2107285"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Boršt", "de": "Forst"}, "coordinates": {"lat": "45.8863198", "lon": "15.5466481"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Občica", "de": "Krapflern"}, "coordinates": {"lat": "45.7052636", "lon": "15.0388773"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kašelj Gorenji", "de": "Oberkaschel"}, "coordinates": {"lat": "46.0516252", "lon": "14.5636645"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zatičina", "de": "Sittich"}, "coordinates": {"lat": "45.9518902", "lon": "14.7673405"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Občina, auch Pljuska", "de": "Pluska"}, "coordinates": {"lat": "45.9091162", "lon": "14.9369178"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Leskovica", "de": "Leskouza"}, "coordinates": {"lat": "46.1485933", "lon": "14.0854563"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Melce", "de": "Mewze"}, "coordinates": {"lat": "45.9558029", "lon": "14.7426478"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jablan", "de": ""}, "coordinates": {"lat": "45.8322426", "lon": "15.0803992"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Čelje", "de": "Tschelje"}, "coordinates": {"lat": "45.5914241", "lon": "14.1548264"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Terbija", "de": "Terbia"}, "coordinates": {"lat": "46.0989633", "lon": "14.0737294"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grosuplje", "de": "Großlupp"}, "coordinates": {"lat": "45.9571788", "lon": "14.6554806"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Koritnice", "de": "Koritnize"}, "coordinates": {"lat": "45.6224853", "lon": "14.2855225"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Koroška Vas", "de": "Karndorf"}, "coordinates": {"lat": "45.7491596", "lon": "15.1788708"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Reber", "de": "Leiten"}, "coordinates": {"lat": "45.8540225", "lon": "14.9299177"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Velesovo", "de": "Michelstetten"}, "coordinates": {"lat": "46.2659048", "lon": "14.4526405"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kranj", "de": "Krainburg"}, "coordinates": {"lat": "46.2432913", "lon": "14.3549353"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zaplana", "de": "Saplana"}, "coordinates": {"lat": "45.9724428", "lon": "14.2315599"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trn Veliki", "de": "Großdorn"}, "coordinates": {"lat": "45.9668772", "lon": "15.3941428"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hlebce", "de": "Hlebitz"}, "coordinates": {"lat": "46.366822", "lon": "14.1787719"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žiri", "de": "Sairach"}, "coordinates": {"lat": "46.0510703", "lon": "14.1106226"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Škofja Loka", "de": "Bischoflack"}, "coordinates": {"lat": "46.165274", "lon": "14.3067474"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Logatec Gorenji", "de": "Oberloitsch"}, "coordinates": {"lat": "45.9000139", "lon": "14.1897003"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Davča", "de": "Dautscha"}, "coordinates": {"lat": "46.1801409", "lon": "14.0347781"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sodražica", "de": "Soderschitz"}, "coordinates": {"lat": "45.7619709", "lon": "14.6346442"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dragomer", "de": "Dragomer"}, "coordinates": {"lat": "46.0187941", "lon": "14.3837236"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Konj", "de": "Roßbüchel"}, "coordinates": {"lat": "46.087162", "lon": "14.8461193"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gozd", "de": "Goisdreka"}, "coordinates": {"lat": "46.0161415", "lon": "14.7204317"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brod", "de": "Überfuhr"}, "coordinates": {"lat": "46.2795753", "lon": "13.8554361"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vaše", "de": ""}, "coordinates": {"lat": "46.1370414", "lon": "14.4000587"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gotenica", "de": "Göttenitz"}, "coordinates": {"lat": "45.6123746", "lon": "14.7491167"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Luče", "de": "Leitsch"}, "coordinates": {"lat": "45.9150942", "lon": "14.7146374"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brinje", "de": "Landol"}, "coordinates": {"lat": "45.9680861", "lon": "15.0516484"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mekine", "de": "Münkendorf"}, "coordinates": {"lat": "45.9645747", "lon": "14.8142445"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gabrovnica", "de": "Gabrounitz"}, "coordinates": {"lat": "46.1936461", "lon": "14.7601963"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Krška Vas", "de": "Munkendorf"}, "coordinates": {"lat": "45.8911201", "lon": "15.5681215"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Želimlje", "de": "Schelimle"}, "coordinates": {"lat": "45.9188643", "lon": "14.5715716"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kuhlarji", "de": "Küchlern"}, "coordinates": {"lat": "45.5406891", "lon": "14.8824286"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Malence", "de": ""}, "coordinates": {"lat": "45.8854998", "lon": "15.5679871"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Tomišelj", "de": "Tomischl"}, "coordinates": {"lat": "45.9639945", "lon": "14.4812746"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Čurile", "de": ""}, "coordinates": {"lat": "45.6555652", "lon": "15.330499"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrhnika", "de": "Oberlaibach"}, "coordinates": {"lat": "45.9663607", "lon": "14.2980772"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Močile", "de": ""}, "coordinates": {"lat": "45.496624", "lon": "15.0790117"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hrašče", "de": "Hraschtsche"}, "coordinates": {"lat": "45.7774899", "lon": "14.1550661"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Artmanja Vas", "de": "Hartmannsdorf"}, "coordinates": {"lat": "45.8699059", "lon": "14.9862709"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ležeče Gorenje", "de": "Oberlesetsche"}, "coordinates": {"lat": "45.6707516", "lon": "13.9883335"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Budanje", "de": ""}, "coordinates": {"lat": "45.8728323", "lon": "13.9495928"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kuteževo", "de": ""}, "coordinates": {"lat": "45.5309675", "lon": "14.3315246"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Adlešici", "de": "Adleschitz"}, "coordinates": {"lat": "45.5215037", "lon": "15.3136555"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Učak", "de": ""}, "coordinates": {"lat": "46.183128", "lon": "14.8671746"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kupljenik", "de": ""}, "coordinates": {"lat": "46.3390702", "lon": "14.0793505"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bleč Vrh", "de": "Feldsberg"}, "coordinates": {"lat": "45.9874289", "lon": "14.6877759"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kal", "de": "Kaal"}, "coordinates": {"lat": "46.1694167", "lon": "15.0962587"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bregana", "de": "Bergana"}, "coordinates": {"lat": "45.8382973", "lon": "15.6881481"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žuniče", "de": "Schunitsche"}, "coordinates": {"lat": "45.4835832", "lon": "15.3592234"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Belčj Vrh", "de": "Weltschberg"}, "coordinates": {"lat": "45.4944681", "lon": "15.2010773"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dravlje", "de": "Draule"}, "coordinates": {"lat": "46.0811396", "lon": "14.4752006"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Perovo", "de": "Perau"}, "coordinates": {"lat": "45.7914094", "lon": "14.6043121"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Straževo", "de": "Sterscheu"}, "coordinates": {"lat": "46.2538755", "lon": "14.3369162"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Javor", "de": ""}, "coordinates": {"lat": "46.0193235", "lon": "14.6481741"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Smokuč", "de": ""}, "coordinates": {"lat": "46.3888064", "lon": "14.1673896"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mojstrana", "de": "Moisterna"}, "coordinates": {"lat": "46.4609536", "lon": "13.9394245"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Butoraj", "de": "Wutarei"}, "coordinates": {"lat": "45.5435814", "lon": "15.2053967"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dobrunje", "de": "Dobruine"}, "coordinates": {"lat": "46.0378974", "lon": "14.5842917"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rogatec", "de": ""}, "coordinates": {"lat": "45.8958618", "lon": "14.5707102"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Visoče", "de": ""}, "coordinates": {"lat": "46.0934878", "lon": "15.381008"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lož", "de": "Laas"}, "coordinates": {"lat": "45.7261579", "lon": "14.4690218"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Peče", "de": "Petsch"}, "coordinates": {"lat": "46.147679", "lon": "14.8093822"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zgoša", "de": "Sgosch"}, "coordinates": {"lat": "46.3688577", "lon": "14.1969089"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Breznik", "de": ""}, "coordinates": {"lat": "45.5243811", "lon": "15.1404832"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Goriče", "de": ""}, "coordinates": {"lat": "46.3190904", "lon": "14.345959"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pšenična Polica", "de": "Niederfeld"}, "coordinates": {"lat": "46.2486072", "lon": "14.4983883"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Nemška Vas", "de": "Deutschdorf"}, "coordinates": {"lat": "45.9561175", "lon": "15.4244184"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Virmaše", "de": "Ermern"}, "coordinates": {"lat": "46.1786437", "lon": "14.3225933"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Tržič", "de": "Neumarktl"}, "coordinates": {"lat": "46.3636679", "lon": "14.3095397"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pobrežje", "de": "Freithurn"}, "coordinates": {"lat": "45.5295813", "lon": "15.3058128"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brdo", "de": ""}, "coordinates": {"lat": "46.3301507", "lon": "14.2502952"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podjelše", "de": ""}, "coordinates": {"lat": "46.2463569", "lon": "14.613889"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Smuka", "de": "Langenthon"}, "coordinates": {"lat": "45.7625712", "lon": "14.9309249"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mršeča Vas", "de": "Merschetschendorf"}, "coordinates": {"lat": "45.8779021", "lon": "15.3663757"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zala", "de": ""}, "coordinates": {"lat": "46.1850239", "lon": "14.0715539"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rača", "de": "Ratscha"}, "coordinates": {"lat": "46.1344177", "lon": "14.6574917"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Škrjance", "de": "Lerchenfeld"}, "coordinates": {"lat": "45.9280442", "lon": "14.7996999"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kočevje", "de": "Gottschee"}, "coordinates": {"lat": "45.6430266", "lon": "14.8552701"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stara Vas", "de": "Altendorf"}, "coordinates": {"lat": "45.7607551", "lon": "14.2016522"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žigmarice", "de": "Schigmaritz"}, "coordinates": {"lat": "45.7791221", "lon": "14.5756944"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Nemška Loka", "de": "Unterdeutschau"}, "coordinates": {"lat": "45.5582348", "lon": "15.0432443"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hruševje", "de": "Hruschewje"}, "coordinates": {"lat": "45.7620116", "lon": "14.1153598"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mahovnik", "de": "Mooswald"}, "coordinates": {"lat": "45.6410039", "lon": "14.8097183"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Harije", "de": ""}, "coordinates": {"lat": "45.552984", "lon": "14.1974714"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grobišče", "de": "Grobsche"}, "coordinates": {"lat": "45.7509327", "lon": "14.178704241156728"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Luže", "de": "Lausach"}, "coordinates": {"lat": "46.2643434", "lon": "14.4234145"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ribnica", "de": "Reifnitz"}, "coordinates": {"lat": "45.7387697", "lon": "14.5679189"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sturje", "de": ""}, "coordinates": {"lat": "45.8876855", "lon": "13.9107473"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kotredež", "de": "Kotredesch"}, "coordinates": {"lat": "46.1548295", "lon": "14.998599"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Huje", "de": ""}, "coordinates": {"lat": "45.571573", "lon": "14.0988793"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Petrina", "de": ""}, "coordinates": {"lat": "45.4650725", "lon": "14.8530801"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grible", "de": "Grüble"}, "coordinates": {"lat": "45.5708737", "lon": "15.2768942"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jereka", "de": ""}, "coordinates": {"lat": "46.2967526", "lon": "13.9625912"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podgrič", "de": ""}, "coordinates": {"lat": "45.7887524", "lon": "13.9960392"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Selo", "de": "Zellach"}, "coordinates": {"lat": "45.8615498", "lon": "15.4518717"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Smolenja Vas", "de": "Pechdorf"}, "coordinates": {"lat": "45.815165050000004", "lon": "15.201510000429188"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podtabor", "de": ""}, "coordinates": {"lat": "45.6059224", "lon": "14.2278335"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Goče", "de": "Gotsche"}, "coordinates": {"lat": "45.8216084", "lon": "13.9250214"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zamostec", "de": "Brückel"}, "coordinates": {"lat": "45.7584261", "lon": "14.6485945"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Turkova Draga Dolenja", "de": "Unterfliegendorf"}, "coordinates": {"lat": "45.5387856", "lon": "14.9095192"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Tatinec", "de": "Tattintz"}, "coordinates": {"lat": "46.2883656", "lon": "14.368108"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kolovrat", "de": "Kolowrat"}, "coordinates": {"lat": "46.1662108", "lon": "14.7944698"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Plano", "de": "Planu"}, "coordinates": {"lat": "45.8263638", "lon": "15.0236867"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grič", "de": ""}, "coordinates": {"lat": "45.7690068", "lon": "15.4430412"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Famlje", "de": "Famle"}, "coordinates": {"lat": "45.6615851", "lon": "14.0218508"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gabrovo", "de": "Gabrou"}, "coordinates": {"lat": "46.1610212", "lon": "14.266801"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Osojnik", "de": "Ossojnick"}, "coordinates": {"lat": "46.187301", "lon": "14.1007265"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dolenjci", "de": ""}, "coordinates": {"lat": "45.5355435", "lon": "15.2966594"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gršeča Vas", "de": "Gerschetschendorf"}, "coordinates": {"lat": "45.9041882", "lon": "15.4301812"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Knežja Lipa", "de": "Graflinden"}, "coordinates": {"lat": "45.5502846", "lon": "15.0094419"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žiganja Vas", "de": "Siegersdorf"}, "coordinates": {"lat": "46.3252916", "lon": "14.2998484"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brčice", "de": "Wertschitsch"}, "coordinates": {"lat": "45.6511352", "lon": "15.1223602"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zagorje", "de": "Sagor"}, "coordinates": {"lat": "46.1327436", "lon": "14.9928399"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Preže", "de": "Pröse"}, "coordinates": {"lat": "45.5444601", "lon": "14.8214069"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bela Cerkev", "de": "Weißkirchen"}, "coordinates": {"lat": "45.8676313", "lon": "15.2752566"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Velče", "de": ""}, "coordinates": {"lat": "46.053087", "lon": "14.5953146"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jesenovo", "de": ""}, "coordinates": {"lat": "46.1807795", "lon": "14.9706902"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hudenje", "de": ""}, "coordinates": {"lat": "45.8906653", "lon": "15.322752"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grebenc", "de": ""}, "coordinates": {"lat": "46.35562", "lon": "14.37512"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Golek", "de": ""}, "coordinates": {"lat": "45.9599512", "lon": "15.4500174"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Senožeče", "de": "Senosetsch"}, "coordinates": {"lat": "45.7208206", "lon": "14.0393917"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pivka", "de": "Piuka"}, "coordinates": {"lat": "45.6825064", "lon": "14.1953518"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Cerklje", "de": "Zirklach"}, "coordinates": {"lat": "45.8841333", "lon": "15.5203355"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jakovce", "de": ""}, "coordinates": {"lat": "45.7693268", "lon": "13.9619153"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Čatež", "de": "Tschatesch"}, "coordinates": {"lat": "45.9705365", "lon": "14.9588038"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Srednji Vrh", "de": "Mitterberg"}, "coordinates": {"lat": "46.384264", "lon": "14.0497123"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hrib", "de": "Obergörtschach"}, "coordinates": {"lat": "46.3009547", "lon": "14.4104338"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Škocjan", "de": "Cantian, Sct."}, "coordinates": {"lat": "45.907782", "lon": "15.2906185"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sajevec", "de": "Sajowitz"}, "coordinates": {"lat": "45.7431015", "lon": "14.7023935"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lozice", "de": "Losize"}, "coordinates": {"lat": "45.775621", "lon": "13.9921324"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Duplica", "de": ""}, "coordinates": {"lat": "46.2038452", "lon": "14.5959422"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lahinja", "de": "Lachina"}, "coordinates": {"lat": "45.5191686", "lon": "15.1997382"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kostel", "de": ""}, "coordinates": {"lat": "45.5081362", "lon": "14.9104871"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jelovica", "de": ""}, "coordinates": {"lat": "46.1489611", "lon": "14.1326472"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Slavina", "de": "Slawina"}, "coordinates": {"lat": "46.0219846", "lon": "15.0458209"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trnovec", "de": "Tiefenreuther"}, "coordinates": {"lat": "45.7019459", "lon": "14.8125562"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Češnjica", "de": ""}, "coordinates": {"lat": "46.029409", "lon": "14.6200226"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gmajnica", "de": "Gmainza"}, "coordinates": {"lat": "46.330895", "lon": "13.9638452"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Šmihel", "de": "Michael, Sct."}, "coordinates": {"lat": "45.9508019", "lon": "13.7377533"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Knej", "de": ""}, "coordinates": {"lat": "45.8479558", "lon": "14.5994279"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pokojnica", "de": ""}, "coordinates": {"lat": "45.9312303", "lon": "14.8772759"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prevalje", "de": ""}, "coordinates": {"lat": "46.1498684", "lon": "14.6700417"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Predtrg", "de": "Vormarkt"}, "coordinates": {"lat": "46.3402623", "lon": "14.1751593"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Goriča Vas", "de": "Weikersdorf"}, "coordinates": {"lat": "45.729715", "lon": "14.7403676"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ivanje Selo", "de": "Eibenschuß"}, "coordinates": {"lat": "45.8354968", "lon": "14.2991037"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Nemški Rovt", "de": "Deutschgereuth"}, "coordinates": {"lat": "46.2715663", "lon": "13.9798412"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Loka", "de": ""}, "coordinates": {"lat": "45.5361783", "lon": "13.8892884"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Polhov Gradec", "de": "Billichgratz"}, "coordinates": {"lat": "46.0653617", "lon": "14.3128622"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Finkovo", "de": ""}, "coordinates": {"lat": "45.8127524", "lon": "14.6750851"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zajelše", "de": "Sajeusche"}, "coordinates": {"lat": "46.0942", "lon": "14.6473549"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Tunjice", "de": "Theinitz"}, "coordinates": {"lat": "46.2372175", "lon": "14.5787801"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kočevska Reka", "de": "Rieg"}, "coordinates": {"lat": "45.5749221", "lon": "14.7996781"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jurjevica", "de": "Jurjowitz"}, "coordinates": {"lat": "45.7488018", "lon": "14.6857148"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Osterc", "de": "Osterz"}, "coordinates": {"lat": "46.0689938", "lon": "15.4519042"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brodi", "de": "Wrodech"}, "coordinates": {"lat": "46.1378703", "lon": "14.2325668"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Griže", "de": "Grische"}, "coordinates": {"lat": "45.7558617", "lon": "13.9433423"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Onek", "de": "Hohenegg"}, "coordinates": {"lat": "45.6415886", "lon": "14.8950964"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ponikve", "de": "Ponique"}, "coordinates": {"lat": "45.8606129", "lon": "14.6284299"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Cerovec", "de": "Zerouz"}, "coordinates": {"lat": "46.0178939", "lon": "15.1904976"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kamni Vrh", "de": "Steinberg"}, "coordinates": {"lat": "45.997379", "lon": "14.9385309"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zavratec", "de": "Sauratz"}, "coordinates": {"lat": "45.9593097", "lon": "15.3414953"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žeje", "de": ""}, "coordinates": {"lat": "46.2905661", "lon": "14.2885117"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Šmarata", "de": "Margarethen, Sct."}, "coordinates": {"lat": "45.6892848", "lon": "14.4669204"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grenec", "de": "Grenze"}, "coordinates": {"lat": "46.1773411", "lon": "14.2792647"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mrzla Luža", "de": "Kaltlacken"}, "coordinates": {"lat": "45.9303931", "lon": "14.9795988"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Smolnik", "de": ""}, "coordinates": {"lat": "46.2534999", "lon": "14.8959111"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stražberg", "de": "Straßberg"}, "coordinates": {"lat": "45.9952473", "lon": "15.0070289"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Šiška Zgornja", "de": "Oberschischka"}, "coordinates": {"lat": "46.071521649999994", "lon": "14.477594869446868"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zilje", "de": "Sile"}, "coordinates": {"lat": "45.4621468", "lon": "15.2979976"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ravno", "de": "Rauno"}, "coordinates": {"lat": "45.8960743", "lon": "15.3784859"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Štrekljevec", "de": "Streklowitz"}, "coordinates": {"lat": "45.6712741", "lon": "15.2158369"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Delnice", "de": "Dewenze"}, "coordinates": {"lat": "46.1534706", "lon": "14.1859832"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Britof", "de": "Freithof"}, "coordinates": {"lat": "46.2612885", "lon": "14.3891453"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Velika Vas", "de": "Großdorf"}, "coordinates": {"lat": "46.105716", "lon": "14.7333557"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sv. Križ", "de": "Heiligenkreuz"}, "coordinates": {"lat": "45.9388996", "lon": "15.1145799"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Soteska", "de": "Ainöd"}, "coordinates": {"lat": "46.232711", "lon": "14.6504588"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podreče", "de": "Podretsche"}, "coordinates": {"lat": "46.1374143", "lon": "14.6098228"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Litija", "de": "Littai"}, "coordinates": {"lat": "46.0575677", "lon": "14.8314192"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Drskovče", "de": ""}, "coordinates": {"lat": "45.6556777", "lon": "14.2222585"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brezovo", "de": ""}, "coordinates": {"lat": "46.0105816", "lon": "14.994854"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Beli Kamen", "de": "Weißenstein"}, "coordinates": {"lat": "45.731656", "lon": "14.894008"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gomila", "de": ""}, "coordinates": {"lat": "45.9339321", "lon": "15.0467133"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Udmat", "de": ""}, "coordinates": {"lat": "46.1473802", "lon": "15.2037287"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brda", "de": "Berdach"}, "coordinates": {"lat": "46.0162019", "lon": "13.548910233619523"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kamnik", "de": "Stein"}, "coordinates": {"lat": "46.2257358", "lon": "14.6118936"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Staje", "de": "Staidorf"}, "coordinates": {"lat": "45.9562334", "lon": "14.4987252"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lesce", "de": "Lees"}, "coordinates": {"lat": "46.3618008", "lon": "14.1544381"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dolenčice", "de": "Dolentschize"}, "coordinates": {"lat": "46.1564327", "lon": "14.1748825"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trzin", "de": "Tersain"}, "coordinates": {"lat": "46.1302879", "lon": "14.556192"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Begunje", "de": "Wigaun"}, "coordinates": {"lat": "46.374605", "lon": "14.1997859"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Težka Voda Gorenja", "de": "Oberschwerenbach"}, "coordinates": {"lat": "45.7576975", "lon": "15.1930539"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ratje", "de": "Rathje"}, "coordinates": {"lat": "45.7852232", "lon": "14.8651885"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Polica", "de": "Politz"}, "coordinates": {"lat": "45.9814405", "lon": "14.7038306"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podpreska", "de": "Merleinsrauth"}, "coordinates": {"lat": "45.6477138", "lon": "14.6413458"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Golnik", "de": "Gallenfels"}, "coordinates": {"lat": "46.3273129", "lon": "14.3330921"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Preska", "de": ""}, "coordinates": {"lat": "45.9841386", "lon": "15.2900747"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Črni Vrh", "de": "Schwarzenberg"}, "coordinates": {"lat": "46.0887512", "lon": "14.2558939"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Veliki Vrh", "de": "Großberg"}, "coordinates": {"lat": "45.7723044", "lon": "14.5225365"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pirniče Gorenje", "de": "Oberpirnitsch"}, "coordinates": {"lat": "46.1418999", "lon": "14.3950666"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Moše", "de": "Mosche"}, "coordinates": {"lat": "46.1850831", "lon": "14.4106796"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ustje", "de": ""}, "coordinates": {"lat": "45.8709671", "lon": "13.8946278"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hrenovice", "de": "Hrenowitz"}, "coordinates": {"lat": "45.7790463", "lon": "14.1451097"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Graben", "de": ""}, "coordinates": {"lat": "45.7827291", "lon": "14.617289"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stara Fužina", "de": "Althammer"}, "coordinates": {"lat": "46.2879339", "lon": "13.8936598"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Iška Loka", "de": "Igglack"}, "coordinates": {"lat": "45.9710424", "lon": "14.514726"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rove", "de": ""}, "coordinates": {"lat": "46.1606353", "lon": "14.9725373"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Repnje", "de": "Repne"}, "coordinates": {"lat": "46.170537", "lon": "14.4804122"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kandrše", "de": "Kandersche"}, "coordinates": {"lat": "46.1371553", "lon": "14.8425944"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ubelsko Malo", "de": "Kleinubelsko"}, "coordinates": {"lat": "45.7665804", "lon": "14.0843196"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Briše", "de": "Wrische"}, "coordinates": {"lat": "46.245518", "lon": "14.6450174"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Borovnica", "de": "Franzdorf"}, "coordinates": {"lat": "45.9194745", "lon": "14.3637139"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pristava", "de": ""}, "coordinates": {"lat": "45.782813", "lon": "13.9065216"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jarše", "de": ""}, "coordinates": {"lat": "46.1069942", "lon": "14.9378597"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Cegelnica", "de": "Zegounza"}, "coordinates": {"lat": "46.2782838", "lon": "14.3208016"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Savlje", "de": ""}, "coordinates": {"lat": "46.0952834", "lon": "14.5028367"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žvirče", "de": "Schwörz"}, "coordinates": {"lat": "45.7833577", "lon": "14.8243516"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vir", "de": ""}, "coordinates": {"lat": "46.1535958", "lon": "14.5918885"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dedni Dol", "de": "Dedendol"}, "coordinates": {"lat": "45.9706898", "lon": "14.7298139"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podraga", "de": ""}, "coordinates": {"lat": "45.8063327", "lon": "13.9496746"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brest", "de": "Wröst"}, "coordinates": {"lat": "45.9795407", "lon": "14.4510179"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pristavica", "de": "Pristawitz"}, "coordinates": {"lat": "45.8548329", "lon": "15.2651946"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Peč", "de": ""}, "coordinates": {"lat": "45.9668031", "lon": "14.6658481"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrbovec", "de": "Tiefenthal"}, "coordinates": {"lat": "45.7302571", "lon": "14.7989621"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Postojna", "de": "Adelsberg"}, "coordinates": {"lat": "45.7752847", "lon": "14.2139937"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Moste", "de": ""}, "coordinates": {"lat": "46.0567618", "lon": "14.5334126"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Čirčiče", "de": "Zirtschitsch"}, "coordinates": {"lat": "46.237867", "lon": "14.339151"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kolovec", "de": ""}, "coordinates": {"lat": "46.1937307", "lon": "14.6414681"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kandija", "de": "Kandia"}, "coordinates": {"lat": "46.0183555", "lon": "13.5165933"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rafolče", "de": "Rafoltsche"}, "coordinates": {"lat": "46.1743054", "lon": "14.675149"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gradac", "de": "Gradaz"}, "coordinates": {"lat": "45.6126529", "lon": "15.2158206"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Otok Mali", "de": "Kleinotok"}, "coordinates": {"lat": "45.7783192", "lon": "14.1553977"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podlog Veliki", "de": "Großpodlog"}, "coordinates": {"lat": "45.898069", "lon": "15.4553755"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Topol", "de": ""}, "coordinates": {"lat": "45.7547017", "lon": "14.5359462"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Koritno", "de": ""}, "coordinates": {"lat": "45.854616", "lon": "15.6349874"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brezova Reber", "de": "Birkenleiten"}, "coordinates": {"lat": "45.6909381", "lon": "15.2143645"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Komolce", "de": "Komutzen"}, "coordinates": {"lat": "45.7370762", "lon": "14.9405077"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Poreber", "de": ""}, "coordinates": {"lat": "46.2399795", "lon": "14.6636452"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Naklo", "de": "Kalce"}, "coordinates": {"lat": "46.2727921", "lon": "14.3150815"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dragovanja Vas", "de": "Dragoweinsdorf"}, "coordinates": {"lat": "45.5423849", "lon": "15.1531946"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vače", "de": "Waatsch"}, "coordinates": {"lat": "46.1192723", "lon": "14.8373697"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Črnomelj", "de": "Tschernembl"}, "coordinates": {"lat": "45.5700965", "lon": "15.1923324"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Belo", "de": ""}, "coordinates": {"lat": "45.4737457", "lon": "14.8942396"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dolšake", "de": ""}, "coordinates": {"lat": "45.8467993", "lon": "14.5610711"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jugorje", "de": ""}, "coordinates": {"lat": "45.7781943", "lon": "15.2789783"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Butajnova", "de": "Wutainowa"}, "coordinates": {"lat": "46.0431366", "lon": "14.2358947"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gorenje", "de": ""}, "coordinates": {"lat": "45.8491635", "lon": "13.9832473"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Železno", "de": "Eisendorf"}, "coordinates": {"lat": "45.8845263", "lon": "14.9571359"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podlog", "de": ""}, "coordinates": {"lat": "45.526278", "lon": "15.1896499"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Višnje", "de": "Wischne"}, "coordinates": {"lat": "45.8083377", "lon": "14.8351796"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Štalcarji", "de": "Stalzern"}, "coordinates": {"lat": "45.5653403", "lon": "14.8317001"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Valpča Vas", "de": "Amtmannsdorf"}, "coordinates": {"lat": "45.8908727", "lon": "14.9514336"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kozljevo", "de": "Koslewz"}, "coordinates": {"lat": "45.9982695", "lon": "14.6797142"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mačji Dol", "de": "Katzenthal"}, "coordinates": {"lat": "45.9520542", "lon": "14.9298218"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Osredek", "de": ""}, "coordinates": {"lat": "46.0566935", "lon": "14.9997124"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jerova Vas", "de": "Irrdorf"}, "coordinates": {"lat": "45.9679599", "lon": "14.6676764"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prebačevo", "de": ""}, "coordinates": {"lat": "46.2121832", "lon": "14.3978901"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ledeča Vas", "de": "Ladendorf"}, "coordinates": {"lat": "45.8429201", "lon": "15.3670372"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Smerje", "de": ""}, "coordinates": {"lat": "45.5900877", "lon": "14.1478961"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Šenturška Gora", "de": "Ulrichsberg"}, "coordinates": {"lat": "46.2582277", "lon": "14.5462567"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ulaka", "de": ""}, "coordinates": {"lat": "45.8317295", "lon": "14.6107272"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ravan", "de": "Četena"}, "coordinates": {"lat": "46.1668325", "lon": "14.1702294"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zapuže", "de": ""}, "coordinates": {"lat": "45.8205605", "lon": "15.2960854"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kleče", "de": "Kletsche"}, "coordinates": {"lat": "46.0954039", "lon": "14.4639885"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podgorica", "de": "Podgoritz"}, "coordinates": {"lat": "46.0962546", "lon": "14.5475483"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gradiško", "de": "Gradischko"}, "coordinates": {"lat": "45.8110245", "lon": "14.503233"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Laknice Dolenje", "de": "Unterlaknitz"}, "coordinates": {"lat": "45.9297966", "lon": "15.2086079"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Goniče", "de": ""}, "coordinates": {"lat": "45.9716816", "lon": "14.5774817"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sad", "de": ""}, "coordinates": {"lat": "45.9128865", "lon": "14.8590884"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bled", "de": "Veldes"}, "coordinates": {"lat": "46.3654692", "lon": "14.0547473"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lokve", "de": ""}, "coordinates": {"lat": "45.5975329", "lon": "15.1747391"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Volčji Potok", "de": "Wolfsbach"}, "coordinates": {"lat": "46.1924223", "lon": "14.6072104"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rebro", "de": "Reber"}, "coordinates": {"lat": "46.0481037", "lon": "13.6558926"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pudob", "de": ""}, "coordinates": {"lat": "45.7000239", "lon": "14.478597"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Preloka", "de": ""}, "coordinates": {"lat": "45.4700133", "lon": "15.3404818"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kovor", "de": "Kaier"}, "coordinates": {"lat": "46.3422307", "lon": "14.2791813"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kranjska Gora", "de": "Kronau"}, "coordinates": {"lat": "46.485132", "lon": "13.7843957"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Štajer", "de": ""}, "coordinates": {"lat": "45.4756907", "lon": "14.8579837"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Golobinjak", "de": "Taubenberg"}, "coordinates": {"lat": "45.8514549", "lon": "15.0425445"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Drašiči", "de": "Draschitz"}, "coordinates": {"lat": "45.6665055", "lon": "15.3713822"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Liberga", "de": ""}, "coordinates": {"lat": "46.0231239", "lon": "14.8999822"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hrovača", "de": "Krobatsch"}, "coordinates": {"lat": "45.7367139", "lon": "14.7366775"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zajasovnik", "de": ""}, "coordinates": {"lat": "46.2074493", "lon": "14.9045325"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bereča Vas", "de": "Beretschendorf"}, "coordinates": {"lat": "45.680754", "lon": "15.2760762"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podkraj", "de": "Podkrai"}, "coordinates": {"lat": "45.8156031", "lon": "14.6458353"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Orehovica", "de": ""}, "coordinates": {"lat": "45.7893746", "lon": "13.9550786"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Radoviči", "de": "Radowitsch"}, "coordinates": {"lat": "45.6492233", "lon": "15.3516896"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kopačnica", "de": ""}, "coordinates": {"lat": "46.1328382", "lon": "14.0771159"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Besnica Zgornja", "de": "Oberweßnitz"}, "coordinates": {"lat": "46.2637737", "lon": "14.2737511"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lazina", "de": ""}, "coordinates": {"lat": "45.7697327", "lon": "14.8916658"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podboršt", "de": "Podborscht"}, "coordinates": {"lat": "46.0027153", "lon": "15.1520991"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Nevlje", "de": "Neul"}, "coordinates": {"lat": "46.2315507", "lon": "14.6241335"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dolenja Vas", "de": "Doleinawas"}, "coordinates": {"lat": "46.2152215", "lon": "14.203002"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Poljšica", "de": "Pogelschitz"}, "coordinates": {"lat": "46.2775144", "lon": "14.2468639"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Olševek", "de": ""}, "coordinates": {"lat": "46.2790654", "lon": "14.4380685"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dragatuš", "de": ""}, "coordinates": {"lat": "45.5220541", "lon": "15.1789047"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Krupa", "de": "Krupp"}, "coordinates": {"lat": "45.6357036", "lon": "15.2179852"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Slivnica Dolenja", "de": "Unterschleinitz"}, "coordinates": {"lat": "45.9253164", "lon": "14.6187908"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jurka Vas", "de": "Jurkendorf"}, "coordinates": {"lat": "45.7837362", "lon": "15.0919428"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kamenica", "de": ""}, "coordinates": {"lat": "45.6812381", "lon": "15.3619144"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Drča", "de": ""}, "coordinates": {"lat": "45.8167456", "lon": "15.3507687"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lazec", "de": "Gehack"}, "coordinates": {"lat": "46.094343", "lon": "13.9675772"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Krnice", "de": "Kernitze"}, "coordinates": {"lat": "45.8221079", "lon": "14.1676183"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prapreče", "de": "Prapretsch"}, "coordinates": {"lat": "46.1499487", "lon": "15.0211209"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stelnik", "de": ""}, "coordinates": {"lat": "45.5058211", "lon": "14.8967992"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Črešnjice", "de": "Kerschdorf"}, "coordinates": {"lat": "45.6761375", "lon": "15.1941218"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Viševek", "de": "Uscheuk"}, "coordinates": {"lat": "45.701662", "lon": "14.4863341"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Nomen", "de": "Neuming"}, "coordinates": {"lat": "46.286187", "lon": "14.0194112"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Selca", "de": ""}, "coordinates": {"lat": "46.2306004", "lon": "14.1846908"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Veliko Polje", "de": "Großpule"}, "coordinates": {"lat": "45.7599481", "lon": "13.9596137"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kašča", "de": ""}, "coordinates": {"lat": "45.6591053", "lon": "15.1845051"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pekel", "de": ""}, "coordinates": {"lat": "45.9163796", "lon": "15.0028533"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bičje", "de": "Witschje"}, "coordinates": {"lat": "45.9408407", "lon": "14.6133818"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pungert", "de": "Baumgarten"}, "coordinates": {"lat": "46.156005", "lon": "14.3365865"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rožnepelj", "de": "Rosenbüchel"}, "coordinates": {"lat": "45.8987058", "lon": "14.9313256"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Šumberk", "de": "Schönberg"}, "coordinates": {"lat": "45.8910755", "lon": "14.8598326"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podklanec", "de": ""}, "coordinates": {"lat": "45.468405", "lon": "15.2670627"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gradec", "de": "Graz"}, "coordinates": {"lat": "47.0732813", "lon": "15.3595614"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Blate", "de": ""}, "coordinates": {"lat": "45.6984468", "lon": "14.7446514"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Travnik", "de": "Traunig"}, "coordinates": {"lat": "45.6885885", "lon": "14.5785691"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bernik Spodnji", "de": "Unterfernig"}, "coordinates": {"lat": "46.2195877", "lon": "14.40225"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Suhor Dolenji", "de": "Untersuchor"}, "coordinates": {"lat": "45.4950982", "lon": "15.1907989"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Radoše", "de": ""}, "coordinates": {"lat": "45.6975192", "lon": "15.3369227"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Log", "de": "Auen"}, "coordinates": {"lat": "45.9427005", "lon": "15.087107"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Log Gorenji", "de": "Oberlog"}, "coordinates": {"lat": "46.0785547", "lon": "14.7913689"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mirke", "de": ""}, "coordinates": {"lat": "45.9554574", "lon": "14.2969148"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Tominje", "de": "Tomeine"}, "coordinates": {"lat": "45.5636556", "lon": "14.1746331"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Krvava Peč", "de": "Blutigenstein"}, "coordinates": {"lat": "45.8641789", "lon": "14.5147514"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pijavice", "de": "Piauze"}, "coordinates": {"lat": "45.9699883", "lon": "15.1629622"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rakovnik", "de": "Kroisenbach"}, "coordinates": {"lat": "45.8283517", "lon": "15.3735424"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hudo", "de": "Pösendorf"}, "coordinates": {"lat": "45.8329027", "lon": "15.1362301"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kresnice", "de": "Kreßnitz"}, "coordinates": {"lat": "46.1025116", "lon": "14.7867831"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grad", "de": ""}, "coordinates": {"lat": "46.2715158", "lon": "14.4575749"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podhom", "de": "Buchheim"}, "coordinates": {"lat": "46.3884873", "lon": "14.0905409"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Tržišče", "de": "Terschische"}, "coordinates": {"lat": "45.9583132", "lon": "15.1927312"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ivanja Vas", "de": "Iwansdorf"}, "coordinates": {"lat": "45.7991745", "lon": "16.1177143"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Belsko", "de": ""}, "coordinates": {"lat": "45.8205632", "lon": "14.15568"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Fužine", "de": "Fuschine"}, "coordinates": {"lat": "46.2341472", "lon": "14.6053401"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podlipa", "de": ""}, "coordinates": {"lat": "45.9148787", "lon": "15.3774615"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dovje", "de": "Lengenfeld"}, "coordinates": {"lat": "46.4683259", "lon": "13.9478026"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podreber", "de": ""}, "coordinates": {"lat": "46.0636899", "lon": "14.3205739"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hotedražica", "de": "Hotederschitz"}, "coordinates": {"lat": "45.9331778", "lon": "14.1043656"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Krašice", "de": "Kraschze"}, "coordinates": {"lat": "46.1351409", "lon": "14.710496"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dedča Vas", "de": "Dedendorf"}, "coordinates": {"lat": "45.8775917", "lon": "15.0261092"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Markovec", "de": ""}, "coordinates": {"lat": "45.712462", "lon": "14.4917535"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Račeva", "de": ""}, "coordinates": {"lat": "46.0286094", "lon": "14.1512895"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Njivice", "de": "Niwitz"}, "coordinates": {"lat": "46.066106", "lon": "15.1104949"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Krmačina", "de": ""}, "coordinates": {"lat": "45.6668924", "lon": "15.3860761"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Puštal", "de": "Burgstall"}, "coordinates": {"lat": "46.1618561", "lon": "14.311505"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sostro", "de": "Sostru"}, "coordinates": {"lat": "46.0354884", "lon": "14.607094"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Tabor", "de": "Schillertabor"}, "coordinates": {"lat": "46.2334997", "lon": "15.0044673"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hotemaže", "de": "Hotemasch"}, "coordinates": {"lat": "46.2825672", "lon": "14.4223576"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Goliše", "de": "Goltsche"}, "coordinates": {"lat": "46.0692382", "lon": "14.6901751"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pečnik", "de": ""}, "coordinates": {"lat": "46.0377925", "lon": "14.0491667"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dunaj", "de": "Wien"}, "coordinates": {"lat": "48.2203441", "lon": "16.2148326"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Predgriže", "de": "Predgrische"}, "coordinates": {"lat": "45.93183655", "lon": "14.066413848342174"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mala Vas", "de": "Kleindorf"}, "coordinates": {"lat": "45.8522626", "lon": "14.7091019"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kozice", "de": "Kositzen"}, "coordinates": {"lat": "45.4956673", "lon": "15.0216616"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Turn", "de": "Thurn"}, "coordinates": {"lat": "45.687775", "lon": "14.6063157"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pšata", "de": "Beischeid"}, "coordinates": {"lat": "46.0993913", "lon": "14.6010713"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Prevoje", "de": ""}, "coordinates": {"lat": "46.1625428", "lon": "14.6644837"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podklance", "de": "Podklanz"}, "coordinates": {"lat": "45.7678736", "lon": "14.5595329"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sušica", "de": "Schuschitz"}, "coordinates": {"lat": "45.8917785", "lon": "14.7439184"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Videm Mali", "de": "Kleinweiden"}, "coordinates": {"lat": "45.9434212", "lon": "14.9511695"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Metlika", "de": "Möttling"}, "coordinates": {"lat": "45.6501029", "lon": "15.3174483"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stob", "de": ""}, "coordinates": {"lat": "46.1376512", "lon": "14.5860995"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Fara", "de": ""}, "coordinates": {"lat": "45.90802", "lon": "13.5165379"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Železnica", "de": "Eisenhof"}, "coordinates": {"lat": "45.8930441", "lon": "14.6339136"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Benete", "de": ""}, "coordinates": {"lat": "45.7694553", "lon": "14.564523"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hom", "de": ""}, "coordinates": {"lat": "45.9997341", "lon": "15.080531"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Preserje", "de": "Presser"}, "coordinates": {"lat": "45.8699557", "lon": "13.7870092"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Turkova Draga Gorenja", "de": "Oberfliegendorf"}, "coordinates": {"lat": "45.5372", "lon": "14.924306"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Beč", "de": "Butsch"}, "coordinates": {"lat": "45.4205031", "lon": "15.3479181"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podturn", "de": "Unterthurn"}, "coordinates": {"lat": "45.7411133", "lon": "15.0399763"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gorica", "de": "Goritz"}, "coordinates": {"lat": "45.9441278", "lon": "13.6252288"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dvor", "de": "Hof"}, "coordinates": {"lat": "45.8080232", "lon": "14.9600402"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grmovlje", "de": ""}, "coordinates": {"lat": "45.8964716", "lon": "15.3094016"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Čekovnik", "de": "Tschekaunik"}, "coordinates": {"lat": "45.9765629", "lon": "14.0106167"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Plavž", "de": "Bleiofen"}, "coordinates": {"lat": "46.4440407", "lon": "14.0381212"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jezero", "de": "Seedorf"}, "coordinates": {"lat": "45.8917381", "lon": "15.0465077"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lipica", "de": ""}, "coordinates": {"lat": "45.667971", "lon": "13.8830679"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Nova Gora", "de": "Neuberg"}, "coordinates": {"lat": "45.9512691", "lon": "15.4055786"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Javorovica", "de": ""}, "coordinates": {"lat": "45.8061461", "lon": "15.3580878"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Radomlje", "de": "Radomle"}, "coordinates": {"lat": "46.1731863", "lon": "14.6101795"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trnovo", "de": "Dornegg"}, "coordinates": {"lat": "45.970461", "lon": "13.7274487"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pirče", "de": "Pirtsche"}, "coordinates": {"lat": "45.4683167", "lon": "14.8585893"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Čeplje", "de": "Tscheplach"}, "coordinates": {"lat": "46.0231574", "lon": "14.9918103"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kukovo", "de": "Kukendorf"}, "coordinates": {"lat": "45.7472855", "lon": "14.8215175"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Slap", "de": ""}, "coordinates": {"lat": "46.0642845", "lon": "15.2038083"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Srobotnik", "de": "Guttenberg"}, "coordinates": {"lat": "45.7872743", "lon": "15.0596382"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zagon", "de": "Sagon"}, "coordinates": {"lat": "45.793668", "lon": "14.1482852"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lipnica", "de": "Leibnitz"}, "coordinates": {"lat": "46.7835264", "lon": "15.5071354"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hudi Vrh", "de": "Bösenberg"}, "coordinates": {"lat": "45.7600703", "lon": "14.5212197"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bič", "de": "Fitsch"}, "coordinates": {"lat": "45.9260732", "lon": "14.8891476"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dobje", "de": ""}, "coordinates": {"lat": "46.1203598", "lon": "14.1608892"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vrhovlje", "de": ""}, "coordinates": {"lat": "46.1765516", "lon": "14.6684617"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trojane", "de": "Trojana"}, "coordinates": {"lat": "46.1882207", "lon": "14.8861224"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vižmarje", "de": "Wischmarje"}, "coordinates": {"lat": "46.1045264", "lon": "14.4628856"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rudolfovo", "de": "Rudolfswert"}, "coordinates": {"lat": "45.8036409", "lon": "15.1284859"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zalisec", "de": "Salais"}, "coordinates": {"lat": "45.8586906", "lon": "14.9367931"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Goba", "de": ""}, "coordinates": {"lat": "46.0365923", "lon": "14.9478042"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zabrdo", "de": "Sabrdam"}, "coordinates": {"lat": "46.231662", "lon": "14.0664603"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jedinščina", "de": ""}, "coordinates": {"lat": "45.7856189", "lon": "15.1752509"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Cerovo", "de": "Zerou"}, "coordinates": {"lat": "45.9216294", "lon": "14.6207629"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kostanj", "de": ""}, "coordinates": {"lat": "46.2273637", "lon": "14.7430655"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Studenčice", "de": "Studentschitz"}, "coordinates": {"lat": "46.3769632", "lon": "14.1610969"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Primostek", "de": ""}, "coordinates": {"lat": "45.6278122", "lon": "15.2950219"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zagozdac", "de": "Unterwald"}, "coordinates": {"lat": "45.5255484", "lon": "15.0612107"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Maline", "de": ""}, "coordinates": {"lat": "45.9084951", "lon": "15.1582574"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kranjče", "de": "Kraintsche"}, "coordinates": {"lat": "45.8392184", "lon": "14.4327096"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Javornik", "de": "Jauerburg"}, "coordinates": {"lat": "46.4324889", "lon": "14.0424648"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Košica", "de": "Koschza"}, "coordinates": {"lat": "46.0973609", "lon": "14.9616333"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Smrečje", "de": ""}, "coordinates": {"lat": "46.0154133", "lon": "14.2010428"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bojanja Vas", "de": "Bojansdorf"}, "coordinates": {"lat": "45.6950754", "lon": "15.3266081"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trata", "de": ""}, "coordinates": {"lat": "46.1788032", "lon": "14.3392141"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zaloka", "de": ""}, "coordinates": {"lat": "45.9979455", "lon": "15.039103"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Šmartno", "de": "Martin, Sct."}, "coordinates": {"lat": "46.130977", "lon": "14.4731129"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zagrad", "de": "Sagrad"}, "coordinates": {"lat": "45.9293149", "lon": "15.255324"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bušinja Vas", "de": "Wuschinsdorf"}, "coordinates": {"lat": "45.6821579", "lon": "15.2857784"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žabjek", "de": ""}, "coordinates": {"lat": "45.9446596", "lon": "14.956727"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Voglje", "de": "Winklern"}, "coordinates": {"lat": "46.2088037", "lon": "14.3697987"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Medvode", "de": "Zwischenwässern"}, "coordinates": {"lat": "46.1402285", "lon": "14.4130728"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Božjakovo", "de": "Boschiakou"}, "coordinates": {"lat": "45.6475002", "lon": "15.344539"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dolenje", "de": ""}, "coordinates": {"lat": "45.7893235", "lon": "13.9019459"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Babino Polje", "de": "Babenfeld"}, "coordinates": {"lat": "45.6449118", "lon": "14.5036965"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zaloke", "de": ""}, "coordinates": {"lat": "45.9072708", "lon": "15.4028749"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Janž", "de": "Johannisthal"}, "coordinates": {"lat": "46.0150694", "lon": "15.0906666"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Nova Vas", "de": "Neudorf"}, "coordinates": {"lat": "45.7734644", "lon": "14.4922498"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kokra", "de": "Kanker"}, "coordinates": {"lat": "46.267304", "lon": "14.3970298"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gaber", "de": "Gaber"}, "coordinates": {"lat": "46.1598018", "lon": "13.5390223"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gorenja Vas", "de": "Oberdorf"}, "coordinates": {"lat": "45.9186462", "lon": "14.8076763"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rob", "de": ""}, "coordinates": {"lat": "45.8481465", "lon": "14.5717681"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mala Gora", "de": "Malgern"}, "coordinates": {"lat": "45.690435", "lon": "14.8695247"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Drežnik", "de": "Dresnik"}, "coordinates": {"lat": "45.4644921", "lon": "15.2091367"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vas", "de": ""}, "coordinates": {"lat": "45.4705977", "lon": "14.8486387"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zminec", "de": "Sminz"}, "coordinates": {"lat": "46.1480273", "lon": "14.284405"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gosteče", "de": ""}, "coordinates": {"lat": "46.1536745", "lon": "14.3446215"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dolina", "de": ""}, "coordinates": {"lat": "45.8686878", "lon": "15.2803385"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Orehovlje", "de": ""}, "coordinates": {"lat": "45.8901467", "lon": "13.6119751"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jama", "de": ""}, "coordinates": {"lat": "45.7538543", "lon": "15.1628361"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Potok", "de": ""}, "coordinates": {"lat": "45.7842589", "lon": "15.0988369"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Plemberg", "de": ""}, "coordinates": {"lat": "45.7641751", "lon": "15.2061375"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kaptol", "de": ""}, "coordinates": {"lat": "45.5328127", "lon": "14.8495455"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trebelno", "de": ""}, "coordinates": {"lat": "45.9109436", "lon": "15.1497602"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zavoden", "de": "Sovodenj"}, "coordinates": {"lat": "46.0876689", "lon": "14.0329349"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dolina Velika", "de": "Großdolina"}, "coordinates": {"lat": "45.8534353", "lon": "15.6622837"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podgora", "de": "Unterberg"}, "coordinates": {"lat": "45.8095853", "lon": "15.0909807"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Šembije", "de": "Schembije"}, "coordinates": {"lat": "45.6034478", "lon": "14.2369484"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zavrh", "de": ""}, "coordinates": {"lat": "45.8710731", "lon": "14.8844066"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žlebič", "de": "Schlebitsch"}, "coordinates": {"lat": "45.7723596", "lon": "14.6904402"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Podstenica", "de": "Steinwand"}, "coordinates": {"lat": "45.7009544", "lon": "14.9296625"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Toplice", "de": "Töplitz"}, "coordinates": {"lat": "45.7545642", "lon": "15.0429713"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Izlake", "de": "Islak"}, "coordinates": {"lat": "46.1535864", "lon": "14.9307196"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rova", "de": "Rau"}, "coordinates": {"lat": "46.1798662", "lon": "14.6242636"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Šutna", "de": ""}, "coordinates": {"lat": "45.8562162", "lon": "15.4956438"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bloke Velike", "de": "Großoblak"}, "coordinates": {"lat": "45.7848403", "lon": "14.4809148"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dobec", "de": ""}, "coordinates": {"lat": "45.8485845", "lon": "14.3633305"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Deleči Vrh", "de": "Laubbüchel"}, "coordinates": {"lat": "45.709789", "lon": "15.0374622"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Čepno", "de": ""}, "coordinates": {"lat": "45.6709506", "lon": "14.0958891"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mihelja Vas", "de": "Michelsdorf"}, "coordinates": {"lat": "45.6159324", "lon": "15.1621151"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Krtina", "de": "Kertina"}, "coordinates": {"lat": "45.9411084", "lon": "14.957478"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Javorje", "de": "Afriach"}, "coordinates": {"lat": "46.1604794", "lon": "14.177846"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ponova Vas", "de": "Pöndorf"}, "coordinates": {"lat": "45.938938", "lon": "14.6311814"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stožice", "de": "Stoschze"}, "coordinates": {"lat": "46.0856861", "lon": "14.5191063"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Čevica", "de": ""}, "coordinates": {"lat": "45.918225", "lon": "14.2262266"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Medvedica", "de": ""}, "coordinates": {"lat": "45.9137723", "lon": "14.6165647"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sopotnica", "de": "Sapotnica"}, "coordinates": {"lat": "46.1559711", "lon": "14.2366595"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Otok Veliki", "de": "Großotok"}, "coordinates": {"lat": "45.8010952", "lon": "14.1768516"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Smlednik", "de": "Flödnig"}, "coordinates": {"lat": "46.1640594", "lon": "14.4342229"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kamna Gorica", "de": "Steinbüchl"}, "coordinates": {"lat": "46.079114", "lon": "14.4544917"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Slamna Vas", "de": "Sleindorf"}, "coordinates": {"lat": "45.6742742", "lon": "15.3353428"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gora", "de": ""}, "coordinates": {"lat": "45.9723345", "lon": "15.4522115"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bučka", "de": "Butschka"}, "coordinates": {"lat": "45.9294981", "lon": "15.3164863"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grčarske Ravne", "de": "Masereben"}, "coordinates": {"lat": "45.6598813", "lon": "14.7474801"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bač", "de": "Batsch"}, "coordinates": {"lat": "45.6546296", "lon": "13.9947582"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Martinja Vas", "de": "Martinsdorf"}, "coordinates": {"lat": "45.9346077", "lon": "14.9377108"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Grm", "de": ""}, "coordinates": {"lat": "45.9494042", "lon": "14.8732352"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ledine", "de": ""}, "coordinates": {"lat": "46.0421761", "lon": "14.0549603"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rakitna", "de": ""}, "coordinates": {"lat": "45.8910867", "lon": "14.4405105"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zemon Dolenji", "de": "Untersemon"}, "coordinates": {"lat": "45.5378326", "lon": "14.1826066"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Drenik", "de": ""}, "coordinates": {"lat": "45.947687", "lon": "14.5904846"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ig Gorenji", "de": "Oberigg"}, "coordinates": {"lat": "45.914177", "lon": "14.4463405"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rožanec", "de": ""}, "coordinates": {"lat": "45.6074244", "lon": "15.163989"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stara Vrhnika", "de": "Altoberlaibach"}, "coordinates": {"lat": "45.9753883", "lon": "14.2829904"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Cikava", "de": ""}, "coordinates": {"lat": "45.8951756", "lon": "15.1751232"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Noše", "de": "Noschach"}, "coordinates": {"lat": "46.3329716", "lon": "14.229701"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Koreno", "de": ""}, "coordinates": {"lat": "46.0340753", "lon": "14.3003338"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rodica", "de": "Rothenbüchel"}, "coordinates": {"lat": "46.1476784", "lon": "14.5939269"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zduše", "de": "Sdusch"}, "coordinates": {"lat": "46.103086", "lon": "14.4644893"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Nova Lipa", "de": "Neulinden"}, "coordinates": {"lat": "45.472994", "lon": "15.2061427"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dražka Vas", "de": "Dratschdorf"}, "coordinates": {"lat": "45.8424498", "lon": "14.8439528"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Moravče", "de": "Moräutsch"}, "coordinates": {"lat": "46.1356669", "lon": "14.744222"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Slape", "de": ""}, "coordinates": {"lat": "46.0507319", "lon": "14.5810452"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žaga", "de": ""}, "coordinates": {"lat": "45.8049228", "lon": "14.5837059"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zabreznik", "de": ""}, "coordinates": {"lat": "46.1675866", "lon": "14.944338"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Višnja Gora", "de": "Weixelburg"}, "coordinates": {"lat": "45.9554365", "lon": "14.7440991"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Gabrče", "de": "Gabertsche"}, "coordinates": {"lat": "45.7131741", "lon": "14.0222916"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zadre", "de": "Saderz"}, "coordinates": {"lat": "45.5466042", "lon": "15.0424481"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Belica", "de": "Weißenbach"}, "coordinates": {"lat": "45.5687623", "lon": "14.7087122"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Stari Log", "de": "Altlag"}, "coordinates": {"lat": "45.7259142", "lon": "14.921358"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rakulik", "de": "Rakulig"}, "coordinates": {"lat": "45.7412215", "lon": "14.1298599"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Leše", "de": ""}, "coordinates": {"lat": "46.1001092", "lon": "14.8854194"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Nadlesek", "de": "Nadlesk"}, "coordinates": {"lat": "45.6839612", "lon": "14.4039092"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sinja Gorica", "de": "Scheinbüchel"}, "coordinates": {"lat": "45.9753823", "lon": "14.3194599"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Depala Vas", "de": "Depelsdorf"}, "coordinates": {"lat": "46.1321467", "lon": "14.571929"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Golo Brdo", "de": "Golowerdu"}, "coordinates": {"lat": "46.0973537", "lon": "14.3746984"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ljubljana", "de": "Laibach"}, "coordinates": {"lat": "46.0500268", "lon": "14.5069289"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Lopata", "de": "Schaufel"}, "coordinates": {"lat": "45.7829672", "lon": "14.9012091"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Neverke", "de": ""}, "coordinates": {"lat": "45.6659148", "lon": "14.1368745"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Peteline", "de": ""}, "coordinates": {"lat": "45.6907865", "lon": "14.1965287"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rosalince", "de": "Rosalnitz"}, "coordinates": {"lat": "45.6531891", "lon": "15.329003"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Struge", "de": "Struge"}, "coordinates": {"lat": "45.7879523", "lon": "14.7770694"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Tacenj", "de": "Tazen"}, "coordinates": {"lat": "46.1187271", "lon": "14.4507998"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Torka", "de": ""}, "coordinates": {"lat": "46.2307445", "lon": "14.0809224"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vino", "de": "Vinu"}, "coordinates": {"lat": "45.9411269", "lon": "14.6032382"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Celovec", "de": "Klagenfurt"}, "coordinates": {"lat": "46.6415696", "lon": "14.2308574"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trst", "de": "Triest"}, "coordinates": {"lat": "45.6524105", "lon": "13.7012606"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Beljak", "de": "Villach"}, "coordinates": {"lat": "46.613487", "lon": "13.6716564"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Udine", "de": "Videm"}, "coordinates": {"lat": "46.0561519", "lon": "13.161761"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Maribor", "de": "Marburg"}, "coordinates": {"lat": "46.5536284", "lon": "15.5621485"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trbiž", "de": "Tarvis"}, "coordinates": {"lat": "46.4683846", "lon": "13.4331132"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Celje", "de": "Cilli"}, "coordinates": {"lat": "46.2358842", "lon": "15.2134038"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Benetke", "de": "Venedig"}, "coordinates": {"lat": "45.4045513", "lon": "12.0576805"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pariz", "de": "Paris"}, "coordinates": {"lat": "48.8589384", "lon": "2.2646338"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "London", "de": "London"}, "coordinates": {"lat": "51.528607", "lon": "-0.4312438"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Hamburg", "de": "Hamburg"}, "coordinates": {"lat": "53.5585268", "lon": "9.5981789"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Edinburg", "de": "Edinburg"}, "coordinates": {"lat": "55.941277", "lon": "-3.2877394"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Glasgow", "de": "Glasgow"}, "coordinates": {"lat": "55.8555427", "lon": "-4.3972661"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zagreb", "de": "Zagreb"}, "coordinates": {"lat": "45.8428955", "lon": "15.7995535"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Monakovo", "de": "München"}, "coordinates": {"lat": "48.155022", "lon": "11.3770258"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Berlin", "de": "Berlin"}, "coordinates": {"lat": "52.5068041", "lon": "13.0950878"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Berlin", "de": "Berlin"}, "coordinates": {"lat": "52.5068041", "lon": "13.0950878"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Frankfurt", "de": "Frankfurt"}, "coordinates": {"lat": "50.1213155", "lon": "8.4717544"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bologna", "de": "Bologna"}, "coordinates": {"lat": "44.4992289", "lon": "11.249284"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Florence", "de": "Florenz"}, "coordinates": {"lat": "43.7800525", "lon": "11.1585664"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Split", "de": "Split"}, "coordinates": {"lat": "43.5147474", "lon": "16.3766858"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ferrara", "de": "Ferrara"}, "coordinates": {"lat": "44.8363315", "lon": "11.5240443"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sarajevo", "de": "Sarajewo"}, "coordinates": {"lat": "43.8938174", "lon": "18.30059"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ptuj", "de": "Pettau"}, "coordinates": {"lat": "46.4222873", "lon": "15.7885154"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Solnograd", "de": "Salzburg"}, "coordinates": {"lat": "47.8028917", "lon": "12.9741786"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Budimpešta", "de": "Budapest"}, "coordinates": {"lat": "47.4813274", "lon": "18.9654929"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Moskva", "de": "Moskau"}, "coordinates": {"lat": "55.5810333", "lon": "36.7261506"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Petrograd", "de": "Petersburg"}, "coordinates": {"lat": "59.9394573", "lon": "29.4353233"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Atene", "de": "Atene"}, "coordinates": {"lat": "37.9909438", "lon": "23.6559375"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Milje", "de": "Muggia"}, "coordinates": {"lat": "45.5969547", "lon": "13.7284973"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Beograd", "de": "Belgrad"}, "coordinates": {"lat": "44.8153704", "lon": "20.2577862"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rim", "de": "Roma"}, "coordinates": {"lat": "41.9102088", "lon": "12.3711863"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Knittelfeld", "de": "Knittelfeld"}, "coordinates": {"lat": "47.2156374", "lon": "14.8025904"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Inomost", "de": "Innsbruck"}, "coordinates": {"lat": "47.2855627", "lon": "11.2139893"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dravograd", "de": "Unterdrauburg"}, "coordinates": {"lat": "46.5892002", "lon": "15.0015427"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Praga", "de": "Prag"}, "coordinates": {"lat": "50.0597734", "lon": "14.3008145"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brno", "de": "Brünn"}, "coordinates": {"lat": "49.2021772", "lon": "16.4131509"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Linec", "de": "Linz"}, "coordinates": {"lat": "48.2950278", "lon": "14.1626585"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Zürich", "de": "Zürich"}, "coordinates": {"lat": "47.3775284", "lon": "8.4543342"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Koper", "de": "Capodistria"}, "coordinates": {"lat": "45.5181864", "lon": "13.6712765"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Poreč", "de": "Parenz"}, "coordinates": {"lat": "45.2316936", "lon": "13.5153415"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Piran", "de": "Piran"}, "coordinates": {"lat": "45.5240258", "lon": "13.5587874"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rovinj", "de": "Rovinj"}, "coordinates": {"lat": "45.0738199", "lon": "13.5880266"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Aquila", "de": ""}, "coordinates": {"lat": "42.3634408", "lon": "13.3445663"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Velenje", "de": "Wöllan"}, "coordinates": {"lat": "46.3637332", "lon": "15.0626769"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Polzela", "de": "Heilenstein"}, "coordinates": {"lat": "46.2854427", "lon": "15.0521486"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pulj", "de": "Pola"}, "coordinates": {"lat": "44.8862511", "lon": "13.7303363"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Opatija", "de": "Sankt Jakobi"}, "coordinates": {"lat": "45.3394689", "lon": "14.2724732"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Domžale", "de": "Domschale"}, "coordinates": {"lat": "46.150588", "lon": "14.5470511"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Mengeš", "de": "Mannsburg"}, "coordinates": {"lat": "46.1682916", "lon": "14.5120838"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žalec", "de": "Sachsenfeld"}, "coordinates": {"lat": "46.2466035", "lon": "15.1399416"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vojnik", "de": "Hochenegg"}, "coordinates": {"lat": "46.2865299", "lon": "15.2824876"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Tolmin", "de": "Tolmein"}, "coordinates": {"lat": "46.1828752", "lon": "13.7066567"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ajdovščina", "de": "Heidenschaft"}, "coordinates": {"lat": "45.8860764", "lon": "13.8250382"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ljutomer", "de": "Luttenberg"}, "coordinates": {"lat": "46.5250843", "lon": "16.1515166"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Ormož", "de": "Friedau"}, "coordinates": {"lat": "46.4016732", "lon": "16.132363"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Laško", "de": "Tüffer"}, "coordinates": {"lat": "46.1611444", "lon": "15.2181429"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Manchester", "de": "Manchester"}, "coordinates": {"lat": "53.4723364", "lon": "-2.3882712"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Liverpool", "de": "Liverpool"}, "coordinates": {"lat": "53.3933541", "lon": "-3.0833981"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "New York", "de": "New York"}, "coordinates": {"lat": "40.69754", "lon": "-74.3093384"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brocklyn", "de": "Brooklyn"}, "coordinates": {"lat": "40.6453874", "lon": "-74.1098094"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "San Francisco", "de": "San Francisco"}, "coordinates": {"lat": "37.757807", "lon": "-122.5200019"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Novigrad", "de": "Cittanova"}, "coordinates": {"lat": "45.3249256", "lon": "13.5396555"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Kobarid", "de": "Karfreit"}, "coordinates": {"lat": "46.2439413", "lon": "13.549605"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Bovec", "de": "Flitsch"}, "coordinates": {"lat": "46.3427872", "lon": "13.5003657"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Soča", "de": "Isonzo"}, "coordinates": {"lat": "46.3737789", "lon": "13.6640186"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Rateče", "de": "Ratschach"}, "coordinates": {"lat": "46.4716286", "lon": "13.6269711"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Cerkno", "de": "Kirchheim"}, "coordinates": {"lat": "46.1219367", "lon": "13.9359866"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Pokljuka", "de": "Hügelland"}, "coordinates": {"lat": "46.3603908", "lon": "14.0196843"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sežana", "de": "Sesana"}, "coordinates": {"lat": "45.7265794", "lon": "13.6894464"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Jelšane", "de": "Jaltschach"}, "coordinates": {"lat": "45.5010829", "lon": "14.2358494"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Snežnik", "de": "Schneeberg"}, "coordinates": {"lat": "45.5767136", "lon": "14.3463452"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Žužemberk", "de": "Seisenberg"}, "coordinates": {"lat": "45.8249089", "lon": "14.88744"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Sevnica", "de": "Lichtenwald"}, "coordinates": {"lat": "46.0148621", "lon": "15.2896182"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Brežice", "de": "Rann"}, "coordinates": {"lat": "45.9170039", "lon": "15.5627649"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trbovlje", "de": "Trifail"}, "coordinates": {"lat": "46.1428436", "lon": "14.9978685"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Vransko", "de": "Franz"}, "coordinates": {"lat": "46.2339187", "lon": "14.864886"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Dobrna", "de": "Neuhaus"}, "coordinates": {"lat": "46.3406949", "lon": "15.2111733"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Konjice", "de": "Gonobitz"}, "coordinates": {"lat": "46.3377144", "lon": "15.4087806"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Trebnje", "de": "Treffen"}, "coordinates": {"lat": "45.9099483", "lon": "14.9927106"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Karlovec", "de": "Karlstadt"}, "coordinates": {"lat": "45.4923823", "lon": "15.4757027"}}
+{"corpus": ["DezelniZborKranjski"], "names": {"sl": "Boštanj", "de": "Sawenstein"}, "coordinates": {"lat": "46.0120836", "lon": "15.2607929"}}

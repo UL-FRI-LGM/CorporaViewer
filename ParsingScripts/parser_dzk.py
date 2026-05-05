@@ -5,8 +5,63 @@ import time
 import xml.etree.ElementTree as ET
 
 import spacy
+from rapidfuzz import fuzz
 from utils import *
 from constants import *
+
+SIFRANT_PATH = os.path.join(os.path.dirname(__file__), "data", "krajevna_imena_z_koordinatami.jsonl")
+UNMATCHED_PATH = os.path.join(os.path.dirname(__file__), "data", "unmatched_location_entities.jsonl")
+FUZZY_THRESHOLD = 85
+FUZZY_THRESHOLD_SHORT = 95  # za imena < 4 znake
+
+
+def load_sifrant(path=SIFRANT_PATH):
+    entries = []
+    with open(path, 'r', encoding='utf-8') as f:
+        for line in f:
+            entries.append(json.loads(line))
+    print(f"[INFO] Loaded šifrant: {len(entries)} entries from {path}")
+    return entries
+
+
+def normalize_location_entities(raw_names, sifrant, unmatched_log, stats):
+    normalized = []
+    for raw in raw_names:
+        if not raw or not raw.strip():
+            continue
+
+        raw_clean = raw.strip().rstrip('.,;:!?').lower()
+        threshold = FUZZY_THRESHOLD_SHORT if len(raw_clean) < 4 else FUZZY_THRESHOLD
+
+        best_score = 0
+        best_entry = None
+
+        for entry in sifrant:
+            sl = (entry['names']['sl'] or '').lower()
+            de = (entry['names']['de'] or '').lower()
+            for name in filter(None, [sl, de]):
+                score = max(
+                    fuzz.WRatio(raw_clean, name),
+                    fuzz.partial_ratio(raw_clean, name)
+                )
+                if score > best_score:
+                    best_score = score
+                    best_entry = entry
+
+        if best_score >= threshold and best_entry:
+            canonical = best_entry['names']['sl']
+            if canonical and canonical not in normalized:
+                normalized.append(canonical)
+                stats['matched'] += 1
+        else:
+            stats['unmatched'] += 1
+            unmatched_log.append({
+                'raw': raw,
+                'best_match': best_entry['names']['sl'] if best_entry else None,
+                'score': best_score
+            })
+
+    return normalized
 
 from alive_progress import alive_bar
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
@@ -422,7 +477,7 @@ def translate_meeting(meeting):
     return
 
 
-def parse_jsonl(jsonl_path, meeting):
+def parse_jsonl(jsonl_path, meeting, sifrant, unmatched_log, stats):
     if not os.path.exists(jsonl_path):
         print(f"WARNING: JSONL file not found: {jsonl_path}")
         # Add empty to all
@@ -455,9 +510,10 @@ def parse_jsonl(jsonl_path, meeting):
                     sentence_topics_map[sentence_full_id].extend(topics)
             else:
                 # Sentence record — store person/location entities
+                raw_locations = data.get(LOCATION_ENTITIES, [])
                 sentence_entities_map[record_id] = {
                     PERSON_ENTITIES: data.get(PERSON_ENTITIES, []),
-                    LOCATION_ENTITIES: data.get(LOCATION_ENTITIES, [])
+                    LOCATION_ENTITIES: normalize_location_entities(raw_locations, sifrant, unmatched_log, stats)
                 }
 
     # Aggregate all unique topics for the meeting document
@@ -480,7 +536,7 @@ def parse_jsonl(jsonl_path, meeting):
             translation[PERSON_ENTITIES] = sentence[PERSON_ENTITIES]
             translation[LOCATION_ENTITIES] = sentence[LOCATION_ENTITIES]
 
-def parse_zapisnik(xml_root, jsonl_path):
+def parse_zapisnik(xml_root, jsonl_path, sifrant, unmatched_log, stats):
     meeting_parse_start_time = time.time()
 
     meeting = {}
@@ -501,7 +557,7 @@ def parse_zapisnik(xml_root, jsonl_path):
     meeting[SENTENCES], meeting["notes"] = parse_speeches(xml_root)
 
     # add data from source jsonl files.
-    parse_jsonl(jsonl_path, meeting)
+    parse_jsonl(jsonl_path, meeting, sifrant, unmatched_log, stats)
 
     # translate meeting
     translate_meeting(meeting)
@@ -521,6 +577,10 @@ def parse_zapisnik(xml_root, jsonl_path):
 
 
 def parse(source, destination, from_idx=0, to_idx=-1):
+    sifrant = load_sifrant()
+    unmatched_log = []
+    stats = {'matched': 0, 'unmatched': 0}
+
     files = os.listdir(source)
     for i, file in enumerate(files):
 
@@ -543,7 +603,7 @@ def parse(source, destination, from_idx=0, to_idx=-1):
         jsonl_path = path.replace(".xml", ".jsonl")
 
         # initialize parser
-        zapisnik, povedi, besede = parse_zapisnik(xml_root, jsonl_path)
+        zapisnik, povedi, besede = parse_zapisnik(xml_root, jsonl_path, sifrant, unmatched_log, stats)
 
         # save data to jsonl files
         file_path = os.path.join(destination, zapisnik[ID] + "_meeting.jsonl")
@@ -556,3 +616,12 @@ def parse(source, destination, from_idx=0, to_idx=-1):
         save_to_jsonl(besede, file_path)
 
         print(f"parse(): {i+1}/{len(files)} files processed\n")
+
+    # Write unmatched location entities log
+    total = stats['matched'] + stats['unmatched']
+    print(f"[INFO] Location entity normalization: {stats['matched']} matched, {stats['unmatched']} unmatched out of {total} total")
+    if unmatched_log:
+        with open(UNMATCHED_PATH, 'w', encoding='utf-8') as f:
+            for entry in unmatched_log:
+                f.write(json.dumps(entry, ensure_ascii=False) + '\n')
+        print(f"[INFO] Unmatched log written to {UNMATCHED_PATH}")
