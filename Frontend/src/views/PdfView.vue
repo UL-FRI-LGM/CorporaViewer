@@ -522,7 +522,7 @@ select {
   border-radius: 5px;
   background-color: #1e1e2440 !important;
   border-bottom: transparent 2px solid !important;
-  box-shadow: 0px !important;
+  box-shadow: none !important;
   outline: none !important;
 }
 
@@ -673,15 +673,16 @@ import 'pdfjs-dist/build/pdf.worker.entry';
 import 'pdfjs-dist/web/pdf_viewer.css';
 import {Options, Vue} from 'vue-class-component';
 import {Watch} from 'vue-property-decorator';
-import {closest, distance} from "fastest-levenshtein";
 import {mapGetters, mapMutations} from 'vuex';
 import axios from 'axios';
 import {SearchParams} from '@/types/SearchParams';
 import {PdfHighlights, TranscriptHighlights} from '@/types/Highlights';
 import {Pagination} from '@/types/Pagination';
+import {MeetingSpeaker} from '@/types/MeetingSpeaker';
 import {MeetingSearchParams} from "@/types/MeetingSearchParams";
 import store from "@/store";
 import {corporaList} from '@/data/corporaInfo';
+import {advancedHighlightTerms, isAdvancedActive} from '@/data/advancedQuery';
 
 @Options({
   props: {
@@ -738,7 +739,7 @@ export default class PdfView extends Vue {
   meeting_id?: string;
   transcriptLanguage: string = '';
   languageOptions: string[] = ['sl'];
-  speakerList: string[] = [];
+  speakerList: MeetingSpeaker[] = [];
 
 
   show: string = ''
@@ -895,8 +896,8 @@ export default class PdfView extends Vue {
   }
 
 
-  getSelectedSpeaker(): string | undefined {
-    return this.meetingSearchParams.speaker;
+  getSelectedSpeaker(): MeetingSpeaker | undefined {
+    return this.speakerList.find((speaker) => speaker.id === this.meetingSearchParams.speaker);
   }
 
 
@@ -907,6 +908,15 @@ export default class PdfView extends Vue {
     });
 
     this.updateMeetingId(this.meeting_id);
+
+    if (this.searchParams.advanced.enabled) {
+      this.query = this.advancedQuery();
+      this.updateSearchQuery(this.query);
+      this.updateLanguage(undefined);
+      this.setUpdateTranscriptIndex(this.updateTranscriptIndex);
+      this.setUpdateTranscriptTotal(this.updateTranscriptTotal);
+      return;
+    }
 
     // Compose the query from the parameters used to retrieve relevant documents
     let initialQuery = this.searchParams.words.replaceAll(/\s+OR\s+/g, " ") ?? "";
@@ -935,6 +945,15 @@ export default class PdfView extends Vue {
     this.setUpdateTranscriptTotal(this.updateTranscriptTotal);
   }
 
+  // advanced search: highlight the words, places and persons of its conditions (without NOT)
+  advancedQuery(): string {
+    if (!isAdvancedActive(this.searchParams.advanced)) return '';
+    return advancedHighlightTerms(this.searchParams.advanced).words
+        .map(word => word.replaceAll(/\s+OR\s+/g, ' '))
+        .map(word => word.includes(' ') && !word.includes('"') ? `"${word}"` : word)
+        .join(' ');
+  }
+
   resetStoreParams(): void {
     this.resetMeetingSearchParams();
     this.updatePdfAnnotationFactory(undefined);
@@ -949,13 +968,14 @@ export default class PdfView extends Vue {
   }
 
   // HIGHLIGHT FUNCTIONS
-  speakerDisplayFn(speaker: string | undefined) {
-    return speaker;
+  speakerDisplayFn(speaker: MeetingSpeaker): string {
+    // show the name only once if it is the same
+    return Array.from(new Set(Object.values(speaker.names))).join(' / ');
   }
 
-  handleSpeakerChanged(speaker: string) {
-    this.speaker = speaker;
-    this.updateSpeaker(speaker);
+  handleSpeakerChanged(speaker: MeetingSpeaker | undefined) {
+    this.speaker = speaker?.id;
+    this.updateSpeaker(speaker?.id);
   }
 
   showNextPrevHighlightButtons() {
@@ -971,29 +991,16 @@ export default class PdfView extends Vue {
     const data = await response.json();
     this.speakerList = data.speakers;
 
-    // If a speaker is selected, find the most similar speaker from the list set it as selected
-    if (this.searchParams.speaker) {
-      let selectedSpeakerLastNames = this.searchParams.speaker.names
-          .map((name) => name.split(" ").pop())
-          .filter((name): name is string => Boolean(name));
-      let meetingParticipantsLastNames = this.speakerList
-          .map((speaker) => speaker.split(" ").pop())
-          .filter((name): name is string => Boolean(name));
-
-      // Get index of the most similar speaker last name to the selected speaker last name
-      let closestSpeakerIndex = 0;
-      let minDistance = Number.MAX_VALUE;
-      for (const lastName of selectedSpeakerLastNames) {
-        let mostSimilarSpeakerLastName = closest(lastName, meetingParticipantsLastNames);
-        let editDistance = distance(lastName, mostSimilarSpeakerLastName);
-        if (editDistance < minDistance) {
-          minDistance = editDistance;
-          closestSpeakerIndex = meetingParticipantsLastNames.indexOf(mostSimilarSpeakerLastName);
-        }
-      }
-
-      let closestSpeaker = this.speakerList[closestSpeakerIndex];
-      this.updateSpeaker(closestSpeaker);
+    // select the speaker from the search if they speak in this meeting
+    // (advanced search: only when there are no words, otherwise the speaker would limit the highlighted words)
+    const advanced = this.searchParams.advanced.enabled;
+    const advancedSpeakers = isAdvancedActive(this.searchParams.advanced) && !this.query
+        ? advancedHighlightTerms(this.searchParams.advanced).speakers : [];
+    const selectedSpeakerId = advanced
+        ? advancedSpeakers.find(id => this.speakerList.some(speaker => speaker.id === id))
+        : this.searchParams.speaker?.id;
+    if (selectedSpeakerId && this.speakerList.some((speaker) => speaker.id === selectedSpeakerId)) {
+      this.updateSpeaker(selectedSpeakerId);
     }
   }
 

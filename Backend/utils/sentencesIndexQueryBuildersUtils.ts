@@ -40,10 +40,8 @@ const phrasesSearchQueryBuilder = (meetingId: string, phrases: string[][], speak
             ],
             must: [
                 ...(speaker ? [{
-                    match: {
-                        "speaker": {
-                            query: speaker,
-                        }
+                    term: {
+                        "speaker_id": speaker
                     }
                 }] : []),
                 {

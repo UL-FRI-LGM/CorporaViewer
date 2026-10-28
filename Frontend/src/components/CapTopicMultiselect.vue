@@ -3,7 +3,7 @@
     <div class="input-wrapper" :class="{ focused: isFocused }" @click="focusInput">
       <span class="chip" v-for="topic in selectedTopics" :key="topic.id"
             @mousedown.prevent>
-        {{ topic.name }}
+        {{ capTopicLabel(topic.name, locale) }}
         <i class="fa fa-xmark chip-remove" @click.stop="removeTopic(topic)"></i>
       </span>
       <input
@@ -24,7 +24,7 @@
       <template v-for="entry in visibleEntries" :key="entry.main">
         <div class="autocomplete-item main-topic-item">
           <span class="expand-arrow" :class="{ expanded: expandedMains.has(entry.main) }" @click="toggleExpand(entry.main)">&#9654;</span>
-          <strong class="main-topic-label" @click="toggleExpand(entry.main)">{{ entry.main }}</strong>
+          <strong class="main-topic-label" @click="toggleExpand(entry.main)">{{ capMainTopicLabel(entry.main, locale) }}</strong>
           <span class="add-main-btn" @click="selectMainTopic(entry.main)" title="Add whole topic">
             <i class="fa fa-plus"></i>
           </span>
@@ -174,6 +174,8 @@
 import {computed, ref, reactive, watch} from 'vue';
 import {useStore} from 'vuex';
 import {CapTopic} from '@/types/CapTopic';
+import i18n from '@/data/i18setup';
+import {capMainTopicLabel, capSubtopicLabel, capTopicLabel} from '@/data/capTopics';
 
 interface SubtopicEntry {
   label: string;
@@ -185,12 +187,19 @@ interface MainTopicEntry {
   subtopics: SubtopicEntry[];
 }
 
+// without modelValue the store topic filter is used (modelValue is used by the advanced search)
 const props = defineProps<{
   allTopics: CapTopic[];
   placeholder: string;
+  modelValue?: CapTopic[];
+}>();
+
+const emit = defineEmits<{
+  (e: 'update:modelValue', topics: CapTopic[]): void;
 }>();
 
 const store = useStore();
+const locale = computed(() => i18n.global.locale as string);
 const searchText = ref('');
 const dropdownVisible = ref(false);
 const isFocused = ref(false);
@@ -198,8 +207,13 @@ const expandedMains = reactive(new Set<string>());
 const inputRef = ref<HTMLInputElement | null>(null);
 
 const selectedTopics = computed<CapTopic[]>(
-    () => store.getters['searchParamsModule/searchParamsInstance'].capTopics
+    () => props.modelValue ?? store.getters['searchParamsModule/searchParamsInstance'].capTopics
 );
+
+function addTopic(topic: CapTopic) {
+  if (props.modelValue) emit('update:modelValue', [...props.modelValue, topic]);
+  else store.commit('searchParamsModule/addCapTopic', topic);
+}
 
 const selectedIds = computed(
     () => new Set(selectedTopics.value.map(t => t.id))
@@ -210,7 +224,8 @@ const selectedMainTopics = computed(
 );
 
 const uniqueMainTopics = computed(() =>
-    [...new Set(props.allTopics.map(t => t.mainTopic))].sort((a, b) => a.localeCompare(b))
+    [...new Set(props.allTopics.map(t => t.mainTopic))]
+        .sort((a, b) => capMainTopicLabel(a, locale.value).localeCompare(capMainTopicLabel(b, locale.value)))
 );
 
 const visibleEntries = computed<MainTopicEntry[]>(() => {
@@ -219,7 +234,9 @@ const visibleEntries = computed<MainTopicEntry[]>(() => {
 
   for (const main of uniqueMainTopics.value) {
     if (selectedMainTopics.value.has(main)) continue;
-    if (text !== '' && !main.toLowerCase().includes(text)) continue;
+    // search by the translated and the english name
+    if (text !== '' && !main.toLowerCase().includes(text)
+        && !capMainTopicLabel(main, locale.value).toLowerCase().includes(text)) continue;
 
     const subtopics: SubtopicEntry[] = [];
     for (const topic of props.allTopics) {
@@ -227,7 +244,7 @@ const visibleEntries = computed<MainTopicEntry[]>(() => {
       if (selectedIds.value.has(topic.id)) continue;
 
       subtopics.push({
-        label: topic.name.split(':').slice(1).join(':').trim() || topic.name,
+        label: capSubtopicLabel(topic.name, locale.value),
         topic: {...topic, isMainOnly: false}
       });
     }
@@ -258,22 +275,27 @@ function toggleExpand(main: string) {
 
 function selectMainTopic(main: string) {
   // Remove any previously selected subtopics of this main topic
-  selectedTopics.value
-      .filter(t => !t.isMainOnly && t.mainTopic === main)
-      .forEach(t => store.commit('searchParamsModule/removeCapTopic', t));
   const topic: CapTopic = {id: 'main_' + main, name: main, mainTopic: main, isMainOnly: true};
-  store.commit('searchParamsModule/addCapTopic', topic);
+  if (props.modelValue) {
+    emit('update:modelValue', [...props.modelValue.filter(t => t.isMainOnly || t.mainTopic !== main), topic]);
+  } else {
+    selectedTopics.value
+        .filter(t => !t.isMainOnly && t.mainTopic === main)
+        .forEach(t => store.commit('searchParamsModule/removeCapTopic', t));
+    store.commit('searchParamsModule/addCapTopic', topic);
+  }
   expandedMains.delete(main);
   searchText.value = '';
 }
 
 function selectSubtopic(topic: CapTopic) {
-  store.commit('searchParamsModule/addCapTopic', topic);
+  addTopic(topic);
   searchText.value = '';
 }
 
 function removeTopic(topic: CapTopic) {
-  store.commit('searchParamsModule/removeCapTopic', topic);
+  if (props.modelValue) emit('update:modelValue', props.modelValue.filter(t => t.id !== topic.id));
+  else store.commit('searchParamsModule/removeCapTopic', topic);
 }
 
 function onBackspace() {

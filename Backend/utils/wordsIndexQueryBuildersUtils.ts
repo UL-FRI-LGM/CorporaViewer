@@ -29,11 +29,8 @@ const wordsSearchQueryBuilder = (meetingId: string, words: string[], speaker: st
             ],
             must: [
                 ...(speaker ? [{
-                    match: {
-                        "speaker": {
-                            query: speaker,
-                            operator: "and"
-                        }
+                    term: {
+                        "speaker_id": speaker
                     }
                 }] : []),
                 {

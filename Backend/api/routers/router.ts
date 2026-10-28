@@ -23,6 +23,8 @@ router.get("/pdf/getById/:id", pdfController.getById);
 router.get("/pdf/getThumbnailById/:id", pdfController.getThumbnailById);
 
 router.get("/meetings/getPage/:page", meetingsController.getPage);
+router.get("/meetings/getMapLocations", meetingsController.getMapLocations);
+router.get("/meetings/getTimeline", meetingsController.getTimeline);
 router.get("/meetings/:meetingId/getMeetingAsText", meetingsController.getMeetingAsText);
 router.get("/meetings/:meetingId/getSpeakers", meetingsController.getSpeakers);
 router.get("/meetings/:meetingId/getHighlights", headers.setHtmlChunkedHeaders, meetingsController.getHighlights);

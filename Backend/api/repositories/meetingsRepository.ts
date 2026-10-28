@@ -11,6 +11,7 @@ import esClient from "../database/elasticsearch";
 import utils from "../../utils/utils";
 import {GetPageQueryParams} from "../../models/GetPageQueryParams";
 import meetingsIndexQueryBuildersUtils from "../../utils/meetingsIndexQueryBuildersUtils";
+import advancedQueryBuilder, {MATCHED_SEGMENTS, SHOWN_SENTENCES} from "../../utils/advancedQueryBuilder";
 import searchStrategySelector from "../../strategies/searchStrategySelector";
 import {MeetingsIndexDocument} from "../../models/MeetingsIndexDocument";
 import {MeetingData} from "../../models/MeetingData";
@@ -19,6 +20,8 @@ import {HtmlElementBuilder} from "../../builders/HtmlElementBuilder";
 import {Sentence} from "../../models/Sentence";
 import {Word} from "../../models/Word";
 import {UniqueSpeakersAggregation} from "../../models/UniqueSpeakersAggregation";
+import {AttendeesIndexDocument} from "../../models/AttendeesIndexDocument";
+import {MeetingSpeaker} from "../../models/MeetingSpeaker";
 import {Highlight} from "../../models/Highlight";
 import {Coordinate, UtteranceBucket} from "../../models/UtteranceBucket";
 import ASCIIFolder from "fold-to-ascii";
@@ -63,6 +66,213 @@ const getAllMeetings = async (filters: CorpusSearchFilters, page: number) => {
     };
 }
 
+
+const MAX_MATCHING_MEETINGS = 10000;
+
+// remove inner_hits, we only need the meeting ids
+const stripInnerHits = (query: any): any => {
+    if (Array.isArray(query)) {
+        return query.map(stripInnerHits);
+    }
+    if (query && typeof query === "object") {
+        const result: any = {};
+        for (const [key, value] of Object.entries(query)) {
+            if (key !== "inner_hits") {
+                result[key] = stripInnerHits(value);
+            }
+        }
+        return result;
+    }
+    return query;
+}
+
+// ids of all meetings that match the getPage query (max MAX_MATCHING_MEETINGS)
+const getMatchingMeetingIds = async (queryParams: GetPageQueryParams): Promise<{ ids: string[], truncated: boolean }> => {
+
+    // same query as getPage so the map shows the same meetings as the results
+    const query: any = stripInnerHits(meetingsIndexQueryBuildersUtils.buildMeetingsPageQuery(queryParams));
+
+    const response: SearchResponse<MeetingsIndexDocument> = await esClient.search({
+        index: process.env.MEETINGS_INDEX_NAME || 'meetings-index',
+        _source: ["id"],
+        query: query,
+        size: MAX_MATCHING_MEETINGS,
+        track_total_hits: true
+    });
+
+    const ids: string[] = response.hits.hits
+        .map(hit => hit._source?.id)
+        .filter((id): id is string => !!id);
+    const total: number = (response.hits.total as SearchTotalHits).value;
+
+    return {ids, truncated: total > ids.length};
+}
+
+
+export type TimelineInterval = "year" | "month";
+export type TimelineUnit = "meetings" | "segments" | "sentences";
+
+export interface TimelineBucket {
+    date: string;   // yyyy-MM-dd
+    count: number;  // matching meetings/segments/sentences
+    total: number;  // all of them in this period
+}
+
+// meetings per year/month, count = matching meetings (without the date filter), total = all meetings
+const getTimeline = async (queryParams: GetPageQueryParams, interval: TimelineInterval, unit: TimelineUnit = "meetings"): Promise<TimelineBucket[]> => {
+
+    if (unit === "sentences") return getSentencesTimeline(queryParams, interval);
+    if (unit === "segments") return getSegmentsTimeline(queryParams, interval);
+
+    const withoutDates: GetPageQueryParams = {
+        ...queryParams,
+        filters: {...queryParams.filters, dateFrom: undefined, dateTo: undefined}
+    };
+    const histogram = {
+        timeline: {
+            date_histogram: {field: "date", calendar_interval: interval, format: "yyyy-MM-dd", min_doc_count: 0}
+        }
+    };
+    const index: string = process.env.MEETINGS_INDEX_NAME || 'meetings-index';
+
+    const [matching, all] = await Promise.all([
+        esClient.search({
+            index,
+            size: 0,
+            query: stripInnerHits(meetingsIndexQueryBuildersUtils.buildMeetingsPageQuery(withoutDates)),
+            aggs: histogram
+        }),
+        esClient.search({
+            index,
+            size: 0,
+            query: {bool: {filter: [{terms: {"corpus": (queryParams.filters.corpora ?? "").split(",")}}]}},
+            aggs: histogram
+        })
+    ]);
+
+    const bucketsOf = (response: any): { key_as_string: string, doc_count: number }[] =>
+        response.aggregations?.timeline?.buckets ?? [];
+
+    const matchingCounts = new Map<string, number>(bucketsOf(matching).map(b => [b.key_as_string, b.doc_count]));
+    return bucketsOf(all).map(bucket => ({
+        date: bucket.key_as_string,
+        count: matchingCounts.get(bucket.key_as_string) ?? 0,
+        total: bucket.doc_count
+    }));
+}
+
+
+// sentences per year/month, a sentence counts only if it matches all the conditions by itself
+// segments (paragraphs) per year/month, a segment counts only if it matches all the conditions by itself
+const getSegmentsTimeline = async (queryParams: GetPageQueryParams, interval: TimelineInterval): Promise<TimelineBucket[]> => {
+
+    const languages: string[] = (queryParams.filters.languages ?? "").split(",");
+    const matching: any = queryParams.advanced
+        ? advancedQueryBuilder.buildAdvancedSegmentQuery(queryParams.advanced, languages)
+        : advancedQueryBuilder.buildBasicSegmentQuery(queryParams, languages);
+
+    const response: any = await esClient.search({
+        index: process.env.MEETINGS_INDEX_NAME || 'meetings-index',
+        size: 0,
+        query: {bool: {filter: [{terms: {"corpus": (queryParams.filters.corpora ?? "").split(",")}}]}},
+        aggs: {
+            timeline: {
+                date_histogram: {field: "date", calendar_interval: interval, format: "yyyy-MM-dd", min_doc_count: 0},
+                aggs: {
+                    segments: {
+                        nested: {path: "segments"},
+                        aggs: {
+                            all: {filter: {terms: {"segments.original_language": languages}}},
+                            matching: {filter: matching}
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    return (response.aggregations?.timeline?.buckets ?? []).map((bucket: any) => ({
+        date: bucket.key_as_string,
+        count: bucket.segments.matching.doc_count,
+        total: bucket.segments.all.doc_count
+    }));
+}
+
+
+const getSentencesTimeline = async (queryParams: GetPageQueryParams, interval: TimelineInterval): Promise<TimelineBucket[]> => {
+
+    const languages: string[] = (queryParams.filters.languages ?? "").split(",");
+    const inLanguages: any = {
+        nested: {path: "sentences.translations", query: {terms: {"sentences.translations.lang.keyword": languages}}}
+    };
+    const conditions: any[] = meetingsIndexQueryBuildersUtils.buildSentenceConditions(queryParams)
+        .map(condition => ({nested: {path: "sentences.translations", query: condition}}));
+    const topics: any | undefined = meetingsIndexQueryBuildersUtils.buildSentenceTopicsClause(queryParams.capTopics);
+
+    const response: any = await esClient.search({
+        index: process.env.MEETINGS_INDEX_NAME || 'meetings-index',
+        size: 0,
+        query: {bool: {filter: [{terms: {"corpus": (queryParams.filters.corpora ?? "").split(",")}}]}},
+        aggs: {
+            timeline: {
+                date_histogram: {field: "date", calendar_interval: interval, format: "yyyy-MM-dd", min_doc_count: 0},
+                aggs: {
+                    sentences: {
+                        nested: {path: "sentences"},
+                        aggs: {
+                            all: {filter: inLanguages},
+                            matching: {
+                                filter: queryParams.advanced
+                                    // advanced search is checked on each sentence
+                                    ? advancedQueryBuilder.buildAdvancedSentenceQuery(queryParams.advanced, languages)
+                                    : {bool: {must: [inLanguages, ...conditions, ...(topics ? [topics] : [])]}}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    return (response.aggregations?.timeline?.buckets ?? []).map((bucket: any) => ({
+        date: bucket.key_as_string,
+        count: bucket.sentences.matching.doc_count,
+        total: bucket.sentences.all.doc_count
+    }));
+}
+
+
+const toSentenceData = (sentence: any): SentenceData => ({
+    lang: sentence._source.lang,
+    original: sentence._source.original,
+    text: sentence._source.text,
+    speaker: sentence._source.speaker,
+    words: sentence._source.words,
+    highlights: sentence.highlight
+});
+
+const SHOWN_SENTENCES_LIMIT = 10;
+
+// shown sentences of the advanced search (on segment level only the ones from matching segments)
+const advancedShownSentences = (meeting: any): { sentences: SentenceData[], totalSentences: number } => {
+    let hits: any[] = meeting.inner_hits?.[SHOWN_SENTENCES]?.hits.hits ?? [];
+    let total: number = (meeting.inner_hits?.[SHOWN_SENTENCES]?.hits.total as SearchTotalHits)?.value ?? 0;
+
+    const segments = meeting.inner_hits?.[MATCHED_SEGMENTS];
+    if (segments) {
+        const ids = new Set(segments.hits.hits.map((segment: any) => segment._source.id));
+        hits = hits.filter(hit => ids.has(hit._source.segment_id));
+        total = hits.length;
+    }
+
+    return {
+        sentences: hits.slice(0, SHOWN_SENTENCES_LIMIT)
+            .map(hit => hit.inner_hits?.["sentences.translations"]?.hits.hits[0])
+            .filter(translation => translation)
+            .map(toSentenceData),
+        totalSentences: total
+    };
+};
 
 const getPage = async (queryParams: GetPageQueryParams) => {
 
@@ -118,18 +328,11 @@ const getPage = async (queryParams: GetPageQueryParams) => {
                 titles: meeting._source.titles,
                 agendas: meeting._source.agendas,
                 corpus: meeting._source.corpus,
-                sentences: meeting.inner_hits?.["sentences.translations"].hits.hits.map(sentence => {
-                    return {
-                        lang: sentence._source.lang,
-                        original: sentence._source.original,
-                        text: sentence._source.text,
-                        speaker: sentence._source.speaker,
-                        words: sentence._source.words,
-                        highlights: sentence.highlight
-                    } as SentenceData
-                }) ?? [],
-                totalSentences: meeting.inner_hits?.["sentences.translations"]?.hits?.total ?
-                    (meeting.inner_hits["sentences.translations"].hits.total as SearchTotalHits).value : 0,
+                ...(queryParams.advanced ? advancedShownSentences(meeting) : {
+                    sentences: meeting.inner_hits?.["sentences.translations"].hits.hits.map(toSentenceData) ?? [],
+                    totalSentences: meeting.inner_hits?.["sentences.translations"]?.hits?.total ?
+                        (meeting.inner_hits["sentences.translations"].hits.total as SearchTotalHits).value : 0,
+                })
             } as MeetingData
         );
     }
@@ -272,7 +475,8 @@ const getMeetingAsText = async (meetingId: string, pageLang: string, translation
 }
 
 
-const getSpeakers = async (meetingId: string,) => {
+// speakers of a meeting with the number of their sentences
+const getSpeakers = async (meetingId: string): Promise<MeetingSpeaker[]> => {
 
     const meetingsIndexSearchResponse: SearchResponse<MeetingsIndexDocument> = await esClient.search({
         index: process.env.MEETINGS_INDEX_NAME || 'meetings-index',
@@ -289,10 +493,15 @@ const getSpeakers = async (meetingId: string,) => {
             }
         },
         aggs: {
-            unique_speakers: {
-                terms: {
-                    field: "sentences.speaker.keyword",
-                    size: 10000
+            sentences: {
+                nested: {path: "sentences"},
+                aggs: {
+                    unique_speakers: {
+                        terms: {
+                            field: "sentences.speaker_id",
+                            size: 10000
+                        }
+                    }
                 }
             }
         },
@@ -300,15 +509,31 @@ const getSpeakers = async (meetingId: string,) => {
 
     });
 
-    const uniqueSpeakersAggregation = meetingsIndexSearchResponse.aggregations as {
-        unique_speakers: UniqueSpeakersAggregation;
+    const uniqueSpeakersAggregation = meetingsIndexSearchResponse.aggregations as unknown as {
+        sentences: { unique_speakers: UniqueSpeakersAggregation };
     };
 
-    const uniqueSpeakers: string[] = uniqueSpeakersAggregation.unique_speakers.buckets
-        .map(speaker => speaker.key.trim())
-        .filter(speaker => speaker.length > 0);
+    const buckets = uniqueSpeakersAggregation.sentences.unique_speakers.buckets
+        .filter(bucket => bucket.key.trim().length > 0);
+    if (buckets.length === 0) {
+        return [];
+    }
 
-    return uniqueSpeakers;
+    // get speaker names from attendees-index
+    const attendeesResponse: SearchResponse<AttendeesIndexDocument> = await esClient.search({
+        index: process.env.ATTENDEES_INDEX_NAME || 'attendees-index',
+        query: {ids: {values: buckets.map(bucket => bucket.key)}},
+        size: buckets.length,
+        _source: ["id", "names"]
+    });
+    const namesById = new Map<string, AttendeesIndexDocument["names"]>();
+    attendeesResponse.hits.hits.forEach(hit => {
+        if (hit._source) namesById.set(hit._source.id, hit._source.names);
+    });
+
+    return buckets
+        .filter(bucket => namesById.has(bucket.key))
+        .map(bucket => ({id: bucket.key, names: namesById.get(bucket.key)!, count: bucket.doc_count}));
 }
 
 
@@ -471,6 +696,8 @@ async function* getHighlights(meetingId: string, query: string, speaker: string 
 export default {
     getAllMeetings,
     getPage,
+    getMatchingMeetingIds,
+    getTimeline,
     getMeetingAsText,
     getSpeakers,
     getSpeakerUtterancesHighlights,

@@ -16,6 +16,7 @@
     "bootstrap-daterangepicker": "^3.1.0",
     "bootstrap-vue": "^2.23.1",
     "core-js": "^3.8.3",
+    "echarts": "^6.1.0",
     "fastest-levenshtein": "^1.0.16",
     "glob-parent": "^6.0.2",
     "maplibre-gl": "^5.24.0",

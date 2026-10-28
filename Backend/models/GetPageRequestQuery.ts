@@ -5,6 +5,7 @@ export interface GetPageRequestQuery {
     personEntities?: string;
     locationEntities?: string;
     capTopics?: string | string[];
+    advanced?: string;   // AdvancedQuery as JSON
     dateFrom?: string;
     dateTo?: string;
     languages?: string;

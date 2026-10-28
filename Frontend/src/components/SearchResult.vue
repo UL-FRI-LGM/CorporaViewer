@@ -59,7 +59,7 @@
   border-bottom: #708d81 4px solid;
   padding: 1.5rem;
   color: black;
-  margin: 1rem 1, 5rem;
+  margin: 1rem 1.5rem;
 }
 
 .text-container {
@@ -157,7 +157,6 @@ export default class SearchResult extends Vue {
   onMeetingChanged() {
     this.updateHighlights();
     this.updateImageLink();
-    this.scrollToFirstResult();
   }
 
   @Watch('page', {immediate: true})
@@ -171,31 +170,39 @@ export default class SearchResult extends Vue {
 
     this.selectedSpeakerName = this.searchParamsInstance?.speaker?.names[0] ?? "";
     this.result = this.$refs.result as HTMLElement;
-    this.scrollToFirstResult();
-  }
-
-  scrollToFirstResult() {
-    if (this.index === 0) {
-      this.result?.scrollIntoView({behavior: 'smooth', block: 'start'});
-    }
   }
 
   updateHighlights() {
     this.highlights = [];
+
+    // words of the selected person/place
+    const entityLemmas = new Set<string>();
+    [this.searchParamsInstance?.personEntity, this.searchParamsInstance?.locationEntity].forEach(entity => {
+      Object.values(entity?.names ?? {}).forEach((name: any) => {
+        String(name).split(/[\s,]+/).filter(Boolean).forEach(part => entityLemmas.add(part.toLowerCase()));
+      });
+    });
+
+    // one entry per sentence so the index matches the snippet
     this.meeting.sentences?.forEach(sentence => {
-      if (sentence.highlights) {
-        this.highlights.push([
-          ...sentence.highlights['sentences.translations.text']?.flatMap(text => { // map all words inside <em> and </em> tags
-            const words: string[] = text.match(/<em>(.*?)<\/em>/g)?.flatMap(x => x.replace(/<\/?em>/g, "").split(" ")) || [];
-            return words;
-          }) ?? [],
-          ...sentence.highlights['sentences.translations.words.lemma']?.map(x => {
-            const lemma = x.replace(/<\/?em>/g, "")
-            const word = sentence.words.find(word => word.lemma === lemma)?.text;
-            return word ? word.toLowerCase() : "";
-          }) ?? []
-        ])
-      }
+      const searchedWords: string[] = sentence.highlights ? [
+        ...sentence.highlights['sentences.translations.text']?.flatMap(text => { // words inside <em> tags
+          const words: string[] = text.match(/<em>(.*?)<\/em>/g)?.flatMap(x => x.replace(/<\/?em>/g, "").split(" ")) || [];
+          return words;
+        }) ?? [],
+        ...sentence.highlights['sentences.translations.words.lemma']?.map(x => {
+          const lemma = x.replace(/<\/?em>/g, "")
+          const word = sentence.words.find(word => word.lemma === lemma)?.text;
+          return word ? word.toLowerCase() : "";
+        }) ?? []
+      ] : [];
+
+      const entityWords: string[] = entityLemmas.size === 0 ? [] :
+          (sentence.words ?? [])
+              .filter(word => entityLemmas.has(String(word.lemma).toLowerCase()))
+              .map(word => word.text.toLowerCase());
+
+      this.highlights.push([...searchedWords, ...entityWords]);
     });
   }
 
@@ -256,7 +263,8 @@ export default class SearchResult extends Vue {
         .filter(i2 => i2 !== -1);
 
     if (targetWordIndices.length === 0 && !this.selectedSpeakerName) {
-      return this.$t('noTargetWordsFound');
+      // sentence matched another filter (speaker, ...), show the beginning
+      return (index == 0 ? " ... " : "") + untrimmedSnippetWordList.slice(0, 15).join(" ") + " ... ";
     } else if (targetWordIndices.length === 0 && this.selectedSpeakerName) {
       var snippet = (index == 0 ? '<h6 style="text-align: left; padding-left: 1rem;"><span class="highlight-result">' + this.selectedSpeakerName + "</span>:</h6>" : "")
       snippet += untrimmedSnippetWordList.slice(0, 15).join(" ") + " ... ";

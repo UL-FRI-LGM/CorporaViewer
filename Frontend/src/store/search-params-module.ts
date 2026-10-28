@@ -5,6 +5,7 @@ import {Attendee} from "@/types/Attendee";
 import {Place} from "@/types/Place";
 import {PersonEntity} from "@/types/PersonEntity";
 import {CapTopic} from "@/types/CapTopic";
+import {AdvancedSearch} from "@/types/AdvancedQuery";
 
 interface SearchParamsState {
     instance: SearchParams;
@@ -36,6 +37,9 @@ const mutations: MutationTree<SearchParamsState> = {
     },
     resetCapTopics(state: SearchParamsState) {
         state.instance.capTopics = []
+    },
+    updateAdvanced(state: SearchParamsState, advanced: AdvancedSearch) {
+        state.instance.advanced = advanced
     },
 }
 

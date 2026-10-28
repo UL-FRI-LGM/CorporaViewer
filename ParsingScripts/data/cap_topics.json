@@ -1,0 +1,1360 @@
+{
+  "100": {
+    "major_code": 1,
+    "major_name": "Macroeconomics",
+    "minor_name": "General",
+    "major_name_sl": "Makroekonomija",
+    "minor_name_sl": "Splošno"
+  },
+  "101": {
+    "major_code": 1,
+    "major_name": "Macroeconomics",
+    "minor_name": "Interest Rates",
+    "major_name_sl": "Makroekonomija",
+    "minor_name_sl": "Obrestne mere"
+  },
+  "103": {
+    "major_code": 1,
+    "major_name": "Macroeconomics",
+    "minor_name": "Unemployment Rate",
+    "major_name_sl": "Makroekonomija",
+    "minor_name_sl": "Brezposelnost"
+  },
+  "104": {
+    "major_code": 1,
+    "major_name": "Macroeconomics",
+    "minor_name": "Monetary Policy",
+    "major_name_sl": "Makroekonomija",
+    "minor_name_sl": "Denarna politika"
+  },
+  "105": {
+    "major_code": 1,
+    "major_name": "Macroeconomics",
+    "minor_name": "National Budget",
+    "major_name_sl": "Makroekonomija",
+    "minor_name_sl": "Državni proračun"
+  },
+  "107": {
+    "major_code": 1,
+    "major_name": "Macroeconomics",
+    "minor_name": "Tax Code",
+    "major_name_sl": "Makroekonomija",
+    "minor_name_sl": "Davčna zakonodaja"
+  },
+  "108": {
+    "major_code": 1,
+    "major_name": "Macroeconomics",
+    "minor_name": "Industrial Policy",
+    "major_name_sl": "Makroekonomija",
+    "minor_name_sl": "Industrijska politika"
+  },
+  "110": {
+    "major_code": 1,
+    "major_name": "Macroeconomics",
+    "minor_name": "Price Control",
+    "major_name_sl": "Makroekonomija",
+    "minor_name_sl": "Nadzor cen"
+  },
+  "200": {
+    "major_code": 2,
+    "major_name": "Civil Rights",
+    "minor_name": "General",
+    "major_name_sl": "Državljanske pravice",
+    "minor_name_sl": "Splošno"
+  },
+  "201": {
+    "major_code": 2,
+    "major_name": "Civil Rights",
+    "minor_name": "Minority Discrimination",
+    "major_name_sl": "Državljanske pravice",
+    "minor_name_sl": "Diskriminacija manjšin"
+  },
+  "202": {
+    "major_code": 2,
+    "major_name": "Civil Rights",
+    "minor_name": "Gender Discrimination",
+    "major_name_sl": "Državljanske pravice",
+    "minor_name_sl": "Diskriminacija po spolu"
+  },
+  "204": {
+    "major_code": 2,
+    "major_name": "Civil Rights",
+    "minor_name": "Age Discrimination",
+    "major_name_sl": "Državljanske pravice",
+    "minor_name_sl": "Diskriminacija zaradi starosti"
+  },
+  "205": {
+    "major_code": 2,
+    "major_name": "Civil Rights",
+    "minor_name": "Handicap Discrimination",
+    "major_name_sl": "Državljanske pravice",
+    "minor_name_sl": "Diskriminacija invalidov"
+  },
+  "206": {
+    "major_code": 2,
+    "major_name": "Civil Rights",
+    "minor_name": "Voting Rights",
+    "major_name_sl": "Državljanske pravice",
+    "minor_name_sl": "Volilna pravica"
+  },
+  "207": {
+    "major_code": 2,
+    "major_name": "Civil Rights",
+    "minor_name": "Freedom of Speech",
+    "major_name_sl": "Državljanske pravice",
+    "minor_name_sl": "Svoboda govora"
+  },
+  "208": {
+    "major_code": 2,
+    "major_name": "Civil Rights",
+    "minor_name": "Right to Privacy",
+    "major_name_sl": "Državljanske pravice",
+    "minor_name_sl": "Pravica do zasebnosti"
+  },
+  "209": {
+    "major_code": 2,
+    "major_name": "Civil Rights",
+    "minor_name": "Anti-Government",
+    "major_name_sl": "Državljanske pravice",
+    "minor_name_sl": "Protidržavne dejavnosti"
+  },
+  "300": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "General",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Splošno"
+  },
+  "301": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Health Care Reform",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Reforma zdravstva"
+  },
+  "302": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Insurance",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Zdravstveno zavarovanje"
+  },
+  "321": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Drug Industry",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Farmacevtska industrija"
+  },
+  "322": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Medical Facilities",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Zdravstvene ustanove"
+  },
+  "323": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Insurance Providers",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Zavarovalnice in plačniki"
+  },
+  "324": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Medical Liability",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Odgovornost zdravnikov"
+  },
+  "325": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Manpower",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Zdravstveno osebje"
+  },
+  "331": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Disease Prevention",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Preprečevanje bolezni"
+  },
+  "332": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Infants and Children",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Zdravje dojenčkov in otrok"
+  },
+  "333": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Mental Health",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Duševno zdravje"
+  },
+  "334": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Long-term Care",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Dolgotrajna oskrba"
+  },
+  "335": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Drug Coverage and Cost",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Kritje in cene zdravil"
+  },
+  "341": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Tobacco Abuse",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Kajenje in tobak"
+  },
+  "342": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "Drug and Alcohol Abuse",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Zloraba drog in alkohola"
+  },
+  "398": {
+    "major_code": 3,
+    "major_name": "Health",
+    "minor_name": "R&D",
+    "major_name_sl": "Zdravstvo",
+    "minor_name_sl": "Raziskave in razvoj"
+  },
+  "400": {
+    "major_code": 4,
+    "major_name": "Agriculture",
+    "minor_name": "General",
+    "major_name_sl": "Kmetijstvo",
+    "minor_name_sl": "Splošno"
+  },
+  "401": {
+    "major_code": 4,
+    "major_name": "Agriculture",
+    "minor_name": "Trade",
+    "major_name_sl": "Kmetijstvo",
+    "minor_name_sl": "Trgovina s kmetijskimi pridelki"
+  },
+  "402": {
+    "major_code": 4,
+    "major_name": "Agriculture",
+    "minor_name": "Subsidies to Farmers",
+    "major_name_sl": "Kmetijstvo",
+    "minor_name_sl": "Podpore kmetom"
+  },
+  "403": {
+    "major_code": 4,
+    "major_name": "Agriculture",
+    "minor_name": "Food Inspection & Safety",
+    "major_name_sl": "Kmetijstvo",
+    "minor_name_sl": "Nadzor in varnost hrane"
+  },
+  "404": {
+    "major_code": 4,
+    "major_name": "Agriculture",
+    "minor_name": "Food Marketing & Promotion",
+    "major_name_sl": "Kmetijstvo",
+    "minor_name_sl": "Trženje in promocija hrane"
+  },
+  "405": {
+    "major_code": 4,
+    "major_name": "Agriculture",
+    "minor_name": "Animal and Crop Disease",
+    "major_name_sl": "Kmetijstvo",
+    "minor_name_sl": "Bolezni živali in rastlin"
+  },
+  "408": {
+    "major_code": 4,
+    "major_name": "Agriculture",
+    "minor_name": "Fisheries & Fishing",
+    "major_name_sl": "Kmetijstvo",
+    "minor_name_sl": "Ribištvo"
+  },
+  "498": {
+    "major_code": 4,
+    "major_name": "Agriculture",
+    "minor_name": "R&D",
+    "major_name_sl": "Kmetijstvo",
+    "minor_name_sl": "Raziskave in razvoj"
+  },
+  "500": {
+    "major_code": 5,
+    "major_name": "Labor",
+    "minor_name": "General",
+    "major_name_sl": "Delo in zaposlovanje",
+    "minor_name_sl": "Splošno"
+  },
+  "501": {
+    "major_code": 5,
+    "major_name": "Labor",
+    "minor_name": "Worker Safety",
+    "major_name_sl": "Delo in zaposlovanje",
+    "minor_name_sl": "Varnost pri delu"
+  },
+  "502": {
+    "major_code": 5,
+    "major_name": "Labor",
+    "minor_name": "Employment Training",
+    "major_name_sl": "Delo in zaposlovanje",
+    "minor_name_sl": "Usposabljanje za zaposlitev"
+  },
+  "503": {
+    "major_code": 5,
+    "major_name": "Labor",
+    "minor_name": "Employee Benefits",
+    "major_name_sl": "Delo in zaposlovanje",
+    "minor_name_sl": "Pravice in ugodnosti zaposlenih"
+  },
+  "504": {
+    "major_code": 5,
+    "major_name": "Labor",
+    "minor_name": "Labor Unions",
+    "major_name_sl": "Delo in zaposlovanje",
+    "minor_name_sl": "Sindikati"
+  },
+  "505": {
+    "major_code": 5,
+    "major_name": "Labor",
+    "minor_name": "Fair Labor Standards",
+    "major_name_sl": "Delo in zaposlovanje",
+    "minor_name_sl": "Delovni standardi in plače"
+  },
+  "506": {
+    "major_code": 5,
+    "major_name": "Labor",
+    "minor_name": "Youth Employment",
+    "major_name_sl": "Delo in zaposlovanje",
+    "minor_name_sl": "Zaposlovanje mladih"
+  },
+  "529": {
+    "major_code": 5,
+    "major_name": "Labor",
+    "minor_name": "Migrant and Seasonal",
+    "major_name_sl": "Delo in zaposlovanje",
+    "minor_name_sl": "Sezonski delavci in delavci migranti"
+  },
+  "600": {
+    "major_code": 6,
+    "major_name": "Education",
+    "minor_name": "General",
+    "major_name_sl": "Izobraževanje",
+    "minor_name_sl": "Splošno"
+  },
+  "601": {
+    "major_code": 6,
+    "major_name": "Education",
+    "minor_name": "Higher",
+    "major_name_sl": "Izobraževanje",
+    "minor_name_sl": "Visoko šolstvo"
+  },
+  "602": {
+    "major_code": 6,
+    "major_name": "Education",
+    "minor_name": "Elementary & Secondary",
+    "major_name_sl": "Izobraževanje",
+    "minor_name_sl": "Osnovno in srednje šolstvo"
+  },
+  "603": {
+    "major_code": 6,
+    "major_name": "Education",
+    "minor_name": "Underprivileged",
+    "major_name_sl": "Izobraževanje",
+    "minor_name_sl": "Izobraževanje prikrajšanih"
+  },
+  "604": {
+    "major_code": 6,
+    "major_name": "Education",
+    "minor_name": "Vocational",
+    "major_name_sl": "Izobraževanje",
+    "minor_name_sl": "Poklicno izobraževanje"
+  },
+  "606": {
+    "major_code": 6,
+    "major_name": "Education",
+    "minor_name": "Special",
+    "major_name_sl": "Izobraževanje",
+    "minor_name_sl": "Posebno izobraževanje"
+  },
+  "607": {
+    "major_code": 6,
+    "major_name": "Education",
+    "minor_name": "Excellence",
+    "major_name_sl": "Izobraževanje",
+    "minor_name_sl": "Kakovost izobraževanja"
+  },
+  "698": {
+    "major_code": 6,
+    "major_name": "Education",
+    "minor_name": "R&D",
+    "major_name_sl": "Izobraževanje",
+    "minor_name_sl": "Raziskave in razvoj"
+  },
+  "700": {
+    "major_code": 7,
+    "major_name": "Environment",
+    "minor_name": "General",
+    "major_name_sl": "Okolje",
+    "minor_name_sl": "Splošno"
+  },
+  "701": {
+    "major_code": 7,
+    "major_name": "Environment",
+    "minor_name": "Drinking Water",
+    "major_name_sl": "Okolje",
+    "minor_name_sl": "Pitna voda"
+  },
+  "703": {
+    "major_code": 7,
+    "major_name": "Environment",
+    "minor_name": "Waste Disposal",
+    "major_name_sl": "Okolje",
+    "minor_name_sl": "Odstranjevanje odpadkov"
+  },
+  "704": {
+    "major_code": 7,
+    "major_name": "Environment",
+    "minor_name": "Hazardous Waste",
+    "major_name_sl": "Okolje",
+    "minor_name_sl": "Nevarni odpadki"
+  },
+  "705": {
+    "major_code": 7,
+    "major_name": "Environment",
+    "minor_name": "Air Pollution",
+    "major_name_sl": "Okolje",
+    "minor_name_sl": "Onesnaževanje zraka"
+  },
+  "707": {
+    "major_code": 7,
+    "major_name": "Environment",
+    "minor_name": "Recycling",
+    "major_name_sl": "Okolje",
+    "minor_name_sl": "Recikliranje"
+  },
+  "708": {
+    "major_code": 7,
+    "major_name": "Environment",
+    "minor_name": "Indoor Hazards",
+    "major_name_sl": "Okolje",
+    "minor_name_sl": "Nevarnosti v zaprtih prostorih"
+  },
+  "709": {
+    "major_code": 7,
+    "major_name": "Environment",
+    "minor_name": "Species & Forest",
+    "major_name_sl": "Okolje",
+    "minor_name_sl": "Varstvo vrst in gozdov"
+  },
+  "711": {
+    "major_code": 7,
+    "major_name": "Environment",
+    "minor_name": "Land and Water Conservation",
+    "major_name_sl": "Okolje",
+    "minor_name_sl": "Varstvo tal in voda"
+  },
+  "798": {
+    "major_code": 7,
+    "major_name": "Environment",
+    "minor_name": "R&D",
+    "major_name_sl": "Okolje",
+    "minor_name_sl": "Raziskave in razvoj"
+  },
+  "800": {
+    "major_code": 8,
+    "major_name": "Energy",
+    "minor_name": "General",
+    "major_name_sl": "Energetika",
+    "minor_name_sl": "Splošno"
+  },
+  "801": {
+    "major_code": 8,
+    "major_name": "Energy",
+    "minor_name": "Nuclear",
+    "major_name_sl": "Energetika",
+    "minor_name_sl": "Jedrska energija"
+  },
+  "802": {
+    "major_code": 8,
+    "major_name": "Energy",
+    "minor_name": "Electricity",
+    "major_name_sl": "Energetika",
+    "minor_name_sl": "Elektrika"
+  },
+  "803": {
+    "major_code": 8,
+    "major_name": "Energy",
+    "minor_name": "Natural Gas & Oil",
+    "major_name_sl": "Energetika",
+    "minor_name_sl": "Zemeljski plin in nafta"
+  },
+  "805": {
+    "major_code": 8,
+    "major_name": "Energy",
+    "minor_name": "Coal",
+    "major_name_sl": "Energetika",
+    "minor_name_sl": "Premog"
+  },
+  "806": {
+    "major_code": 8,
+    "major_name": "Energy",
+    "minor_name": "Alternative & Renewable",
+    "major_name_sl": "Energetika",
+    "minor_name_sl": "Alternativni in obnovljivi viri"
+  },
+  "807": {
+    "major_code": 8,
+    "major_name": "Energy",
+    "minor_name": "Conservation",
+    "major_name_sl": "Energetika",
+    "minor_name_sl": "Varčevanje z energijo"
+  },
+  "898": {
+    "major_code": 8,
+    "major_name": "Energy",
+    "minor_name": "R&D",
+    "major_name_sl": "Energetika",
+    "minor_name_sl": "Raziskave in razvoj"
+  },
+  "900": {
+    "major_code": 9,
+    "major_name": "Immigration",
+    "minor_name": "Immigration",
+    "major_name_sl": "Priseljevanje",
+    "minor_name_sl": "Priseljevanje"
+  },
+  "1000": {
+    "major_code": 10,
+    "major_name": "Transportation",
+    "minor_name": "General",
+    "major_name_sl": "Promet",
+    "minor_name_sl": "Splošno"
+  },
+  "1001": {
+    "major_code": 10,
+    "major_name": "Transportation",
+    "minor_name": "Mass",
+    "major_name_sl": "Promet",
+    "minor_name_sl": "Javni prevoz"
+  },
+  "1002": {
+    "major_code": 10,
+    "major_name": "Transportation",
+    "minor_name": "Highways",
+    "major_name_sl": "Promet",
+    "minor_name_sl": "Ceste"
+  },
+  "1003": {
+    "major_code": 10,
+    "major_name": "Transportation",
+    "minor_name": "Air Travel",
+    "major_name_sl": "Promet",
+    "minor_name_sl": "Letalski promet"
+  },
+  "1005": {
+    "major_code": 10,
+    "major_name": "Transportation",
+    "minor_name": "Railroad Travel",
+    "major_name_sl": "Promet",
+    "minor_name_sl": "Železniški promet"
+  },
+  "1007": {
+    "major_code": 10,
+    "major_name": "Transportation",
+    "minor_name": "Maritime",
+    "major_name_sl": "Promet",
+    "minor_name_sl": "Pomorski in rečni promet"
+  },
+  "1010": {
+    "major_code": 10,
+    "major_name": "Transportation",
+    "minor_name": "Infrastructure",
+    "major_name_sl": "Promet",
+    "minor_name_sl": "Prometna infrastruktura"
+  },
+  "1098": {
+    "major_code": 10,
+    "major_name": "Transportation",
+    "minor_name": "R&D",
+    "major_name_sl": "Promet",
+    "minor_name_sl": "Raziskave in razvoj"
+  },
+  "1200": {
+    "major_code": 12,
+    "major_name": "Law and Crime",
+    "minor_name": "General",
+    "major_name_sl": "Pravo in kriminal",
+    "minor_name_sl": "Splošno"
+  },
+  "1201": {
+    "major_code": 12,
+    "major_name": "Law and Crime",
+    "minor_name": "Agencies",
+    "major_name_sl": "Pravo in kriminal",
+    "minor_name_sl": "Organi pregona"
+  },
+  "1202": {
+    "major_code": 12,
+    "major_name": "Law and Crime",
+    "minor_name": "White Collar Crime",
+    "major_name_sl": "Pravo in kriminal",
+    "minor_name_sl": "Gospodarski kriminal"
+  },
+  "1203": {
+    "major_code": 12,
+    "major_name": "Law and Crime",
+    "minor_name": "Illegal Drugs",
+    "major_name_sl": "Pravo in kriminal",
+    "minor_name_sl": "Prepovedane droge"
+  },
+  "1204": {
+    "major_code": 12,
+    "major_name": "Law and Crime",
+    "minor_name": "Court Administration",
+    "major_name_sl": "Pravo in kriminal",
+    "minor_name_sl": "Sodstvo in sodna uprava"
+  },
+  "1205": {
+    "major_code": 12,
+    "major_name": "Law and Crime",
+    "minor_name": "Prisons",
+    "major_name_sl": "Pravo in kriminal",
+    "minor_name_sl": "Zapori"
+  },
+  "1206": {
+    "major_code": 12,
+    "major_name": "Law and Crime",
+    "minor_name": "Juvenile Crime",
+    "major_name_sl": "Pravo in kriminal",
+    "minor_name_sl": "Mladoletniško prestopništvo"
+  },
+  "1207": {
+    "major_code": 12,
+    "major_name": "Law and Crime",
+    "minor_name": "Child Abuse",
+    "major_name_sl": "Pravo in kriminal",
+    "minor_name_sl": "Zloraba otrok"
+  },
+  "1208": {
+    "major_code": 12,
+    "major_name": "Law and Crime",
+    "minor_name": "Family Issues",
+    "major_name_sl": "Pravo in kriminal",
+    "minor_name_sl": "Družinsko pravo"
+  },
+  "1210": {
+    "major_code": 12,
+    "major_name": "Law and Crime",
+    "minor_name": "Criminal & Civil Code",
+    "major_name_sl": "Pravo in kriminal",
+    "minor_name_sl": "Kazenski in civilni zakonik"
+  },
+  "1211": {
+    "major_code": 12,
+    "major_name": "Law and Crime",
+    "minor_name": "Crime Control",
+    "major_name_sl": "Pravo in kriminal",
+    "minor_name_sl": "Preprečevanje kriminala"
+  },
+  "1227": {
+    "major_code": 12,
+    "major_name": "Law and Crime",
+    "minor_name": "Police",
+    "major_name_sl": "Pravo in kriminal",
+    "minor_name_sl": "Policija"
+  },
+  "1300": {
+    "major_code": 13,
+    "major_name": "Social Welfare",
+    "minor_name": "General",
+    "major_name_sl": "Socialno varstvo",
+    "minor_name_sl": "Splošno"
+  },
+  "1301": {
+    "major_code": 13,
+    "major_name": "Social Welfare",
+    "minor_name": "Low-Income Assistance",
+    "major_name_sl": "Socialno varstvo",
+    "minor_name_sl": "Pomoč revnim"
+  },
+  "1302": {
+    "major_code": 13,
+    "major_name": "Social Welfare",
+    "minor_name": "Elderly Assistance",
+    "major_name_sl": "Socialno varstvo",
+    "minor_name_sl": "Pomoč starejšim"
+  },
+  "1303": {
+    "major_code": 13,
+    "major_name": "Social Welfare",
+    "minor_name": "Disabled Assistance",
+    "major_name_sl": "Socialno varstvo",
+    "minor_name_sl": "Pomoč invalidom"
+  },
+  "1304": {
+    "major_code": 13,
+    "major_name": "Social Welfare",
+    "minor_name": "Volunteer Associations",
+    "major_name_sl": "Socialno varstvo",
+    "minor_name_sl": "Prostovoljne in dobrodelne organizacije"
+  },
+  "1305": {
+    "major_code": 13,
+    "major_name": "Social Welfare",
+    "minor_name": "Child Care",
+    "major_name_sl": "Socialno varstvo",
+    "minor_name_sl": "Varstvo otrok"
+  },
+  "1400": {
+    "major_code": 14,
+    "major_name": "Housing",
+    "minor_name": "General",
+    "major_name_sl": "Stanovanjska politika in razvoj skupnosti",
+    "minor_name_sl": "Splošno"
+  },
+  "1401": {
+    "major_code": 14,
+    "major_name": "Housing",
+    "minor_name": "Community Development",
+    "major_name_sl": "Stanovanjska politika in razvoj skupnosti",
+    "minor_name_sl": "Razvoj skupnosti"
+  },
+  "1403": {
+    "major_code": 14,
+    "major_name": "Housing",
+    "minor_name": "Urban Development",
+    "major_name_sl": "Stanovanjska politika in razvoj skupnosti",
+    "minor_name_sl": "Razvoj mest"
+  },
+  "1404": {
+    "major_code": 14,
+    "major_name": "Housing",
+    "minor_name": "Rural Housing",
+    "major_name_sl": "Stanovanjska politika in razvoj skupnosti",
+    "minor_name_sl": "Stanovanja na podeželju"
+  },
+  "1405": {
+    "major_code": 14,
+    "major_name": "Housing",
+    "minor_name": "Rural Development",
+    "major_name_sl": "Stanovanjska politika in razvoj skupnosti",
+    "minor_name_sl": "Razvoj podeželja"
+  },
+  "1406": {
+    "major_code": 14,
+    "major_name": "Housing",
+    "minor_name": "Low-Income Assistance",
+    "major_name_sl": "Stanovanjska politika in razvoj skupnosti",
+    "minor_name_sl": "Stanovanjska pomoč revnim"
+  },
+  "1407": {
+    "major_code": 14,
+    "major_name": "Housing",
+    "minor_name": "Veterans",
+    "major_name_sl": "Stanovanjska politika in razvoj skupnosti",
+    "minor_name_sl": "Stanovanja za vojne veterane"
+  },
+  "1408": {
+    "major_code": 14,
+    "major_name": "Housing",
+    "minor_name": "Elderly",
+    "major_name_sl": "Stanovanjska politika in razvoj skupnosti",
+    "minor_name_sl": "Stanovanja za starejše"
+  },
+  "1409": {
+    "major_code": 14,
+    "major_name": "Housing",
+    "minor_name": "Homeless",
+    "major_name_sl": "Stanovanjska politika in razvoj skupnosti",
+    "minor_name_sl": "Brezdomstvo"
+  },
+  "1498": {
+    "major_code": 14,
+    "major_name": "Housing",
+    "minor_name": "R&D",
+    "major_name_sl": "Stanovanjska politika in razvoj skupnosti",
+    "minor_name_sl": "Raziskave in razvoj"
+  },
+  "1500": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "General",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Splošno"
+  },
+  "1501": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "Banking",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Bančništvo"
+  },
+  "1502": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "Securities & Commodities",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Vrednostni papirji in blagovne borze"
+  },
+  "1504": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "Consumer Finance",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Potrošniško kreditiranje"
+  },
+  "1505": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "Insurance Regulation",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Zavarovalništvo"
+  },
+  "1507": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "Bankruptcy",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Stečaji"
+  },
+  "1520": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "Corporate Management",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Upravljanje podjetij"
+  },
+  "1521": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "Small Businesses",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Obrt in mala podjetja"
+  },
+  "1522": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "Copyrights and Patents",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Avtorske pravice in patenti"
+  },
+  "1523": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "Disaster Relief",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Pomoč ob naravnih nesrečah"
+  },
+  "1524": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "Tourism",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Turizem"
+  },
+  "1525": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "Consumer Safety",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Varstvo potrošnikov"
+  },
+  "1526": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "Sports Regulation",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Šport"
+  },
+  "1598": {
+    "major_code": 15,
+    "major_name": "Domestic Commerce",
+    "minor_name": "R&D",
+    "major_name_sl": "Notranje gospodarstvo",
+    "minor_name_sl": "Raziskave in razvoj"
+  },
+  "1600": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "General",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Splošno"
+  },
+  "1602": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Alliances",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Vojaška zavezništva"
+  },
+  "1603": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Intelligence",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Obveščevalna dejavnost"
+  },
+  "1604": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Readiness",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Pripravljenost vojske"
+  },
+  "1605": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Nuclear Arms",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Jedrsko orožje"
+  },
+  "1606": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Military Aid",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Vojaška pomoč"
+  },
+  "1608": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Personnel Issues",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Vojaško osebje"
+  },
+  "1610": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Procurement",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Vojaške nabave"
+  },
+  "1611": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Installations & Land",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Vojaški objekti in zemljišča"
+  },
+  "1612": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Reserve Forces",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Rezervne sile"
+  },
+  "1614": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Hazardous Waste",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Vojaški nevarni odpadki"
+  },
+  "1615": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Civil",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Civilna zaščita"
+  },
+  "1616": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Civilian Personnel",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Civilno osebje v vojski"
+  },
+  "1617": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Contractors",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Pogodbeni dobavitelji vojske"
+  },
+  "1619": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Foreign Operations",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Vojaške operacije v tujini"
+  },
+  "1620": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "Claims against Military",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Odškodninski zahtevki proti vojski"
+  },
+  "1698": {
+    "major_code": 16,
+    "major_name": "Defense",
+    "minor_name": "R&D",
+    "major_name_sl": "Obramba",
+    "minor_name_sl": "Raziskave in razvoj"
+  },
+  "1700": {
+    "major_code": 17,
+    "major_name": "Technology",
+    "minor_name": "General",
+    "major_name_sl": "Tehnologija",
+    "minor_name_sl": "Splošno"
+  },
+  "1701": {
+    "major_code": 17,
+    "major_name": "Technology",
+    "minor_name": "Space",
+    "major_name_sl": "Tehnologija",
+    "minor_name_sl": "Vesolje"
+  },
+  "1704": {
+    "major_code": 17,
+    "major_name": "Technology",
+    "minor_name": "Commercial Use of Space",
+    "major_name_sl": "Tehnologija",
+    "minor_name_sl": "Komercialna raba vesolja"
+  },
+  "1705": {
+    "major_code": 17,
+    "major_name": "Technology",
+    "minor_name": "Science Transfer",
+    "major_name_sl": "Tehnologija",
+    "minor_name_sl": "Prenos znanja"
+  },
+  "1706": {
+    "major_code": 17,
+    "major_name": "Technology",
+    "minor_name": "Telecommunications",
+    "major_name_sl": "Tehnologija",
+    "minor_name_sl": "Telekomunikacije"
+  },
+  "1707": {
+    "major_code": 17,
+    "major_name": "Technology",
+    "minor_name": "Broadcast",
+    "major_name_sl": "Tehnologija",
+    "minor_name_sl": "Radiodifuzija in mediji"
+  },
+  "1708": {
+    "major_code": 17,
+    "major_name": "Technology",
+    "minor_name": "Weather Forecasting",
+    "major_name_sl": "Tehnologija",
+    "minor_name_sl": "Vremenska napoved"
+  },
+  "1709": {
+    "major_code": 17,
+    "major_name": "Technology",
+    "minor_name": "Computers",
+    "major_name_sl": "Tehnologija",
+    "minor_name_sl": "Računalništvo"
+  },
+  "1798": {
+    "major_code": 17,
+    "major_name": "Technology",
+    "minor_name": "R&D",
+    "major_name_sl": "Tehnologija",
+    "minor_name_sl": "Raziskave in razvoj"
+  },
+  "1800": {
+    "major_code": 18,
+    "major_name": "Foreign Trade",
+    "minor_name": "General",
+    "major_name_sl": "Zunanja trgovina",
+    "minor_name_sl": "Splošno"
+  },
+  "1802": {
+    "major_code": 18,
+    "major_name": "Foreign Trade",
+    "minor_name": "Trade Agreements",
+    "major_name_sl": "Zunanja trgovina",
+    "minor_name_sl": "Trgovinski sporazumi"
+  },
+  "1803": {
+    "major_code": 18,
+    "major_name": "Foreign Trade",
+    "minor_name": "Exports",
+    "major_name_sl": "Zunanja trgovina",
+    "minor_name_sl": "Izvoz"
+  },
+  "1804": {
+    "major_code": 18,
+    "major_name": "Foreign Trade",
+    "minor_name": "Private Investments",
+    "major_name_sl": "Zunanja trgovina",
+    "minor_name_sl": "Tuje naložbe"
+  },
+  "1806": {
+    "major_code": 18,
+    "major_name": "Foreign Trade",
+    "minor_name": "Competitiveness",
+    "major_name_sl": "Zunanja trgovina",
+    "minor_name_sl": "Konkurenčnost"
+  },
+  "1807": {
+    "major_code": 18,
+    "major_name": "Foreign Trade",
+    "minor_name": "Tariff & Imports",
+    "major_name_sl": "Zunanja trgovina",
+    "minor_name_sl": "Carine in uvoz"
+  },
+  "1808": {
+    "major_code": 18,
+    "major_name": "Foreign Trade",
+    "minor_name": "Exchange Rates",
+    "major_name_sl": "Zunanja trgovina",
+    "minor_name_sl": "Menjalni tečaji"
+  },
+  "1900": {
+    "major_code": 19,
+    "major_name": "International Affairs",
+    "minor_name": "General",
+    "major_name_sl": "Mednarodne zadeve",
+    "minor_name_sl": "Splošno"
+  },
+  "1901": {
+    "major_code": 19,
+    "major_name": "International Affairs",
+    "minor_name": "Foreign Aid",
+    "major_name_sl": "Mednarodne zadeve",
+    "minor_name_sl": "Pomoč tujini"
+  },
+  "1902": {
+    "major_code": 19,
+    "major_name": "International Affairs",
+    "minor_name": "Resources Exploitation",
+    "major_name_sl": "Mednarodne zadeve",
+    "minor_name_sl": "Izkoriščanje naravnih virov"
+  },
+  "1905": {
+    "major_code": 19,
+    "major_name": "International Affairs",
+    "minor_name": "Developing Countries",
+    "major_name_sl": "Mednarodne zadeve",
+    "minor_name_sl": "Države v razvoju"
+  },
+  "1906": {
+    "major_code": 19,
+    "major_name": "International Affairs",
+    "minor_name": "International Finance",
+    "major_name_sl": "Mednarodne zadeve",
+    "minor_name_sl": "Mednarodne finance"
+  },
+  "1910": {
+    "major_code": 19,
+    "major_name": "International Affairs",
+    "minor_name": "Western Europe",
+    "major_name_sl": "Mednarodne zadeve",
+    "minor_name_sl": "Zahodna Evropa"
+  },
+  "1921": {
+    "major_code": 19,
+    "major_name": "International Affairs",
+    "minor_name": "Specific Country",
+    "major_name_sl": "Mednarodne zadeve",
+    "minor_name_sl": "Posamezne države"
+  },
+  "1925": {
+    "major_code": 19,
+    "major_name": "International Affairs",
+    "minor_name": "Human Rights",
+    "major_name_sl": "Mednarodne zadeve",
+    "minor_name_sl": "Človekove pravice"
+  },
+  "1926": {
+    "major_code": 19,
+    "major_name": "International Affairs",
+    "minor_name": "Organizations",
+    "major_name_sl": "Mednarodne zadeve",
+    "minor_name_sl": "Mednarodne organizacije"
+  },
+  "1927": {
+    "major_code": 19,
+    "major_name": "International Affairs",
+    "minor_name": "Terrorism",
+    "major_name_sl": "Mednarodne zadeve",
+    "minor_name_sl": "Terorizem"
+  },
+  "1929": {
+    "major_code": 19,
+    "major_name": "International Affairs",
+    "minor_name": "Diplomats",
+    "major_name_sl": "Mednarodne zadeve",
+    "minor_name_sl": "Diplomacija"
+  },
+  "2000": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "General",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Splošno"
+  },
+  "2001": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Intergovernmental Relations",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Odnosi med ravnmi oblasti"
+  },
+  "2002": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Bureaucracy",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Javna uprava"
+  },
+  "2003": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Postal Service",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Pošta"
+  },
+  "2004": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Employees",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Javni uslužbenci"
+  },
+  "2005": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Appointments",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Imenovanja"
+  },
+  "2006": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Currency",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Denar in kovanje"
+  },
+  "2007": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Procurement & Contractors",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Javna naročila"
+  },
+  "2008": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Property Management",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Upravljanje državnega premoženja"
+  },
+  "2009": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Tax Administration",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Davčna uprava"
+  },
+  "2010": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Scandals",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Afere in škandali"
+  },
+  "2011": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Branch Relations",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Odnosi med vejami oblasti"
+  },
+  "2012": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Political Campaigns",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Volitve in politične kampanje"
+  },
+  "2013": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Census & Statistics",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Popis prebivalstva in statistika"
+  },
+  "2014": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Capital City",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Glavno mesto"
+  },
+  "2015": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "Claims against the government",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Odškodninski zahtevki proti državi"
+  },
+  "2030": {
+    "major_code": 20,
+    "major_name": "Government Operations",
+    "minor_name": "National Holidays",
+    "major_name_sl": "Delovanje države in uprave",
+    "minor_name_sl": "Državni prazniki"
+  },
+  "2100": {
+    "major_code": 21,
+    "major_name": "Public Lands",
+    "minor_name": "General",
+    "major_name_sl": "Javna zemljišča in vode",
+    "minor_name_sl": "Splošno"
+  },
+  "2101": {
+    "major_code": 21,
+    "major_name": "Public Lands",
+    "minor_name": "National Parks",
+    "major_name_sl": "Javna zemljišča in vode",
+    "minor_name_sl": "Narodni parki"
+  },
+  "2102": {
+    "major_code": 21,
+    "major_name": "Public Lands",
+    "minor_name": "Indigenous Affairs",
+    "major_name_sl": "Javna zemljišča in vode",
+    "minor_name_sl": "Zadeve staroselcev"
+  },
+  "2103": {
+    "major_code": 21,
+    "major_name": "Public Lands",
+    "minor_name": "Public Lands",
+    "major_name_sl": "Javna zemljišča in vode",
+    "minor_name_sl": "Javna zemljišča"
+  },
+  "2104": {
+    "major_code": 21,
+    "major_name": "Public Lands",
+    "minor_name": "Water Resources",
+    "major_name_sl": "Javna zemljišča in vode",
+    "minor_name_sl": "Vodni viri"
+  },
+  "2105": {
+    "major_code": 21,
+    "major_name": "Public Lands",
+    "minor_name": "Dependencies & Territories",
+    "major_name_sl": "Javna zemljišča in vode",
+    "minor_name_sl": "Odvisna ozemlja"
+  },
+  "2300": {
+    "major_code": 23,
+    "major_name": "Culture",
+    "minor_name": "General",
+    "major_name_sl": "Kultura",
+    "minor_name_sl": "Splošno"
+  }
+}

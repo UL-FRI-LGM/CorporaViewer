@@ -10,3 +10,4 @@ spacy==3.8.7
 sympy==1.13.1
 torch==2.6.0
 transformers==4.57.1
+rapidfuzz

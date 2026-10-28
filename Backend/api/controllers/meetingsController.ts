@@ -1,7 +1,9 @@
 import {NextFunction, Request, Response} from 'express';
 import {GetPageRequestQuery} from "../../models/GetPageRequestQuery";
 import utils from "../../utils/utils";
-import meetingsRepository from "../repositories/meetingsRepository";
+import meetingsRepository, {TimelineInterval, TimelineUnit} from "../repositories/meetingsRepository";
+import krajevnaImenaRepository from "../repositories/krajevnaImenaRepository";
+import {MeetingSpeaker} from "../../models/MeetingSpeaker";
 import {GetPageQueryParams} from "../../models/GetPageQueryParams";
 import {GetPageRequestParams} from "../../models/GetPageRequestParams";
 import {GetMeetingAsTextRequestParams} from "../../models/GetMeetingAsTextrRequestParams";
@@ -59,7 +61,7 @@ const getPage = async (req: Request<GetPageRequestParams, {}, {}, GetPageRequest
     }
 
 
-    const noSearchParamsProvided: boolean = Boolean(!words && speaker.length === 0 && placeNames.length === 0 && !queryParams.personEntities && !queryParams.locationEntities && !queryParams.capTopics);
+    const noSearchParamsProvided: boolean = Boolean(!queryParams.advanced && !words && speaker.length === 0 && placeNames.length === 0 && !queryParams.personEntities && !queryParams.locationEntities && !queryParams.capTopics);
     if (noSearchParamsProvided) {
         try {
             const allMeetingsData = await meetingsRepository.getAllMeetings(filters, page);
@@ -98,6 +100,51 @@ const getPage = async (req: Request<GetPageRequestParams, {}, {}, GetPageRequest
         console.error(error);
         res.status(500).json({error: `Internal server error`});
         return;
+    }
+}
+
+
+// map locations of all meetings that match the search (same query as getPage)
+const getMapLocations = async (req: Request<GetPageRequestParams, {}, {}, GetPageRequestQuery>, res: Response) => {
+    try {
+        const queryParams: GetPageQueryParams = utils.parseMeetingsRequestQuery(req);
+        const {filters} = queryParams;
+
+        if (!filters.dateFrom || !filters.dateTo || !filters.languages || !filters.corpora) {
+            res.status(400).json({error: "Bad request, missing filters", locations: [], truncated: false});
+            return;
+        }
+
+        const {ids, truncated} = await meetingsRepository.getMatchingMeetingIds(queryParams);
+        const locations = ids.length > 0 ? await krajevnaImenaRepository.getMapLocations(ids) : [];
+        res.json({locations, truncated});
+
+    } catch (error: any) {
+        console.error(error);
+        res.status(500).json({error: `Internal server error`});
+    }
+}
+
+
+// timeline data, same query as getPage + interval (year/month) and unit (meetings/segments/sentences)
+// date range is ignored here, because it is selected on the timeline
+const getTimeline = async (req: Request<GetPageRequestParams, {}, {}, GetPageRequestQuery & { interval?: string, unit?: string }>, res: Response) => {
+    try {
+        const queryParams: GetPageQueryParams = utils.parseMeetingsRequestQuery(req);
+        const interval: TimelineInterval = req.query.interval === "month" ? "month" : "year";
+        const unit: TimelineUnit = req.query.unit === "sentences" || req.query.unit === "segments" ? req.query.unit : "meetings";
+
+        if (!queryParams.filters.languages || !queryParams.filters.corpora) {
+            res.status(400).json({error: "Bad request, missing filters", interval, unit, buckets: []});
+            return;
+        }
+
+        const buckets = await meetingsRepository.getTimeline(queryParams, interval, unit);
+        res.json({interval, unit, buckets});
+
+    } catch (error: any) {
+        console.error(error);
+        res.status(500).json({error: `Internal server error`});
     }
 }
 
@@ -141,7 +188,7 @@ const getSpeakers = async (req: Request<GetSpeakersRequestParams, {}, {}, {}>, r
     }
 
     try {
-        const speakers: string[] = await meetingsRepository.getSpeakers(meetingId);
+        const speakers: MeetingSpeaker[] = await meetingsRepository.getSpeakers(meetingId);
         res.json({
             speakers: speakers
         });
@@ -210,6 +257,8 @@ const getHighlights = async (req: Request<GetHighlightsRequestParams, {}, {}, Ge
 
 export default {
     getPage,
+    getMapLocations,
+    getTimeline,
     getMeetingAsText,
     getSpeakers,
     getHighlights

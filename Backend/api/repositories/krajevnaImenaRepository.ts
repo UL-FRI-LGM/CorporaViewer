@@ -32,7 +32,7 @@ const getMapLocations = async (meetingIds: string[]) => {
             size: 0,
             aggs: {
                 locations: {
-                    terms: { field: 'location_entities', size: 200 }
+                    terms: { field: 'location_entities', size: 1000 }
                 }
             }
         }

@@ -2,6 +2,7 @@ import {CorpusSearchFilters} from "../models/CorpusSearchFilters";
 import {format} from "date-fns";
 import {GetPageQueryParams} from "../models/GetPageQueryParams";
 import utils from "../utils/utils";
+import advancedQueryBuilder from "./advancedQueryBuilder";
 
 
 const buildAllMeetingsQuery = (filters: CorpusSearchFilters): any => {
@@ -53,133 +54,124 @@ const buildAllMeetingsQuery = (filters: CorpusSearchFilters): any => {
 };
 
 
-const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
+// conditions on one sentence translation (words, speaker, person, location)
+const buildSentenceConditions = (queryParams: GetPageQueryParams): any[] => {
 
-    let innerQuery: any;
+    const languages: string[] = queryParams.filters!.languages!.split(",");
+    const languageFilter: any = {terms: {"sentences.translations.lang.keyword": languages}};
+    // with more languages only search the originals, otherwise the sentence is found twice
+    const originalOnly: any[] = languages.length > 1 ? [{match: {"sentences.translations.original": 1}}] : [];
 
-    /* IF THERE IS ONLY SPEAKER PROVIDED, IT'S A SPECIAL CASE */
-    const isOnlySpeakerProvided: boolean = queryParams.speaker && queryParams.speaker.length > 0 && queryParams.words.length === 0 && queryParams.placeNames.length === 0 && queryParams.personEntities.length === 0 && queryParams.locationEntities.length === 0;
-    let areContentQueriesPresent;
-    let arePlacesQueriesPresent;
-    if (isOnlySpeakerProvided) {
-        /* BUILD INNER QUERY THAT GETS MEETINGS THAT CONTAIN UTTERANCE OF SELECTED SPEAKER */
+    const speakerIds: string[] = queryParams.speaker ?? [];
+    const splitEntities = (entities: string | undefined): string[] =>
+        (entities ?? "").split(",").map(e => e.trim()).filter(e => e.length > 0);
+    const personEntities: string[] = splitEntities(queryParams.personEntities);
+    const locationEntities: string[] = splitEntities(queryParams.locationEntities);
 
-        // 1. Build a speaker query
-        const speakerQuery: any = {
-            bool: {
-                must: [
-                    {terms: {"sentences.translations.lang.keyword": queryParams.filters!.languages!.split(",")}},
-                    {
-                        bool: {
-                            should: queryParams.speaker!.map(speaker => {
-                                return {match: {"sentences.translations.speaker": speaker}}
-                            }),
-                            minimum_should_match: 1
-                        }
-                    }
-                ]
-            }
+    /* 1. SEARCHED CONTENTS (words and place names) */
+    const contentsQueryFilters: any[] = [languageFilter];
+    if (speakerIds.length > 0) {
+        contentsQueryFilters.push({terms: {"sentences.translations.speaker_id": speakerIds}});
+    }
+
+    const contentsQueries: any[] = [];
+    for (const tokenGroup of utils.tokenizeQuery(queryParams.words)) {
+        if (tokenGroup.length === 0) {
+            continue;
         }
 
-        // 2. Add filter for the original language if multiple languages are selected
-        const areMultipleLanguagesSelected: boolean = queryParams.filters!.languages!.split(",").length > 1;
-        if (areMultipleLanguagesSelected) {
-            speakerQuery.bool.must.push({match: {"sentences.translations.original": 1}})
-        }
-
-        innerQuery = {
-            nested: {
-                path: "sentences.translations",
-                query: speakerQuery,
-                inner_hits: {
-                    size: 10,
-                    highlight: {
-                        fields: {
-                            "sentences.translations.text": {},
-                            "sentences.translations.words.lemma": {},
-                        }
-                    }
-                }
-            }
-        }
-
-    } else {
-        /* BUILD INNER QUERY THAT FILTERS MEETINGS BASED ON SEARCHED CONTENTS */
-
-        // 1. Save filters that are used in a content query
-        const contentsQueryFilters: any = [];
-        // Add language filters
-        contentsQueryFilters.push({terms: {"sentences.translations.lang.keyword": queryParams.filters!.languages!.split(",")}});
-        // Add speaker filters
-        if (queryParams.speaker && queryParams.speaker.length > 0) {
-            contentsQueryFilters.push({
+        if (tokenGroup.length === 1) {
+            contentsQueries.push(utils.buildShouldMatchLemmaAndTextQuery(tokenGroup[0], contentsQueryFilters));
+        } else {
+            contentsQueries.push({
                 bool: {
-                    should: queryParams.speaker.map(speaker => {
-                        return {match: {"sentences.translations.speaker": speaker}}
-                    }),
-                    minimum_should_match: 1
-                }
+                    must: tokenGroup.map(token => utils.buildShouldMatchLemmaAndTextQuery(token, contentsQueryFilters))
+                },
             });
         }
+    }
 
-
-        // 2. Build contents query
-        const tokenizedQuery: string[][] = utils.tokenizeQuery(queryParams.words);
-
-        const contentsQueries: any = []
-        for (const tokenGroup of tokenizedQuery) {
-
-            const isTokenGroupEmpty: boolean = !tokenizedQuery || tokenGroup.length === 0;
-            if (isTokenGroupEmpty) {
-                continue;
-            }
-
-            const isTokenGroupSingle: boolean = tokenGroup.length === 1;
-            if (isTokenGroupSingle) {
-                contentsQueries.push(utils.buildShouldMatchLemmaAndTextQuery(tokenGroup[0], contentsQueryFilters));
-            } else {
-                contentsQueries.push({
-                    bool: {
-                        must: tokenGroup.map(token => {
-                            return utils.buildShouldMatchLemmaAndTextQuery(token, contentsQueryFilters)
-                        })
-                    },
-                });
-            }
+    const placesQueries: any[] = [];
+    for (const place of queryParams.placeNames!) {
+        if (!place || !place.name || place.name === "") {
+            continue;
         }
 
-        // 3. Build a place query
-        const placesQueries: any = [];
-        for (const place of queryParams.placeNames!) {
-
-            const isPlaceNameEmpty: boolean = !place || !place.name || place.name === "";
-            if (isPlaceNameEmpty) {
-                continue;
-            }
-
-            const isPlaceNameOneWord: boolean = place.name.split(" ").length === 1;
-            if (isPlaceNameOneWord) {
-                placesQueries.push(utils.buildShouldMatchLemmaAndTextPlaceQuery(place!.name, contentsQueryFilters));
-            } else {
-                placesQueries.push({
-                    bool: {
-                        must: place.name.split(" ").map(word => {
-                            return utils.buildShouldMatchLemmaAndTextPlaceQuery(word, contentsQueryFilters)
-                        })
-                    },
-                });
-            }
+        if (place.name.split(" ").length === 1) {
+            placesQueries.push(utils.buildShouldMatchLemmaAndTextPlaceQuery(place.name, contentsQueryFilters));
+        } else {
+            placesQueries.push({
+                bool: {
+                    must: place.name.split(" ").map(word => utils.buildShouldMatchLemmaAndTextPlaceQuery(word, contentsQueryFilters))
+                },
+            });
         }
+    }
 
-        // 4. Build inner query
-        innerQuery = {
+    /* 2. CONDITIONS (each is matched by at least one sentence of the meeting) */
+    const conditions: any[] = [];
+
+    const contentClauses: any[] = [];
+    if (contentsQueries.length > 0) {
+        contentClauses.push({bool: {should: contentsQueries, minimum_should_match: 1}});
+    }
+    if (placesQueries.length > 0) {
+        contentClauses.push({bool: {should: placesQueries, minimum_should_match: 1}});
+    }
+
+    if (contentClauses.length > 0) {
+        conditions.push({bool: {must: contentClauses}});
+    } else if (speakerIds.length > 0) {
+        conditions.push({
+            bool: {must: [languageFilter, {terms: {"sentences.translations.speaker_id": speakerIds}}, ...originalOnly]}
+        });
+    }
+    if (personEntities.length > 0) {
+        conditions.push({
+            bool: {must: [languageFilter, {terms: {"sentences.translations.person_entities": personEntities}}, ...originalOnly]}
+        });
+    }
+    if (locationEntities.length > 0) {
+        conditions.push({
+            bool: {must: [languageFilter, {terms: {"sentences.translations.location_entities": locationEntities}}, ...originalOnly]}
+        });
+    }
+
+    return conditions;
+}
+
+
+// CAP topics on one sentence (OR, main topic matches all its subtopics)
+const buildSentenceTopicsClause = (capTopics: string[] | undefined): any | undefined => {
+    if (!capTopics || capTopics.length === 0) return undefined;
+
+    return {
+        bool: {
+            should: capTopics.map(topic => topic.includes(':')
+                ? {term: {"sentences.cap_topics": topic}}
+                : {prefix: {"sentences.cap_topics": topic + ":"}}),
+            minimum_should_match: 1
+        }
+    };
+}
+
+
+// Words and entity filters are AND on meeting level (each can be in a different sentence).
+// Shown sentences are the ones that match any of the conditions.
+// If words are searched together with a speaker, only the speaker's sentences are searched.
+const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
+    if (queryParams.advanced) return advancedQueryBuilder.buildAdvancedMeetingsQuery(queryParams);
+
+    const conditions: any[] = buildSentenceConditions(queryParams);
+
+    /* 3. INNER QUERY */
+    const isInnerQueryNeeded: boolean = conditions.length > 0;
+    let innerQuery: any;
+    if (isInnerQueryNeeded) {
+        const shownSentences: any = {
             nested: {
                 path: "sentences.translations",
-                query: {
-                    bool: {
-                        must: []
-                    }
-                },
+                query: {bool: {should: conditions, minimum_should_match: 1}},
                 inner_hits: {
                     size: 10,
                     highlight: {
@@ -197,51 +189,12 @@ const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
                     ]
                 }
             }
-        }
+        };
 
-        areContentQueriesPresent = contentsQueries.length > 0;
-        if (areContentQueriesPresent) {
-            innerQuery.nested.query.bool.must.push({
-                bool: {
-                    should: contentsQueries,
-                    minimum_should_match: 1
-                }
-            });
-        }
-
-        arePlacesQueriesPresent = placesQueries.length > 0;
-        if (arePlacesQueriesPresent) {
-            innerQuery.nested.query.bool.must.push({
-                bool: {
-                    should: placesQueries,
-                    minimum_should_match: 1
-                }
-            });
-        }
-
-        // Add person entity filters (directly to nested query, same level as lang/speaker)
-        if (queryParams.personEntities) {
-            const entitiesArray = queryParams.personEntities
-                .split(',')
-                .map(e => e.trim())
-                .filter(e => e.length > 0);
-
-            innerQuery.nested.query.bool.must.push({
-                terms: {"sentences.translations.person_entities": entitiesArray}
-            });
-        }
-
-        // Add location entity filters
-        if (queryParams.locationEntities) {
-            const entitiesArray = queryParams.locationEntities
-                .split(',')
-                .map(e => e.trim())
-                .filter(e => e.length > 0);
-
-            innerQuery.nested.query.bool.must.push({
-                terms: {"sentences.translations.location_entities": entitiesArray}
-            });
-        }
+        const requiredConditions: any[] = conditions.length > 1
+            ? conditions.map(condition => ({nested: {path: "sentences.translations", query: condition}}))
+            : [];
+        innerQuery = {bool: {must: [...requiredConditions, shownSentences]}};
     }
 
     /* BUILD OUTER QUERY THAT FILTERS MEETINGS BASED ON DATE */
@@ -253,6 +206,11 @@ const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
                 should: []
             }
     };
+
+    // 0. Add corpus filter to outer query
+    if (queryParams.filters.corpora) {
+        outerQuery.bool.filter.push({terms: {"corpus": queryParams.filters.corpora.split(",")}});
+    }
 
     // 1. Add date range filter to outer query
     if (queryParams.filters.dateFrom || queryParams.filters.dateTo) {
@@ -290,9 +248,6 @@ const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
     }
 
     // 2. Add inner query to outer query
-    const arePersonEntitiesPresent = !!queryParams.personEntities && queryParams.personEntities.length > 0;
-    const areLocationEntitiesPresent = !!queryParams.locationEntities && queryParams.locationEntities.length > 0;
-    const isInnerQueryNeeded = isOnlySpeakerProvided || areContentQueriesPresent || arePlacesQueriesPresent || arePersonEntitiesPresent || areLocationEntitiesPresent;
     if (isInnerQueryNeeded) {
         outerQuery.bool.must.push({
             function_score: {
@@ -306,7 +261,7 @@ const buildMeetingsPageQuery = (queryParams: GetPageQueryParams): any => {
 }
 
 
-const buildSpeakerUtterancesQuery = (meetingId: string, speaker: string): any => {
+const buildSpeakerUtterancesQuery = (meetingId: string, speakerId: string): any => {
     return {
         bool: {
             filter: [
@@ -318,10 +273,8 @@ const buildSpeakerUtterancesQuery = (meetingId: string, speaker: string): any =>
             ],
             must: [
                 {
-                    match_phrase: {
-                        speaker: {
-                            query: speaker
-                        }
+                    term: {
+                        speaker_id: speakerId
                     }
                 }
             ]
@@ -333,5 +286,7 @@ const buildSpeakerUtterancesQuery = (meetingId: string, speaker: string): any =>
 export default {
     buildAllMeetingsQuery,
     buildMeetingsPageQuery,
+    buildSentenceConditions,
+    buildSentenceTopicsClause,
     buildSpeakerUtterancesQuery
 }

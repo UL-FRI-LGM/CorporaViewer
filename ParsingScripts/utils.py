@@ -114,8 +114,11 @@ def transform_sentences_fast(meeting, coords_index=None):
             SENTENCE_ID: sentence.get(ID),
             SEGMENT_ID: sentence.get(SEGMENT_ID),
             SPEAKER: sentence.get(SPEAKER),
+            SPEAKER_ID: sentence.get(SPEAKER_ID),
+            MEETING_DATE: meeting.get("date"),
             PERSON_ENTITIES: sentence.get(PERSON_ENTITIES),
             LOCATION_ENTITIES: sentence.get(LOCATION_ENTITIES),
+            CAP_TOPICS: sentence.get(CAP_TOPICS, []),
             COORDINATES: coords,
             TRANSLATIONS: [
                 {
@@ -165,6 +168,7 @@ def transform_words_fast(meeting, coords_index=None):
                     "text": word.get("text"),
                     "lemma": word.get("lemma"),
                     SPEAKER: sentence.get(SPEAKER),
+                    SPEAKER_ID: sentence.get(SPEAKER_ID),
                     "pos": i,
                     "wpos": word_index,
                     COORDINATES: coordinates,
